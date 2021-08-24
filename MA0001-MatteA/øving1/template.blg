@@ -1,9 +1,0 @@
-[0] Config.pm:311> INFO - This is Biber 2.16
-[0] Config.pm:314> INFO - Logfile is 'template.blg'
-[60] biber-darwin:340> INFO - === Tue Aug 24, 2021, 15:40:28
-[73] Biber.pm:415> INFO - Reading 'template.bcf'
-[166] Biber.pm:952> INFO - Found 0 citekeys in bib section 0
-[172] Utils.pm:395> WARN - The file 'template.bcf' does not contain any citations!
-[180] bbl.pm:654> INFO - Writing 'template.bbl' with encoding 'UTF-8'
-[180] bbl.pm:757> INFO - Output to template.bbl
-[180] Biber.pm:128> INFO - WARNINGS: 1
