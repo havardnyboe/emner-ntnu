@@ -1,0 +1,49 @@
+% #region PREAMBEL OG PAKKER
+\documentclass[a4paper, 12pt]{article}  % DOKUMENTKLASSE
+\title{Øving 1}                         % TITTEL
+\date{MA0001 -- \today}                 % DATO & FAG
+\author{Håvard S. Nybøe}           % FORFATTER
+
+\usepackage[english, norsk]{babel}      % NORSK SPRÅK
+\usepackage[
+    backend=biber,style=apa]{biblatex}  % BIBLIOGRAFI
+\usepackage{csquotes}                   % PAKKE TIL BABEL
+\addbibresource{bibliografi.bib}        % PATH TIL BIBLIOGRAFI
+\usepackage[hidelinks]{hyperref}        % LENKER I TOC OG GENERELT
+\usepackage[margin=1in]{geometry}       % VANLIG STØRRELSE MARGIN
+\setlength{\parindent}{0em}             % SKILLER AVSNITT
+\setlength{\parskip}{.8em}              % SKILLER AVSNITT
+\usepackage{graphicx}                   % BILDER \includegraphics[OPTIONS]{PATH}
+\usepackage{kantlipsum}                 % FYLLTEKST I KANT-STIL (kant[n-m])
+\usepackage{amsfonts,                   % BLACKBOARD BOLD FONT (\mathbb{N})
+amsmath,stmaryrd,amssymb,gensymb} % ANDRE MATTE PAKKER
+\usepackage{circuitikz}                 % LOGISKE PORTER OG KRETSER & TikZ
+\usepackage{import}                     % IMPORTER FILER (\import{PATH}{FILE})
+% #endregion
+\begin{document}
+
+\maketitle
+% \tableofcontents % INNHOLDSFORTEGNELSE
+
+\begin{enumerate}
+    \item[\boxed{1}] 
+    \begin{enumerate}
+        \item[a)] $-135\degree = {\frac{3}{4}} \pi$
+        \item[b)] $\frac{3}{2}\pi = 270\degree$
+        \item[c)] $\sin\left(-\pi \over 2\right) = -1$
+    \end{enumerate}
+    \item[\boxed{2}]
+    \begin{enumerate}
+        \item[a)] $2^{3} - 3^{2} = -1$
+        \item[b)] $\log_{4}(4^2) = 2$
+        \item[c)] $\ln(e^5) = 5$
+    \end{enumerate} 
+    % \begin{tasks}
+    %     \task $1^{-1}+2^{-1}+3^{-1} = 1 + {1\over2} + {1\over3} = {11\over6}$
+    %     \task $x^{-7} \cdot x^6 = {1\over x}$
+    %     \task $\frac{(x^2yz^3)^2}{x^4y^3z^5} = $
+    % \end{tasks}
+\end{enumerate}
+
+% \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
+\end{document}
