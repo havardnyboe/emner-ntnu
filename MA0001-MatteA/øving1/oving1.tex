@@ -8,14 +8,15 @@
 \usepackage[
     backend=biber,style=apa]{biblatex}  % BIBLIOGRAFI
 \usepackage{csquotes}                   % PAKKE TIL BABEL
-\addbibresource{bibliografi.bib}        % PATH TIL BIBLIOGRAFI
+\addbibresource{bibliografi.bib}         % PATH TIL BIBLIOGRAFI
 \usepackage[hidelinks]{hyperref}        % LENKER I TOC OG GENERELT
 \usepackage[margin=1in]{geometry}       % VANLIG STØRRELSE MARGIN
 \setlength{\parindent}{0em}             % SKILLER AVSNITT
 \setlength{\parskip}{.8em}              % SKILLER AVSNITT
 \usepackage{graphicx}                   % BILDER \includegraphics[OPTIONS]{PATH}
+\usepackage{float}                       % TVINGER PLASSERING AV FIGURER
 \usepackage{kantlipsum}                 % FYLLTEKST I KANT-STIL (kant[n-m])
-\usepackage{amsfonts,                   % BLACKBOARD BOLD FONT (\mathbb{N})
+\usepackage{amsfonts,pgfplots,          % BLACKBOARD BOLD FONT (\mathbb{N})
 amsmath,stmaryrd,amssymb,gensymb}       % ANDRE MATTE PAKKER
 \usepackage{circuitikz}                 % LOGISKE PORTER OG KRETSER & TikZ
 \usepackage{import}                     % IMPORTER FILER (\import{PATH}{FILE})
@@ -76,8 +77,47 @@ amsmath,stmaryrd,amssymb,gensymb}       % ANDRE MATTE PAKKER
                     \end{flalign*}
                     $\boxed{x = 0 \vee x = 2}$
           \end{enumerate}
-          \vspace{1em}
-    \item[\boxed{5}]
+          \vspace{1em} \vfill
+    \item[\boxed{5}] 
+          \begin{enumerate}
+            \item[a)] \textbf{ }
+                  \begin{figure}[H]
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \begin{axis}[xmin=0, xmax=4, ymin=0, ymax=4, axis on top, style=thick, grid, grid style={dashed,gray!30}]
+                                \addplot[color=blue]{3-x};
+                                \addlegendentry{$y=3-x$};
+                                \addplot[color=red]{x-1};
+                                \addlegendentry{$y=x-1$};
+                                \draw [black, fill] (axis cs: 2,1) circle (2pt) node[anchor=west] {$P$};
+                            \end{axis}
+                        \end{tikzpicture}
+                    \end{center}
+                    \begin{align*}
+                        3-x & = x-1 \\
+                        2x & = 4 \\
+                        x & = 2\\
+                        \\
+                        y & = 3-2 \\
+                        y & = 1 \\
+                        \\
+                        P & = (2,1)
+                    \end{align*}
+                \end{figure}
+                \vspace{1em}
+                \item [b)] \textbf{ }
+                  \begin{figure}[H]
+                    \begin{center}
+                        \begin{tikzpicture}
+                            \begin{axis}[xmin=0, xmax=4, ymin=0, ymax=4, style=thick, grid, grid style={dashed,gray!30}]
+                                \addplot[color=blue] coordinates {(0,3) (2,1)};
+                                \addplot[color=blue] coordinates {(2,1) (4,3)};
+                                \addlegendentry{$f(x)=\left\lvert x-2\right\rvert +1$};
+                            \end{axis}
+                        \end{tikzpicture}
+                    \end{center}
+                \end{figure}
+          \end{enumerate}
 \end{enumerate}
 
 % \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
