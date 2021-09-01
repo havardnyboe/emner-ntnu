@@ -44,11 +44,13 @@
 
 ## Etikk
 
--   Hva er rett og galt å gjøre, og hvorfor? Noen teorier i norvatik etikk
--   _Finnes_ det noe som er absolutt rett eller galt? Om moralsk relativiisme
+-   Hva er rett og galt å gjøre, og hvorfor? Noen teorier i normativ etikk
+-   _Finnes_ det noe som er absolutt rett eller galt? Om moralsk relativisme
 -   Hvem/hva har moralsk verdi?
 -   Forskningsetikk
 
 ## Politisk filosofi
 
--
+-   Hva menes med begrepet frihet?
+-   Hvor langt kan myndighetene gripe inn i vår frihet?
+-   Hvor langt strekker ytringsfriheten seg?
