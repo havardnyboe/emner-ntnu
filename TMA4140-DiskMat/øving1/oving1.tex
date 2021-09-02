@@ -1,0 +1,66 @@
+% #region PREAMBEL OG PAKKER
+\documentclass[a4paper, 12pt]{article}  % DOKUMENTKLASSE
+\title{Øving 1}               % TITTEL
+\author{Håvard Solberg Nybøe}           % FORFATTER
+\date{TMA4140 -- \today}                    % DATO & FAG
+
+\usepackage[english, norsk]{babel}      % NORSK SPRÅK
+\usepackage[
+    backend=biber,style=apa]{biblatex}  % BIBLIOGRAFI
+\usepackage{csquotes}                   % PAKKE TIL BABEL
+\addbibresource{bibliografi.bib}        % PATH TIL BIBLIOGRAFI
+\usepackage[hidelinks]{hyperref}        % LENKER I TOC OG GENERELT
+\usepackage[margin=1in]{geometry}       % VANLIG STØRRELSE MARGIN
+\setlength{\parindent}{0em}             % SKILLER AVSNITT
+\setlength{\parskip}{.8em}              % SKILLER AVSNITT
+\usepackage{graphicx}                   % BILDER \includegraphics[OPTIONS]{PATH}
+\usepackage{kantlipsum}                 % FYLLTEKST I KANT-STIL (kant[n-m])
+\usepackage{amsfonts,                   % BLACKBOARD BOLD FONT (\mathbb{N})
+amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
+\usepackage{circuitikz}                 % LOGISKE PORTER OG KRETSER & TikZ
+\usepackage{import}                     % IMPORTER FILER (\import{PATH}{FILE})
+\usepackage{caption}
+
+% #endregion
+\begin{document}
+\maketitle
+
+\subsection*{Seksjon 1.1, s. 14}
+\begin{enumerate} 
+    \item [\boxed{14}] 
+    \begin{enumerate}
+        \item [(c)] You missing the final exam implies not passing the course.
+        \item [(f)] You have the flu and you miss the final exam or you don't miss the final exam and you pass the course.
+    \end{enumerate}
+    \item [\boxed{16}]
+    \begin{enumerate}
+        \item $r \land \neg q$
+        \item [(e)] $(p \land q) \rightarrow r$
+    \end{enumerate}
+\end{enumerate}
+
+\subsection*{Seksjon 1.3, s. 38}
+\begin{enumerate}
+    \item [\boxed{12}]
+    \begin{enumerate}
+        \item $(\neg p \land (p \lor q)) \rightarrow q$
+        \begin{table}[h]
+            \begin{center}
+                \begin{tabular}{|c|c|c|c|c|c|}
+                    \hline
+                    $p$ & $q$ & $\neg p$ & $p \lor q$ & $\neg p \land (p \lor q)$ & $\neg p \land (p \lor q) \rightarrow q$\\
+                    \hline
+                    0 & 0 & 1 & 0 & 0 & 1 \\
+                    0 & 1 & 1 & 1 & 1 & 1 \\
+                    1 & 0 & 0 & 1 & 0 & 1 \\
+                    1 & 1 & 0 & 1 & 0 & 1 \\
+                    \hline
+                \end{tabular}
+                \caption*{$(\neg p \land (p \lor q)) \rightarrow q$ er en tautologi.}
+            \end{center}
+        \end{table}
+        \item $ $
+    \end{enumerate}
+\end{enumerate}
+
+\end{document}
