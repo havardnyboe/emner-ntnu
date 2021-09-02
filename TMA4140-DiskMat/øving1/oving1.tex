@@ -22,45 +22,123 @@ amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
 \usepackage{caption}
 
 % #endregion
+\newcommand{\rarr}{\rightarrow}
+
 \begin{document}
 \maketitle
 
 \subsection*{Seksjon 1.1, s. 14}
-\begin{enumerate} 
-    \item [\boxed{14}] 
-    \begin{enumerate}
-        \item [(c)] You missing the final exam implies not passing the course.
-        \item [(f)] You have the flu and you miss the final exam or you don't miss the final exam and you pass the course.
-    \end{enumerate}
+\begin{enumerate}
+    \item [\boxed{14}]
+          \begin{enumerate}
+              \item [(c)] You missing the final exam implies not passing the course.
+              \item [(f)] You have the flu and you miss the final exam or you don't miss the final exam and you pass the course.
+          \end{enumerate}
     \item [\boxed{16}]
-    \begin{enumerate}
-        \item $r \land \neg q$
-        \item [(e)] $(p \land q) \rightarrow r$
-    \end{enumerate}
+          \begin{enumerate}
+              \item $r \land \neg q$
+              \item [(e)] $(p \land q) \rarr r$
+          \end{enumerate}
 \end{enumerate}
 
 \subsection*{Seksjon 1.3, s. 38}
 \begin{enumerate}
     \item [\boxed{12}]
-    \begin{enumerate}
-        \item $(\neg p \land (p \lor q)) \rightarrow q$
-        \begin{table}[h]
-            \begin{center}
-                \begin{tabular}{|c|c|c|c|c|c|}
-                    \hline
-                    $p$ & $q$ & $\neg p$ & $p \lor q$ & $\neg p \land (p \lor q)$ & $\neg p \land (p \lor q) \rightarrow q$\\
-                    \hline
-                    0 & 0 & 1 & 0 & 0 & 1 \\
-                    0 & 1 & 1 & 1 & 1 & 1 \\
-                    1 & 0 & 0 & 1 & 0 & 1 \\
-                    1 & 1 & 0 & 1 & 0 & 1 \\
-                    \hline
-                \end{tabular}
-                \caption*{$(\neg p \land (p \lor q)) \rightarrow q$ er en tautologi.}
-            \end{center}
-        \end{table}
-        \item $ $
-    \end{enumerate}
+          \begin{enumerate}
+              \item $(\neg p \land (p \lor q)) \rarr q$
+                    \begin{table}[h]
+                        \begin{center}
+                            \begin{tabular}{|c|c|c|c|c|c|}
+                                \hline
+                                $p$ & $q$ & $\neg p$ & $p \lor q$ & $\neg p \land (p \lor q)$ & $\neg p \land (p \lor q) \rarr q$ \\
+                                \hline
+                                0   & 0   & 1        & 0          & 0                         & 1                                 \\
+                                0   & 1   & 1        & 1          & 1                         & 1                                 \\
+                                1   & 0   & 0        & 1          & 0                         & 1                                 \\
+                                1   & 1   & 0        & 1          & 0                         & 1                                 \\
+                                \hline
+                            \end{tabular}
+                            \caption*{$(\neg p \land (p \lor q)) \rarr q$ er en tautologi.}
+                        \end{center}
+                    \end{table} \newpage
+              \item $((p \rarr q) \land (q \rarr r)) \rarr (p \rarr r)$
+                    \begin{table}[h]
+                        \begin{center}
+                            \begin{tabular}{|c|c|c|c|c|c|c|c|}
+                                \hline
+                                $p$ & $q$ & $r$ & $p \rarr q$ & $q \rarr r$ & $(p \rarr q) \land (q \rarr r)$ & $p \rarr r$ & $((p \rarr q) \land (q \rarr r)) \rarr (p \rarr r)$ \\
+                                \hline
+                                0   & 0   & 0   & 1           & 1           & 1                               & 1           & 1                                                   \\
+                                0   & 0   & 1   & 1           & 1           & 1                               & 1           & 1                                                   \\
+                                0   & 1   & 0   & 1           & 0           & 0                               & 1           & 1                                                   \\
+                                0   & 1   & 1   & 1           & 1           & 1                               & 1           & 1                                                   \\
+                                1   & 0   & 0   & 0           & 1           & 0                               & 0           & 1                                                   \\
+                                1   & 0   & 1   & 0           & 1           & 0                               & 1           & 1                                                   \\
+                                1   & 1   & 0   & 1           & 0           & 0                               & 0           & 1                                                   \\
+                                1   & 1   & 1   & 1           & 1           & 1                               & 1           & 1                                                   \\
+                                \hline
+                            \end{tabular}
+                            \caption*{$((p \rarr q) \land (q \rarr r)) \rarr (p \rarr r)$ er en tautologi.}
+                        \end{center}
+                    \end{table}
+              \item $(p \land (p \rarr q)) \rarr q$
+                    \begin{table}[h]
+                        \begin{center}
+                            \begin{tabular}{|c|c|c|c|c|}
+                                \hline
+                                $p$ & $q$ & $p \rarr q$ & $p \land (p \rarr q)$ & $(p \land (p \rarr q)) \rarr q$ \\
+                                \hline
+                                0   & 0   & 1           & 0                     & 1                               \\
+                                0   & 1   & 1           & 0                     & 1                               \\
+                                1   & 0   & 0           & 0                     & 1                               \\
+                                1   & 1   & 1           & 1                     & 1                               \\
+                                \hline
+                            \end{tabular}
+                            \caption*{$(p \land (p \rarr q)) \rarr q$ er en tautologi.}
+                        \end{center}
+                    \end{table}
+              \item $((p \lor q) \land (p \rarr r) \land (q \rarr r)) \rarr r$
+                    \begin{table}[h]
+                        \begin{center}
+                            \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+                                \hline
+                                $p$ & $q$ & $r$ & $p \lor q$ & $p \rarr r$ & $q \rarr r$ & $(p \lor q) \land (p \rarr r) \land (q \rarr r)$ & $((p \lor q) \land (p \rarr r) \land (q \rarr r)) \rarr r$ \\
+                                \hline
+                                0   & 0   & 0   & 0          & 1           & 1           & 0                                                & 1                                                          \\
+                                0   & 0   & 1   & 0          & 1           & 1           & 0                                                & 1                                                          \\
+                                0   & 1   & 0   & 1          & 1           & 0           & 0                                                & 1                                                          \\
+                                0   & 1   & 1   & 1          & 1           & 1           & 1                                                & 1                                                          \\
+                                1   & 0   & 0   & 1          & 1           & 1           & 1                                                & 1                                                          \\
+                                1   & 0   & 1   & 1          & 1           & 1           & 1                                                & 1                                                          \\
+                                1   & 1   & 0   & 1          & 0           & 0           & 0                                                & 1                                                          \\
+                                1   & 1   & 1   & 1          & 1           & 1           & 1                                                & 1                                                          \\
+                                \hline
+                            \end{tabular}
+                            \caption*{$((p \lor q) \land (p \rarr r) \land (q \rarr r)) \rarr r$ er en tautologi.}
+                        \end{center}
+                    \end{table}
+          \end{enumerate}
+\end{enumerate}
+\newpage
+
+\subsection*{Seksjon 1.4, s. 57}
+\begin{enumerate}
+    \item [\boxed{24}]
+          \begin{enumerate}
+              \item [(d)] $\forall x \exists y, \neg P(y)$ \\
+                    $P(x)$: ``$x$ kan svømme''.
+              \item [(e)] $\forall x \exists y, \neg Q(y)$ \\
+                    $Q(x)$: ``$x$ vil være rik''.
+          \end{enumerate}
+\end{enumerate}
+
+\subsection*{Seksjon 1.5, s. 69, 71}
+\begin{enumerate}
+    \item [\boxed{12}] $I(x)$: ``$x$ har tilgang til internett.'' $C(x,y)$: ``$x$ og $y$ har snakket over internett.''
+          \begin{enumerate}
+              \item [(b)] $\exists x \exists y, \neg C(x,y)$
+              \item [(e)] $\forall x \exists y, \neg C(y,x)$
+          \end{enumerate}
 \end{enumerate}
 
 \end{document}
