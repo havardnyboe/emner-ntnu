@@ -139,6 +139,18 @@ amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
               \item [(b)] $\exists x \exists y, \neg C(x,y)$
               \item [(e)] $\forall x \exists y, \neg C(y,x)$
           \end{enumerate}
+    \item [\boxed{30}]
+          \begin{enumerate}
+              \item [(c)] $\neg \exists y (Q(y) \land \forall x \neg R(x,y))$ \\
+                    $\equiv \forall y \neg (Q(y) \land \forall x \neg R(x,y))$ \\
+                    $\equiv \forall y (\neg Q(y) \lor \neg \forall x \neg R(x,y))$ \\
+                    $\equiv \forall y (\neg Q(y) \lor \exists x \neg \neg R(x,y))$ \\
+                    $\equiv \forall y (\neg Q(y) \lor \exists x R(x,y))$ \\
+              \item[(e)] $\neg \exists y (\forall x \exists z T(x,y,z) \lor \exists x \forall z U(x,y,z))$ \\
+                    $\equiv \forall y \neg (\forall x \exists z T(x,y,z) \lor \exists x \forall z U(x,y,z))$ \\
+                    $\equiv \forall y (\neg \forall x \exists z T(x,y,z) \land \neg \exists x \forall z U(x,y,z))$ \\
+                    $\equiv \forall y (\exists x \forall z \neg T(x,y,z) \land \forall x \exists z \neg U(x,y,z))$ \\
+          \end{enumerate}
 \end{enumerate}
 
 \end{document}
