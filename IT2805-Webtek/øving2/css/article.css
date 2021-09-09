@@ -16,7 +16,7 @@ article {
 
 #cover {
     width: 70ch;
-} 
+}
 
 h1 {
     font-size: 3em;
@@ -27,7 +27,10 @@ h2 {
     font-size: 1.8em;
 }
 
-p, blockquote, ul, ol {
+p,
+blockquote,
+ul,
+ol {
     font-size: 1em;
     line-height: 1.5em;
 }
@@ -44,7 +47,7 @@ p, blockquote, ul, ol {
 }
 
 #facts > ul {
-    list-style-image: url('cup-icon.svg');
+    list-style-image: url("cup-icon.svg");
     line-height: 1.5em;
     padding-left: 1.5em;
 }
