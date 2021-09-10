@@ -1,0 +1,44 @@
+% #region PREAMBEL OG PAKKER
+\documentclass[a4paper, 12pt]{article}  % DOKUMENTKLASSE
+\title{Øving 2}               % TITTEL
+\author{Håvard Solberg Nybøe}           % FORFATTER
+\date{TMA4140 -- \today}                    % DATO & FAG
+
+\usepackage[english, norsk]{babel}      % NORSK SPRÅK
+\usepackage[
+    backend=biber,style=apa]{biblatex}  % BIBLIOGRAFI
+\usepackage{csquotes}                   % PAKKE TIL BABEL
+\addbibresource{bibliografi.bib}        % PATH TIL BIBLIOGRAFI
+\usepackage[hidelinks]{hyperref}        % LENKER I TOC OG GENERELT
+\usepackage[margin=1in]{geometry}       % VANLIG STØRRELSE MARGIN
+\setlength{\parindent}{0em}             % SKILLER AVSNITT
+\setlength{\parskip}{.8em}              % SKILLER AVSNITT
+\usepackage{graphicx}                   % BILDER \includegraphics[OPTIONS]{PATH}
+\usepackage{kantlipsum}                 % FYLLTEKST I KANT-STIL (kant[n-m])
+\usepackage{amsfonts,                   % BLACKBOARD BOLD FONT (\mathbb{N})
+amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
+\usepackage{circuitikz}                 % LOGISKE PORTER OG KRETSER & TikZ
+\usepackage{import}                     % IMPORTER FILER (\import{PATH}{FILE})
+\usepackage{caption}                    % PAKKE FOR BEDRE CAPTIONS I FIGURER
+% #endregion
+\begin{document}
+
+\maketitle
+% \tableofcontents % INNHOLDSFORTEGNELSE
+
+\subsection*{Seksjon 2.1, s. 132}
+\begin{enumerate}
+    \item [\boxed{7}] 
+    \begin{enumerate}
+        \item [(a)] $ \{1,3,3,3,5,5,5,5,5\} \equiv \{5,3,1\}$, fordi en mengde ikke kan inneholde duplikater. 
+        \item [(b)] $\{\{1\}\} \neq  \{1, \{1\}\}$, fordi den første mengden innholder mengden som inneholder 1, mens den andre mengden inneholder 1, og mengden som inneholder 1.
+        \item [(c)] $ \emptyset \neq \{\emptyset\}$, fordi den første mengden er er en den tomme mengden, mens den andre er en mengde med et enkelt element.
+    \end{enumerate}
+    \item [\boxed{26}] 
+        \begin{enumerate}
+            \item [(a)]$\mathcal{P}(\emptyset) = \{\emptyset\}$
+        \end{enumerate}
+\end{enumerate}
+
+% \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
+\end{document}
