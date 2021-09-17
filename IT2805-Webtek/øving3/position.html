@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IT2805</title>
+
+        <style type="text/css">
+            html,
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+            }
+            /* Part 1 */
+
+            .header {
+                font-family: sans-serif;
+                padding-top: 30px;
+                margin-bottom: 40px;
+                position: fixed;
+                left: 50%;
+                transform: translate(-50%, 0);
+            }
+
+            .box {
+                border-width: 2px;
+                border-color: #0060a3;
+                border-style: solid;
+                height: 50vh;
+                width: 50vw;
+                position: fixed;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            .one {
+                width: 100px;
+                height: 100px;
+                margin: 8px;
+                border-width: 2px;
+                border-color: #faa21b;
+                border-style: solid;
+                position: absolute;
+            }
+
+            .two {
+                width: 100px;
+                height: 100px;
+                margin: 8px;
+                border-width: 2px;
+                border-color: #faa21b;
+                border-style: solid;
+                background-color: #fff;
+                position: absolute;
+                bottom: 0%;
+            }
+
+            .three {
+                width: 100px;
+                height: 100px;
+                border-width: 2px;
+                border-color: #faa21b;
+                border-style: solid;
+                background-color: #fff;
+                position: absolute;
+                top: 50%;
+                right: 0%;
+                transform: translate(50%, -50%);
+            }
+
+            .five {
+                bottom: 10px;
+                right: 10px;
+                font-size: 35px;
+                font-family: sans-serif;
+                position: absolute;
+                right: 1%;
+                bottom: 0%;
+            }
+
+            .four {
+                width: 50px;
+                height: 50px;
+                border-width: 2px;
+                border-color: #faa21b;
+                border-style: solid;
+                position: relative;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+
+            /* Part 2 */
+            .five a {
+                color: inherit;
+                text-decoration: none;
+            }
+            .five a:visited {
+                color: brown;
+                text-decoration: none;
+            }
+            .five a:hover {
+                color: greenyellow;
+                text-decoration: underline dashed;
+            }
+            .five a:active {
+                color: magenta;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Assignment 3: position</h1>
+        </div>
+
+        <div class="box">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three">
+                <div class="four"></div>
+            </div>
+            <div class="five">
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+                    >CSS is awesome</a
+                >
+            </div>
+        </div>
+    </body>
+</html>
