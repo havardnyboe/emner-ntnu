@@ -1,0 +1,86 @@
+% #region PREAMBEL OG PAKKER
+\documentclass[a4paper, 12pt]{article}  % DOKUMENTKLASSE
+\title{Øving 3}                         % TITTEL
+\author{Håvard Solberg Nybøe}           % FORFATTER
+\date{MA0001 -- \today}                    % DATO & FAG
+
+\usepackage[english, norsk]{babel}      % NORSK SPRÅK
+\usepackage[
+    backend=biber,style=apa]{biblatex}  % BIBLIOGRAFI
+\usepackage{csquotes}                   % PAKKE TIL BABEL
+\addbibresource{bibliografi.bib}        % PATH TIL BIBLIOGRAFI
+\usepackage[hidelinks]{hyperref}        % LENKER I TOC OG GENERELT
+\usepackage[margin=1in]{geometry}       % VANLIG STØRRELSE MARGIN
+\setlength{\parindent}{0em}             % SKILLER AVSNITT
+\setlength{\parskip}{.8em}              % SKILLER AVSNITT
+\usepackage{graphicx}                   % BILDER \includegraphics[OPTIONS]{PATH}
+\usepackage{kantlipsum}                 % FYLLTEKST I KANT-STIL (kant[n-m])
+\usepackage{amsfonts,amsmath,amssymb}   % BLACKBOARD BOLD FONT (\mathbb{N}) & SYMBOLER
+\usepackage{circuitikz,pgfplots}        % LOGISKE PORTER OG KRETSER & TikZ
+\usetikzlibrary{shapes.geometric}       % STILER TIL FLYTSKJEMA
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{prosess} = [rectangle, minimum width=3cm, text width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick, ->, > = stealth]
+% #endregion
+\begin{document}
+
+\maketitle
+% \tableofcontents % INNHOLDSFORTEGNELSE
+
+\begin{enumerate}
+    \item [\boxed{1}]
+          \begin{enumerate}
+              \item \begin{flalign*}
+                        x^2 - 6x + y^2 + 2y + 7 &= 0 &&\\
+                        x^2 - 6x + y^2 + 2y + 10 &= 3 &&\\
+                        (x^2 - 6x + 9) + (y^2 + 2y + 1) &= 3 &&\\
+                        (x - 3)^2 + (y + 1)^2 &= 3 &&\\
+                        \boxed{sentrum = (3, -1)} \quad & \mathrm{og} \quad \boxed{radius = \sqrt{3}}
+                    \end{flalign*}
+              \item Likningen $x^2 - 6x + 2y^2 + 4y + 7 = 0$ er ikke likningen til en sirkel fordi leddet $2y^2$ hindrer at y-delen kan skrives om til et fullstendig kvadrat. Likningen er derimot likningen til en ellipse hvis det er av interessant informasjon.
+          \end{enumerate}
+    \item [\boxed{2}]
+          \begin{enumerate}
+              \item \textbf{ }
+                    \begin{figure}[h]
+                        \begin{center}
+                            \begin{tikzpicture}[scale=0.75]
+                                \draw (0,0) circle (1in);
+                                \draw (0,0) -- (0:1in) node[right] {$0$};
+                                \draw (0,0) -- (90:1in) node[above] {${1\over\pi}$};
+                                \draw (0,0) -- (180:1in) node[left] {$\cos{\pi} = -1$};
+                                \draw (0,0) -- (270:1in) node[below] {${3\over 2}\pi$};
+                            \end{tikzpicture}
+                            $\boxed{\cos{x} = -1$, for $x = \pi + 2\pi \cdot n}$
+                        \end{center}
+                    \end{figure}
+              \item \begin{flalign*}
+                        \cos({2x}) &= 1 - 2 \sin^2({x}) &&\\
+                        \cos^2(x) - \sin^2(x) &= 1 - 2 (1 - \cos^2(x)) &&\\
+                        \cos^2(x) - \sin^2(x) &= 2\cos^2(x) - 1 &&\\
+                        - \cos^2(x) - \sin^2(x) &= - 1 &&\\
+                        \cos^2(x) + \sin^2(x) &= 1 &&\\
+                    \end{flalign*}
+          \end{enumerate}
+    \item [\boxed{3}] \begin{flalign*}
+              x^2 + 2x + 2 &> 50 &&\\
+              x^2 + 2x + 2 - 50 &> 0 &&\\
+              x^2 + 8x -6x - 48 &> 0 &&\\
+              x(x+8)-6(x+8) &> 0 &&\\
+              (x+8)(x-6) &> 0 &&\\
+              \boxed{x \in \left<\leftarrow, -8\right>} & \land \boxed{x \in \left<6, \rightarrow \right>}
+          \end{flalign*}
+    \item [\boxed{4}] \begin{flalign*}
+              e^{2x} + e^x - 2 &= 0, \quad u = e^x &&\\
+              u^2 + u - 2 &= 0 &&\\
+              u = -2 \quad &\land \quad u = 1 &&\\
+              e^x = -2 \quad &\land \quad e^x = 1 &&\\
+              x \notin \mathbb{R} \quad & \land \quad x = \ln(1) = 0 &&\\
+              &\boxed{x = 0} &&\\
+          \end{flalign*}
+\end{enumerate}
+
+% \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
+\end{document}
