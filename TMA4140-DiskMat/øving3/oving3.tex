@@ -20,6 +20,7 @@ amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
 \usepackage{circuitikz}                 % LOGISKE PORTER OG KRETSER & TikZ
 \usepackage{import}                     % IMPORTER FILER (\import{PATH}{FILE})
 \usepackage{caption}                    % PAKKE FOR BEDRE CAPTIONS I FIGURER
+\newcommand{\Mod}[1]{\ (\mathrm{mod}\ #1)} % MODULUS
 % #endregion
 \begin{document}
 
@@ -29,13 +30,56 @@ amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
 \subsection*{Seksjon 3.1}
 \begin{enumerate}
     \item [\boxed{57}]
+          \begin{enumerate}
+              \item 51 cents = $2 \cdot 25 + 1 \cdot 1$
+              \item 69 cents = $2 \cdot 25 + 1 \cdot 10 + 1 \cdot 5 + 4 \cdot 1$
+              \item 76 cents = $3 \cdot 25 + 1 \cdot 1$
+              \item 60 cents = $2 \cdot 25 + 1 \cdot 10$
+          \end{enumerate}
     \item [\boxed{59}]
-    \item [\boxed{60}]
+          \begin{enumerate}
+              \item 51 cents = $2 \cdot 25 + 1 \cdot 1$, minste antall mynter
+              \item 69 cents = $2 \cdot 25 + 1 \cdot 10 + 9 \cdot 1$, ikke minste antall mynter \\
+                    $1 \cdot 25 + 4 \cdot 10 + 4 \cdot 1$ er mindre antall mynter
+              \item 76 cents = $3 \cdot 25 + 1 \cdot 1$, minste antall mynter
+              \item 60 cents = $2 \cdot 25 + 1 \cdot 10$, minste antall mynter
+          \end{enumerate}
+    \item [\boxed{60}] 46 cents = $1 \cdot 25 + 1 \cdot 12 + 1 \cdot 5 + 4 \cdot 1$, bruker 7 mynter \\
+          $4 \cdot 10 + 1 \cdot 5 + 1 \cdot 1$, bruker 6 mynter
 \end{enumerate}
 
 \subsection*{Seksjon 3.2}
 \begin{enumerate}
     \item [\boxed{27}]
+          \begin{enumerate}
+              \item $n \log(n^2 + 1) + n^2 \log n \rightarrow O(n^2 \log n)$
+              \item $(n \log n + 1)^2 + (\log n + 1)(n^2 + 1) \rightarrow O(n^2)$
+          \end{enumerate}
+    \item [\boxed{30}]
+          \begin{enumerate}
+              \item [(c)] \begin{flalign*}
+                        \left\lfloor x + {1\over 2} \right\rfloor &\rightarrow O(n) &&\\
+                        x &\rightarrow O(n) &&\\
+                    \end{flalign*}
+              \item [(e)] \begin{flalign*}
+                        \log_{10}x &\rightarrow O(\log n) &&\\
+                        \log_{2}x &\rightarrow O(\log n) &&\\
+                    \end{flalign*}
+          \end{enumerate}
+\end{enumerate}
+
+\subsection*{Seksjon 4.1}
+\begin{enumerate}
+    \item [\boxed{15}] \begin{enumerate}
+              \item $(80 + 11) = 12 \cdot 7 + 7$, viseren står på 7, 80 timer etter den var 11
+              \item $40 = 12 \cdot 3 + 4$, viseren sto på 8, 40 timer før den var 12
+              \item $(100 + 6) = 12 \cdot 8 + 10$, viseren står på 10, 100 timer etter den var 6
+          \end{enumerate}
+    \item [\boxed{42}] \begin{flalign*}
+              a \equiv b \Mod{m} & \Leftrightarrow (a - b) | m &&\\
+              c \cdot (a - b) | m \cdot c &\Rightarrow (ac - bc) | mc &&\\
+              (ac - bc) | mc & \Rightarrow \boxed{ac \equiv bc \Mod{mc}} &&\\
+          \end{flalign*}
 \end{enumerate}
 
 % \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
