@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>IT2805 assignment 5: JavaScript introduction</title>
+
+        <style>
+            .box {
+                /* Sets the size and position of each box */
+                width: 200px;
+                height: 200px;
+                background-color: #185d8b;
+                margin: 10px;
+
+                /* Sets the font within each box*/
+                color: #fff;
+                font-family: Helvetica, Arial, sans-serif;
+                text-align: center;
+                line-height: 200px;
+                font-size: 100px;
+            }
+
+            .buttons {
+                width: 200px;
+                margin: 10px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="title"></h1>
+
+        <h2>Part 5</h2>
+        <div class="buttons">
+            <button class="button">Display: none</button>
+            <button class="button">Visibility: hidden</button>
+            <button class="button">Reset</button>
+        </div>
+        <div class="box" id="magic">1</div>
+        <div class="box">2</div>
+
+        <h2>Part 6</h2>
+        <ul id="tech"></ul>
+        <script src="script.js"></script>
+        <!-- Legger til javascript fila i slutten av dokumentet så hele html fila laster før javascripten laster -->
+    </body>
+</html>
