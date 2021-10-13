@@ -1,36 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="nb">
     <head>
         <title>Tax form</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <form
-            action="https://folk.ntnu.no/anderobs/webtek/receive_form.php"
-            method="post"
-        >
-            <label for="real_name">Real Name</label> <br />
-            <input type="text" name="real_name" id="real_name" /><br />
+        <section>
+            <h2>Tax form</h2>
+            <form
+                action="https://folk.ntnu.no/anderobs/webtek/receive_form.php"
+                method="post"
+            >
+                <span>
+                    <label for="real_name">Real Name</label>
+                    <input
+                        type="text"
+                        name="name"
+                        id="real_name"
+                        pattern="[a-zA-Z]+"
+                        oninvalid="setCustomValidity('Please enter a string of alphabetical characters only.')"
+                        required
+                    />
+                </span>
 
-            <label for="gender">What is your gender?</label> <br />
-            <input type="radio" name="gender" id="male" />Male<br />
-            <input type="radio" name="gender" id="female" />Female<br />
+                <span>
+                    <label for="gender">What is your gender?</label><br /><br />
+                    <select name="gender" id="gender">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </span>
 
-            <label for="email">What is your email?</label> <br />
-            <input type="email" name="email" id="email" /><br />
+                <span>
+                    <label for="email">What is your email?</label>
+                    <input type="email" name="email" id="email" required />
+                </span>
 
-            <label for="birthdate">What is your birthdate?</label> <br />
-            <input type="datetime" name="birthdate" id="birthdate" /><br />
+                <span
+                    ><label for="birthdate">What is your birthdate?</label>
+                    <input
+                        type="date"
+                        name="birthdate"
+                        id="birthdate"
+                        max="1988-12-31"
+                        required
+                    />
+                </span>
 
-            <label for="hero_name">What is yout hero name?</label> <br />
-            <input type="text" name="hero_name" id="hero_name" /><br />
-            <label for="spandex">Do you wear spandex?</label> <br />
-            <input type="checkbox" name="spandex" id="True" /> <br />
+                <span
+                    ><label for="hero_name">What is yout hero name?</label>
+                    <input
+                        type="text"
+                        name="hero"
+                        id="hero_name"
+                        pattern="[a-zA-Z-]+"
+                        required
+                    />
+                </span>
 
-            <input type="number" name="strength" id="strength" /> <br />
-            <input type="number" name="speed" id="speed" /> <br />
-            <input type="number" name="intelligence" id="intelligence" /> <br />
-        </form>
+                <span>
+                    <label for="spandex1">Do you wear spandex?</label><br />
+                    <input
+                        type="radio"
+                        name="spandex"
+                        id="spandex1"
+                        value="True"
+                        required
+                    />
+                    True <br />
+                    <input
+                        type="radio"
+                        name="spandex"
+                        id="spandex2"
+                        value="False"
+                        required
+                    />
+                    False
+                </span>
+
+                <span>
+                    <label for="strength">What is your strength? (1-10)</label>
+                    <input
+                        type="range"
+                        name="strength"
+                        id="strength"
+                        min="1"
+                        max="10"
+                    />
+                </span>
+
+                <span>
+                    <label for="speed">What is your speed? (1-10)</label>
+                    <input
+                        type="range"
+                        name="speed"
+                        id="speed"
+                        min="1"
+                        max="10"
+                    />
+                </span>
+
+                <span>
+                    <label for="intelligence"
+                        >What is your intelligence? (1-10)</label
+                    >
+                    <input
+                        type="range"
+                        name="intelligence"
+                        id="intelligence"
+                        min="1"
+                        max="10"
+                    />
+                </span>
+
+                <span>
+                    <label for="income">Income</label>
+                    <input
+                        type="number"
+                        name="income"
+                        id="income"
+                        min="0"
+                        value="0"
+                        required
+                    />
+                </span>
+
+                <span>
+                    <label for="wealth">Wealth</label>
+                    <input
+                        type="number"
+                        name="wealth"
+                        id="wealth"
+                        min="0"
+                        value="0"
+                        required
+                    />
+                </span>
+
+                <span>
+                    <label for="tax">Tax</label>
+                    <input type="number" name="tax" id="tax" disabled />
+                </span>
+
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+            </form>
+        </section>
+        <script src="tax.js"></script>
     </body>
 </html>
