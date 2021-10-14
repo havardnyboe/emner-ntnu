@@ -1,0 +1,17 @@
+---
+title: Øving 7
+author: Håvard Solberg Nybøe
+date: MA0001 - 14 Okober 2021
+---
+
+\boxed{1}
+
+    (a) $$f(x) = \ln{1 \over x^2}$$
+
+(b)
+
+(c)
+
+(d)
+
+(e)
