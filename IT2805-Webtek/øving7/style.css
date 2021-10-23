@@ -1,1 +1,36 @@
+* {
+    font-family: Helvetica;
+}
 
+body {
+    display: flex;
+    justify-content: center;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px 0;
+
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    margin: auto;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.completed {
+    text-decoration: line-through;
+}
