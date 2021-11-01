@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Income greather than 500 000</title>
+        <meta charset="UTF-8" />
+        <script src="taxForms.js"></script>
+    </head>
+    <body>
+        <script>
+            taxForms.forEach((element) => {
+                if (element.income > 500000) {
+                    console.log(element.realName);
+                }
+            });
+        </script>
+    </body>
+</html>
