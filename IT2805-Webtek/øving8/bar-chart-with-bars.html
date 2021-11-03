@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Tax forms: Bar chart with lines</title>
+    <title>Tax forms: Bar chart with labels</title>
     <meta charset="UTF-8" />
     <script src="taxForms.js"></script>
     <style>
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <canvas id="chart" width="700" height="550"></canvas>
+    <canvas id="chart" width="750" height="600"></canvas>
 
     <script>
         const canvas = document.querySelector('#chart');
@@ -44,10 +44,27 @@
             drawLine(fromX, fromY, toX, toY);
         }
 
+        function drawBar(x, y, width, height, color) {
+            context.fillStyle = color;
+            context.fillRect(x, y, width, height);
+        }
+
         /* Insert your code here. */
         for (let i = 1; i <= 10; i++) {
-            drawLineWithText(`${1100000 - 100000 * i}`, 50, 50 * i, 650, 50 * i);
+            drawLineWithText(`${1100000 - 100000 * i}`, 50, 50 * i, 650, 50 * i); // tegner linjer med tekst
         }
+
+        drawBar(660, 50, 50, 30, 'red'); // rød bar
+        drawText('Income', 715, 65); // rød bar label
+        drawBar(660, 100, 50, 30, 'blue'); // blå bar
+        drawText('Wealth', 715, 115); // blå bar label
+
+        for (let i = 0; i < taxForms.length; i++) {
+            drawBar(150 * (i + 1), 550, 50, (1 - (taxForms[i].income / 1000000) * 500), 'red'); // tegner income relativt til taxForms[i].income
+            drawBar(150 * (i + 1) + 55, 550, 50, (1 - (taxForms[i].wealth / 1000000) * 500), 'blue'); // tegner wealth relativt til taxForms[i].wealth
+            drawText(taxForms[i].realName, 150 * (i + 1) + 25, 570); // tegner navn
+        }
+
     </script>
 </body>
 

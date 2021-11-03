@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Tax forms: Bar chart with lines</title>
+    <title>Tax forms: Bar chart with labels</title>
     <meta charset="UTF-8" />
     <script src="taxForms.js"></script>
     <style>
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <canvas id="chart" width="700" height="550"></canvas>
+    <canvas id="chart" width="750" height="550"></canvas>
 
     <script>
         const canvas = document.querySelector('#chart');
@@ -48,6 +48,15 @@
         for (let i = 1; i <= 10; i++) {
             drawLineWithText(`${1100000 - 100000 * i}`, 50, 50 * i, 650, 50 * i);
         }
+
+        context.fillStyle = 'red';
+        context.fillRect(660, 50, 50, 30);
+        drawText('Income', 715, 65);
+        context.fillStyle = 'blue';
+        context.fillRect(660, 100, 50, 30);
+        drawText('Wealth', 715, 115);
+
+
     </script>
 </body>
 
