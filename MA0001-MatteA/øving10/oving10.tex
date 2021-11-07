@@ -1,0 +1,79 @@
+% #region PREAMBEL OG PAKKER
+\documentclass[a4paper, 12pt]{article}  % DOKUMENTKLASSE
+\title{Øving 10}                        % TITTEL
+\author{Håvard Solberg Nybøe}           % FORFATTER
+\date{MA0001 -- \today}                    % DATO & FAG
+
+\usepackage[english, norsk]{babel}      % NORSK SPRÅK
+\usepackage[
+    backend=biber,style=apa]{biblatex}  % BIBLIOGRAFI
+\usepackage{csquotes}                   % PAKKE TIL BABEL
+\addbibresource{bibliografi.bib}        % PATH TIL BIBLIOGRAFI
+\usepackage[hidelinks]{hyperref}        % LENKER I TOC OG GENERELT
+\usepackage[margin=1in]{geometry}       % VANLIG STØRRELSE MARGIN
+\setlength{\parindent}{0em}             % SKILLER AVSNITT
+\setlength{\parskip}{.8em}              % SKILLER AVSNITT
+\usepackage{graphicx}                   % BILDER \includegraphics[OPTIONS]{PATH}
+\usepackage{kantlipsum}                 % FYLLTEKST I KANT-STIL (kant[n-m])
+\usepackage{amsfonts,amsmath,amssymb}   % BLACKBOARD BOLD FONT (\mathbb{N}) & SYMBOLER
+\usepackage{circuitikz,pgfplots}        % LOGISKE PORTER OG KRETSER & TikZ
+\usetikzlibrary{shapes.geometric}       % STILER TIL FLYTSKJEMA
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=blue!30]
+\tikzstyle{prosess} = [rectangle, minimum width=3cm, text width=3cm, minimum height=1cm, text centered, draw=black, fill=orange!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick, ->, > = stealth]
+% #endregion
+\begin{document}
+
+\maketitle
+% \tableofcontents % INNHOLDSFORTEGNELSE
+
+\begin{enumerate}
+    \item [\boxed{1}]
+          \begin{enumerate}
+              \item \(\displaystyle \int{a^x}dx = \frac{a^x}{\log a} + C\)
+              \item
+                    \begin{align*}
+                        f(x)          & = \frac{5}{x} + \sin(5x) + \frac{1}{x^5} + \sqrt[5]{5x} + x^5 + 5^x + 5                                                                                \\
+                        \int{f(x)} dx & = {5\log x} - {\frac{1}{5}\cos(5x)} - {\frac{1}{4x^4}} + {\frac{5}{6}\sqrt[5]{5}x^{\frac{6}{5}}} + {\frac{1}{6}x^6} + {\frac{5^x}{\log5}} + {5x} + {C} \\
+                    \end{align*}
+          \end{enumerate}
+    \item [\boxed{2}]
+          \begin{align*}
+              \int_0^3{\cos\left( \frac{\pi}{6}t \right)} dt         & , \quad u = {\pi t \over 6}, du = {\pi\over6}dt                      \\
+              \int_0^{\pi\over2}{\frac{6}{\pi}\cos(u)} du            & =\frac{6}{\pi}\int_0^{\pi\over2}{\cos(u)} du                         \\
+                                                                     & =\frac{6}{\pi}\biggl[{\sin(u)}\biggr]_0^{\pi\over2}                  \\
+                                                                     & = \frac{6}{\pi}\left( \sin\left({\pi\over2}\right) - \sin(0) \right) \\
+                                                                     & = \frac{6}{\pi}                                                      \\
+              \text{Temperaturen har økt med }\frac{6}{\pi}^\text{o} & \approx 1.91^\text{o} \text{ og er lik } \boxed{16.91^\text{o}}      \\
+          \end{align*}
+    \item [\boxed{3}]
+          \begin{align*}
+              f(x) = e^x,                                                     & \quad f''(x) = e^x                                                         \\
+              \iint{f(x)}dx                                                   & = \int{\frac{e^x}{\ln e}+C_1}                                              \\
+                                                                              & = {\frac{e^x}{(\ln e)^2}+C_1 \cdot x + C_2}, \quad C_1, C_2 \in \mathbb{R} \\
+              g(x) = e^x + C_1,                                               & \quad g''(x) = e^x                                                         \\
+              h(x) = e^x + C_1 \cdot x + C_2,                                 & \quad h''(x) = e^x                                                         \\
+              i(x) = {\frac{e^x}{\ln e}+C_1},                                 & \quad i''(x) = e^x                                                         \\
+              j(x) = {\frac{e^x}{(\ln e)^2}+C_1 \cdot x + C_2},               & \quad j''(x) = e^x                                                         \\
+              \text{Funksjonene } f, g, h, i                    \text{ og } j & \text{ oppfyller kravet}                                                   \\
+          \end{align*}
+    \item [\boxed{4}]
+          \begin{enumerate}
+              \item
+                    \begin{align*}
+                        f(x)         & = \frac{1}{x}, \quad x \in \mathbb{R}, x \neq 0 \\
+                        \int{f(x)}dx & = \int{\frac{1}{x}}dx                           \\
+                                     & = \ln |x| + C, \quad C \in \mathbb{R}           \\
+                    \end{align*}
+                    Funksjonen \(F(x) = \biggl\{\begin{array}{ll}
+                        \ln x - 4,    & \text{ for } x > 0 \\
+                        \ln (-x) + 1, & \text{ for } x < 0 \\
+                    \end{array}\) er en antiderivert av \(f(x)\).
+              \item \(F\) er en antiderivert av \(f\) fordi når man deriverer \(F\) forsvinner konstantleddene, og man ender opp med funksjonen \(f(x) = \frac{1}{x}\)
+          \end{enumerate}
+\end{enumerate}
+
+% \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
+\end{document}
