@@ -1,6 +1,6 @@
 # emner ntnu
 
-Diverse emner jeg har tatt og skal ta (og prøvd å ta) på ntnu
+Diverse emner jeg har tatt, skal ta (og har prøvd å ta) på ntnu
 
 | Høst 21                     | Vår 22        | Høst 22    | Vår 23 | Høst 23 | Vår 24 |
 | --------------------------- | ------------- | ---------- | ------ | ------- | ------ |
