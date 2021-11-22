@@ -1,24 +1,27 @@
 \documentclass[a4paper, 12pt]{article}  % DOKUMENTKLASSE
 
-
-\title{Dokument}                        % TITTEL
+\title{Eksamen}                        % TITTEL
 \author{EXPH0300}                       % FORFATTER
 \date{\today}                           % DATO & FAG
 
 \usepackage[english, norsk]{babel}      % NORSK SPRÅK
-\usepackage[backend=biber,style=apa]{biblatex}  % BIBLIOGRAFI
-\usepackage{csquotes}                   % PAKKE TIL BABEL
+\usepackage[backend=biber,style=ieee]{biblatex}  % BIBLIOGRAFI
 \addbibresource{references.bib}         % PATH TIL BIBLIOGRAFI
+\usepackage{csquotes}                   % PAKKE TIL BABEL
 
 \usepackage[hidelinks]{hyperref}        % LENKER I TOC OG GENERELT
 \usepackage[margin=1in]{geometry}       % VANLIG STØRRELSE MARGIN
-\setlength{\parindent}{0em}             % SKILLER AVSNITT
-\setlength{\parskip}{.8em}              % SKILLER AVSNITT
+\setlength{\parindent}{0em}             % AVSNITT INNRYKK
+\setlength{\parskip}{1em}              % AVSNITT HØYDE
+% \linespread{1.5}                        % LINJE AVSTAND
+\renewcommand{\baselinestretch}{1neufeld2013reviews.5}
 
 \usepackage{graphicx}                   % BILDER \includegraphics[OPTIONS]{PATH}
 \usepackage{kantlipsum}                 % FYLLTEKST I KANT-STIL (kant[n-m])
 \usepackage{amsfonts,                   % BLACKBOARD BOLD FONT (\mathbb{N})
-amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
+    amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
 
 \usepackage{import}                     % IMPORTER FILER (\import{PATH}{FILE})
 \usepackage{caption}                    % PAKKE FOR BEDRE CAPTIONS I FIGURER
+
+\usepackage{lipsum}                     % FYLLTEKST
