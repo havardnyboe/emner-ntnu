@@ -3,47 +3,14 @@
 
 \begin{document}
 
+\setlength{\parskip}{0em}
 \maketitle
 \tableofcontents % INNHOLDSFORTEGNELSE
+\setlength{\parskip}{1em}
 \newpage
 
-\section*{Disposisjon}
-\begin{itemize}
-    \item \textbf{Bevisthetsfilosofi}
-          \begin{itemize}
-              \item Omhandler mentale hendelser og egenskaper
-              \item Sentrale retninger:
-                    \begin{itemize}
-                        \item Dualisme (Descartes)
-                              \begin{itemize}
-                                  \item Descartes' argument for dualisme
-                                  \item Kunnskapsargumentet
-                              \end{itemize}
-                        \item Fysikalisme
-                        \item Dobbeltaspektteori
-                        \item Funksjonalisme (ikke i pensum)
-                    \end{itemize}
-              \item Relevante filosofer:
-                    \begin{itemize}
-                        \item René Descartes (Cogito ergo sum)
-                        \item Immanuel Kant?
-                    \end{itemize}
-          \end{itemize}
-    \item \textbf{Kan maskiner tenke?}
-          \begin{itemize}
-              \item Viktig spørsmål innen bevisthetsfilosofi og IT
-              \item Diskusjonen har dreid seg om hva det innebærer å kunne tenke
-                    \begin{itemize}
-                        \item Turing-testen besvarer dette
-                    \end{itemize}
-              \item John Searles tankeekspeiment <<det kinesiske rommet>> argumenterer \\mot Turing
-              \item Relevante filosofer/personer:
-                    \begin{itemize}
-                        \item Alan Turing
-                        \item John Searle
-                    \end{itemize}
-          \end{itemize}
-\end{itemize}
+
+\input{doc/disposisjon.tex} % DISPOSISJON
 
 \section*{Bevisthetsfilosofi}
 \addcontentsline{toc}{section}{Bevisthetsfilosofi}
@@ -56,4 +23,10 @@
 \parencite{neufeld2013reviews}
 
 \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
+
+\newpage
+\appendix
+
+\input{doc/oppgave.tex}
+
 \end{document}
