@@ -6,7 +6,6 @@ geometry: margin=25mm
 ---
 
 \tableofcontents
-\newpage
 
 # Pensum
 
@@ -39,11 +38,10 @@ Dokumentet er kun laget for eget bruk.
 
 Dokumentet ble originalt laget til mitt eget bruk som repetisjon til eksamen høsten 2021, 
 men kan godt benyttes av andre late studenter som ikke gidder å lese til eksamen.
-Jeg eier så og si ingen ting av innholdet i dokumentet da alt er ~~stjålet~~ hentet fra læreboka og eller emnesiden.
-\newpage
+Jeg eier så og si ingen ting av innholdet i dokumentet da alt er ~~stjålet~~ hentet fra læreboka, emnesiden eller Wikipedia.
 
 <!-- INTRODUCTION -->
-
+\newpage
 # Introduction
 
 This section reviews some of the concepts and techniques from algebra and trigonometry that are frequently used in calculus.
@@ -128,6 +126,7 @@ $\tan(\theta) = \frac{y}{x}$ with $y = \sin(θ)$ and $x = \cos(θ)$ , it follows
 
 An **exponential** is an expression of the form $$a^r$$
 where $a$ is called the **base** and $r$ is called the **exponent**.
+
 Unless r is an integer or unless r is a
 rational number of the form p/q where p is an integer and q is an odd integer, we will
 assume that a is positive. We summarize some of the properties of an exponential as
@@ -138,12 +137,25 @@ follows:
     a^{-r} = \frac{1}{a^r} \quad&\quad (a^{-r})^5 = a^{r\cdot5}
 \end{align*}
 
-A **logarithm** is an expression of the form $$\log_b(a)$$
-where $a$ is called the **base** and $b$ is called the **argument**.
+A **logarithm** is the inverse function to the exponential and is expressed in the form $$\log_b(a)$$
+where $b$ is called the **base** and $a$ is called the **argument**. 
+
+The logarithm of a **product** is the sum of the logarithms of the numbers being multiplied; 
+the logarithm of the **ratio of two numbers** is the difference of the logarithms. 
+The logarithm of the **p-th power** of a number is p times the logarithm of the number itself; 
+the logarithm of a **p-th root** is the logarithm of the number divided by p. 
+The following table lists these identities with examples
+\begin{align*}
+    \log_b(xy) &= \log_b(x) + \log_b(y) \\
+    \log_b\left(\frac{x}{y}\right) &= \log_b(x) - \log_b(y) \\
+    \log_b(x^p) &= p \log_b(x) \\
+    \log_b\left(\sqrt[p]{x}\right) &= \frac{\log_b(x)}{p}
+\end{align*}
 
 <!-- FUNCTIONS -->
-
+\newpage
 # Functions
+hei
 
 ## What Is a Function?
 
