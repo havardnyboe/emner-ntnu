@@ -5,6 +5,9 @@
 
 \setlength{\parskip}{0em}
 \maketitle
+\thispagestyle{empty}
+\addtocounter{page}{-1}
+\newpage
 \tableofcontents % INNHOLDSFORTEGNELSE
 \setlength{\parskip}{1em}
 \newpage
@@ -14,13 +17,16 @@
 
 \section*{Bevisthetsfilosofi}
 \addcontentsline{toc}{section}{Bevisthetsfilosofi}
-\lipsum[1-2]
+\lipsum[1]
+Hei dette er en test for å se om det funker.
 
 \section*{Kan maskiner tenke?}
 \addcontentsline{toc}{section}{Kan maskiner tenke?}
 \lipsum[1-2]
 
-\parencite{neufeld2013reviews}
+\autocite{Kiran2013}
+
+\autocite{Nagel2003}
 
 \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
 
