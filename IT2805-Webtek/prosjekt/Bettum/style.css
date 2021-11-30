@@ -1,0 +1,577 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;600;700;800;900&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    color: #000;
+    font-family: "Heebo", sans-serif;
+    font-weight: 400;
+}
+
+body {
+    background-color: #f4f1e6;
+}
+
+main {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1010px;
+    min-height: calc(100vh - 9.7rem);
+    background-color: white;
+    padding: 20px 50px 40px 50px;
+    box-shadow: 0px 0px 10px #cac3abb0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav,
+footer {
+    background-color: #626d21d2;
+    font-weight: bold;
+    font-size: 18px;
+    height: 3rem;
+    line-height: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: 0px 0px 5px #000;
+    text-shadow: 0px 0px 2px black;
+    padding: 0 5rem;
+    position: relative;
+}
+
+nav ul {
+    width: 30%;
+    min-width: 330px;
+}
+
+nav ul,
+nav div {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav * {
+    font-weight: 600;
+}
+
+.logo_mobile {
+    display: none;
+}
+
+nav *,
+footer * {
+    color: #f4f1e6;
+    text-decoration: none;
+}
+
+#main_produkter {
+    font: 500 100%/1.5 system-ui;
+}
+
+#logo {
+    font-size: 36px;
+}
+
+#logo img {
+    position: absolute;
+    height: 250px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#top_box {
+    height: 100vh;
+    overflow: hidden;
+}
+
+#top_box:hover {
+    cursor: pointer;
+}
+
+#index_bilde_m_logo img {
+    width: 100%;
+    height: calc(100vh - 3rem);
+    box-sizing: border-box;
+}
+
+#forside_tablet,
+#forside_mobil {
+    display: none;
+}
+
+div#move_down {
+    background-color: rgba(204, 188, 188, 0.637);
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 30px 30px 30px;
+    border-radius: 50px;
+    transition: 0.5s ease-in;
+}
+div#move_down:hover {
+    opacity: 0.8;
+}
+
+#move_down i {
+    border: solid rgb(255, 255, 255);
+    border-width: 0 4px 4px 0;
+    display: inline-block;
+    padding: 15px;
+    transform: rotate(45deg);
+}
+
+#index_om_gaarden {
+    width: 100%;
+}
+
+#index_om_gaarden p {
+    margin-bottom: 1em;
+}
+
+/* img slider */
+#img_slider_container {
+    margin: auto;
+    position: relative;
+    width: 80%;
+}
+
+.img_slide {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1s;
+    animation-name: fade;
+    animation-duration: 1s;
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px rgba(71, 71, 71, 0.767);
+}
+
+.text_slide p {
+    padding: 10px 0px 10px 0px;
+    margin: 0px 0px 8px 0px;
+    bottom: -1px;
+    color: #ffffff;
+    background-color: rgba(211, 211, 211, 0.514);
+    font-size: 20px;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    border-radius: 0px 0px 10px 10px;
+}
+#arrow_left,
+#arrow_right {
+    cursor: pointer;
+    position: absolute;
+    top: calc(50% - 1.5em);
+    width: auto;
+    padding: 10px 10px 10px 20px;
+    color: rgb(245, 245, 245);
+    font-weight: bold;
+    font-size: 50px;
+    transition: 0.4s ease;
+    border-radius: 0 10px 10px 0;
+}
+#arrow_right {
+    right: 0;
+    border-radius: 10px 0 0 10px;
+    padding: 10px 20px 10px 10px;
+}
+#arrow_left:hover,
+#arrow_right:hover {
+    background-color: rgba(173, 173, 173, 0.507);
+}
+
+/* box om produkter */
+#index_produkter {
+    margin-top: 20px;
+}
+
+#index_om_gaarden {
+    text-align: center;
+    margin: 20px;
+}
+
+#index_om_gaarden p a {
+    color: #626d21d2;
+}
+
+.produkt_container {
+    display: grid;
+    grid-template-columns: 0.25fr 1fr;
+    gap: 1.2rem;
+    align-items: center;
+    margin-bottom: 3rem;
+    background-color: #626d2150;
+    border-radius: 4px 4px 10px 10px;
+    width: 100%;
+    transition: margin 0.2s ease-in-out;
+}
+
+.produkt_container:hover {
+    background-color: #626d21aa;
+    margin-top: 10px;
+    gap: 1.3rem;
+    margin-bottom: 4rem;
+    border-radius: 10px 10px 15px 10px;
+}
+
+.produkt_container img {
+    width: 20rem;
+    height: auto;
+    margin: auto;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0px 0px 3px rgba(71, 71, 71, 0.767);
+}
+
+.bilde_tekst {
+    color: #ffffff;
+    background-color: #626d21;
+    font-size: 20px;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    border-radius: 4px 4px 10px 10px;
+}
+.produkt_bilde {
+    display: block;
+    margin: 0 auto;
+}
+
+/* ordner så bilderaden står riktig */
+.img_column {
+    float: left;
+    width: 33.33%;
+    height: 330px;
+    padding: 5px;
+    display: block;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 0px;
+}
+.img_column img {
+    width: 100%;
+    height: 80%;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px rgba(71, 71, 71, 0.767);
+}
+.img_column p {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 22px;
+}
+/* gir bildene av produktuer hvitt skjær når man hovrer over*/
+a {
+    text-decoration: none;
+}
+a:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+/* fjerner hover effekt fra forside bilde */
+#move_down_page_unit:hover {
+    opacity: 1;
+}
+
+footer b {
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 1em;
+}
+
+h2 {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 1em;
+    margin: 10px 0px 5px 0px;
+}
+
+p {
+    font-size: 16px;
+    margin-top: 1em;
+}
+
+/* for kart */
+iframe {
+    width: 80%;
+    height: 30rem;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+    margin: 20px auto 20px auto;
+}
+
+#kontakt {
+    width: 70%;
+    padding: 12px 24px 24px 24px;
+    margin-left: 25%;
+    margin-right: 25%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background: #ffffff;
+    border-radius: 7px;
+    box-sizing: border-box;
+}
+
+label {
+    font-size: 0.85em;
+    margin-left: 12px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background: #626d21d2;
+    margin: 0 auto;
+    outline: 0;
+    color: white;
+    border: 0;
+    padding: 12px 24px;
+    border-radius: 4px;
+    transition: all ease-in-out 0.1s;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+input[type="submit"]:hover {
+    background: #434b17d2;
+}
+
+input:hover,
+textarea:hover {
+    background-color: rgba(202, 202, 202, 0.384);
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes fade {
+    from {
+        opacity: 0.5;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    main {
+        width: 90%;
+        text-align: left;
+        padding: 0px;
+        box-shadow: unset;
+    }
+    body {
+        background-color: white;
+    }
+
+    .logo_main {
+        display: none;
+    }
+
+    .logo_mobile {
+        display: inline-block;
+    }
+
+    nav,
+    footer {
+        height: 8rem;
+        font-size: 16px;
+        flex-direction: column;
+        align-items: center;
+        line-height: initial;
+        justify-content: space-evenly;
+    }
+
+    footer {
+        height: 5rem;
+    }
+
+    nav ul {
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    #kontakt {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        box-shadow: none;
+    }
+
+    #top_box {
+        height: 20rem;
+    }
+
+    #index_bilde_m_logo {
+        height: 12rem;
+        width: auto;
+    }
+
+    #forside_pc {
+        display: none;
+    }
+
+    #forside_tablet {
+        display: block;
+        height: 100%;
+        margin: 0px auto;
+    }
+
+    #index_bilde_m_logo img {
+        height: 100%;
+        margin: 0px auto;
+    }
+
+    #logo img {
+        height: 140px;
+        top: 14rem;
+    }
+
+    div#move_down {
+        display: none;
+    }
+
+    #index_om_gaarden {
+        margin: 10px 10px 0px 10px;
+        text-align: center;
+    }
+
+    #img_slider_container {
+        text-align: initial;
+        width: 100%;
+    }
+
+    .img_slide {
+        max-width: 100%;
+        height: 300px;
+    }
+    .text_slide p {
+        font-size: 16px;
+    }
+
+    #arrow_left,
+    #arrow_right {
+        top: 15%;
+        height: 70%;
+        width: 40%;
+        font-size: 0px;
+        padding: initial;
+        transition: none;
+        border-radius: initial;
+        color: initial;
+    }
+    #arrow_left:hover,
+    #arrow_right:hover {
+        background-color: initial;
+    }
+
+    #index_produkter {
+        text-align: center;
+    }
+
+    .img_column {
+        width: 100%;
+        height: auto;
+        margin: auto;
+        float: none;
+    }
+
+    .img_column p {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 22px;
+        margin-top: 0px;
+    }
+
+    /* For å få produktboksene + pricetags til å se bra ut på telefon */
+    .produkt_container {
+        display: unset;
+        max-width: 100%;
+        margin: 20px;
+    }
+    .produkt_container img {
+        width: 100%;
+    }
+    .produkt_container p {
+        padding: 10px;
+    }
+
+    #main#main_produkter {
+        margin: 20px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 15rem;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    nav ul {
+        min-width: 200px;
+    }
+
+    footer {
+        height: 10rem;
+        text-align: center;
+    }
+
+    main {
+        width: 90%;
+    }
+
+    #forside_mobil {
+        display: block;
+    }
+
+    #forside_tablet {
+        display: none;
+    }
+
+    #logo img {
+        height: 100px;
+        width: auto;
+    }
+
+    .img_slide {
+        max-width: 100%;
+        height: 200px;
+    }
+
+    .text_slide p {
+        font-size: 12px;
+    }
+}
