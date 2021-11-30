@@ -7,7 +7,7 @@ Diverse emner jeg har tatt, skal ta (og har prøvd å ta) på ntnu
 | [ITGK](TDT4109-ITGK/)       | [ezDiskMat]() | [DatDig]() |        |         |        |
 | [WebTek](IT2805-Webtek/)    | [KTN]()       | [AlgDat]() |        |         |        |
 | [Matte A](MA0001-MatteA/)   | [MMI]()       | [IT1901]() |        |         |        |
-| [DiskMat](TMA4140-DiskMat/) | [POOP]()     |            |        |         |        |
+| [DiskMat](TMA4140-DiskMat/) | [OOP++]()     |            |        |         |        |
 | [Ex.phil](EXPH0300-ExPhil/) |               |            |        |         |        |
 
 ## Emner jeg vurderer å ta
