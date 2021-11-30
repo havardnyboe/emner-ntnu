@@ -25,6 +25,7 @@ Diverse emner jeg har tatt, skal ta (og har prøvd å ta) på ntnu
 | [TDT4186](https://www.ntnu.no/studier/emner/TDT4186/) | Operativsystemer                         | Vår      |
 | [TDT4205](https://www.ntnu.no/studier/emner/TDT4205/) | Kompilatorteknikk                        | Vår      |
 | [TDT4240](https://www.ntnu.no/studier/emner/TDT4240/) | Programvarearkitektur                    | Vår      |
+| [TDT4125](https://www.ntnu.no/studier/emner/TDT4125/) | Algoritmekonstruksjon                    | Vår      |
 | [IT2810](https://www.ntnu.no/studier/emner/IT2810)    | Webutvikling                             | Høst     |
 |                                                       |                                          |          |
 
