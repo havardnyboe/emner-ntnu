@@ -155,26 +155,92 @@ The following table lists these identities with examples
 <!-- FUNCTIONS -->
 \newpage
 # Functions
-hei
 
 ## What Is a Function?
+A **function** $f$ is a rule that assigns each element $x$ in the set $A$
+exactly one element $y$ in the set $B$ . The element y is called the **image** (or **value**)
+of $x$ under $f$ and is denoted by $f(x)$ (read “$f$ of $x$”). The set $A$ is called the
+**domain** of $f$, the set $B$ is called the **codomain** of $f$, and the set $f(A) = \{y :y = f (x)$
+for some $x ∈ A\}$ is called the **range** of $f$.
+
+To define a function, we use the notation
+\begin{align*}
+    f : A &\rightarrow B \\
+    x &\rightarrow f(x)
+\end{align*}
+where $A$ and $B$ are subsets of the set of real numbers. Frequently, we simply write
+$y = f (x)$ and call $x$ the **independent** variable and $y$ the **dependent** variable.
 
 ## Polynomial Functions
+Polynomial functions are the simplest elementary functions.
+A **polynomial** function is a function of the form $$f(x) = a_0 + a_1x + a_2x^2 + \cdots + a_nx^n$$
+where $n$ is a nonnegative integer and $a_0 , a_1 , \cdots , a_n$ are (real-valued) constants
+with $a_n \neq 0$. The coefficient $a_n$ is called the **leading coefficient**, and $n$ is called
+the **degree** of the polynomial function. The largest possible domain of $f$ is $\mathbb{R}$.
 
 ## Rational Functions
+Rational functions are built from polynomial functions.
+A **rational** function is the quotient of two polynomial functions
+$p(x)$ and $q(x)$: 
+\begin{align*}
+    f(x) = \frac{p(x)}{q(x)} \quad\text{ for } q(x) \neq 0
+\end{align*}
+Since division by 0 is not allowed, we must exclude those values of $x$ for which $q(x) = 0$.
 
 ## Power Functions
+A **power** function is of the form
+\begin{align*}
+    f(x) = x^r
+\end{align*}
+where $r$ is a real number.
 
 ## Exponential Functions
+The function $f$ is an **exponential** function with base $a$ if
+\begin{align*}
+    f(x) = a^x
+\end{align*}
+where $a$ is a positive constant other than 1. The largest possible domain of $f$
+is $\mathbb{R}$.
+\newpage
 
 ## Inverse Functions
+The inverse of a function $f$ reverses the effect
+of $f$. That is, if $f$ maps $x$ into $y = f (x)$, then the inverse function, denoted by $f^{− 1}$
+(read “$f$ inverse”), takes $y$ and maps it back into $x$.
+
+Functions that have the property $x_1 \neq x_2 \text{ implies } f(x_1 ) \neq f (x_2 )$ or,
+equivalently, $f(x_1 ) = f(x_2 ) \text{ implies } x_1 = x_2$ are called **one to one**. If you know
+what the graph of a particular function looks like over its domain, then it is easy to
+determine whether or not the function is one to one: If no horizontal line intersects
+the graph of the function $f$ more than once, then $f$ is one to one. This criterion is
+called the horizontal line test.
+
+Let $f : A → B$ be a one-to-one function with range $f(A)$. The
+**inverse** function $f^{−1}$ has domain $f(A)$ and range $A$ and is defined by
+\begin{align*}
+    f^{−1}(y) = x \quad\text{ if and only if } y = f(x)
+\end{align*}
+for all $y \in f(A)$.
 
 ## Logarithmic Functions
+The inverse of $f(x) = a^x$ is called the \textbf{logarithm to base \textit{a}} and is
+written $f^{− 1}(x) = \log_a(x)$.
+The maximum domain of $f(x) = a^x$ is the set of all real numbers, and its range is the
+set of all positive numbers. Since the range of $f$ is the domain of $f^{− 1}$ , we find that
+the maximum domain of $f^{− 1}(x) = \log_a(x)$ is the set of positive numbers.
 
 ## Trigonometric Functions
+The trigonometric functions are examples of periodic functions.
+A function $f(x)$ is **periodic** if there is a positive constant $a$ such
+that
+\begin{align*}
+    f(x + a) = f(x)
+\end{align*}
+for all $x$ in the domain of $f$. If $a$ is the smallest number with this property, we
+call it the **period** of $f(x)$.
 
 <!-- LIMITS -->
-
+\newpage
 # Limits & Continuity
 
 ## Limits
