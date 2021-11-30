@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="no">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bettumgård</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="top_box">
+        <nav id="navbar"></nav>
+
+        <a id="move_down_page_unit">
+            <div id="index_bilde_m_logo">
+                <img src="img/gård_sommer.jpg" alt="Bettum gård på sommertid" id="forside_pc">
+                <img src="img/gård_sommer_tablet.jpg" alt="Bettum gård på sommertid" id="forside_tablet">
+                <img src="img/gård_sommer_mobil.jpg" alt="Bettum gård på sommertid" id="forside_mobil">
+            </div>
+            <div id="logo">
+                <img src="img/bettum_logo.png" alt="Logo for Bettum gård">
+            </div>
+            <div id="move_down">
+                <i></i>
+            </div>
+        </a>
+
+    </div>
+
+    <main id="main_index">
+
+        <!-- bakgrunnsbilde med logo -->
+
+        <div id="index_om_gaarden">
+            <h2>Velkommen til Bettum Gård</h2>
+            <p>
+                Bettum gård er et idyllisk småbruk i landlinge Våle med frukttrær, bær og et yrende dyreliv.
+                Klikk dere gjennom siden for å finne alt av informasjon om gården, våre produkter og tjenestene vi kan
+                tilby!
+                <br>
+                Spørsmål? Ta kontakt gjennom vårt <a href="kontakt_oss.html">kontaktskjema!</a>
+                <br>
+
+
+            </p>
+        </div>
+
+        <div id="img_slider_container">
+            <div id="img_slider">
+                <img class="img_slide" src="img/gård_sommer.jpg" alt="gård_sommer.jpg">
+            </div>
+            <a id="arrow_left">❮</a>
+            <a id="arrow_right">❯</a>
+        </div>
+
+        <div id="index_produkter">
+
+
+            <div class="img_column">
+                <a href="produkter.html#anchor_produkter_honning">
+                    <p>Honning</p>
+                    <img src="img/oppstilthonning.jpg" alt="Honning">
+                </a>
+            </div>
+
+            <div class="img_column">
+                <a href="produkter.html#anchor_produkter_ved">
+                    <p>Ved</p>
+                    <img src="img/europall.jpg" alt="Ved">
+                </a>
+            </div>
+
+            <div class="img_column">
+                <a href="produkter.html#anchor_produkter_baer">
+                    <p>Bær</p>
+                    <img src="img/blaabaer.jpg" alt="Bær">
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/footer.js"></script>
+    <script src="scripts/slider_img.js"></script>
+    <script src="scripts/move_down_page.js"></script>
+</body>
+
+</html>
