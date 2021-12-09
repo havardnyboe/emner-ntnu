@@ -14,7 +14,7 @@
 \setlength{\parindent}{0em}             % AVSNITT INNRYKK
 \setlength{\parskip}{1em}              % AVSNITT HØYDE
 % \linespread{1.5}                        % LINJE AVSTAND
-\renewcommand{\baselinestretch}{1.5}
+% \renewcommand{\baselinestretch}{1.5}
 
 \usepackage{graphicx}                   % BILDER \includegraphics[OPTIONS]{PATH}
 \usepackage{kantlipsum}                 % FYLLTEKST I KANT-STIL (kant[n-m])
@@ -25,3 +25,18 @@
 \usepackage{caption}                    % PAKKE FOR BEDRE CAPTIONS I FIGURER
 
 \usepackage{lipsum}                     % FYLLTEKST
+
+\usepackage{quoting,xparse}             % QUOTING
+
+\NewDocumentCommand{\bywhom}{m}{% the Bourbaki trick
+  {\nobreak\hfill\penalty50\hskip1em\null\nobreak
+   \hfill\mbox{\normalfont(#1)}%
+   \parfillskip=0pt \finalhyphendemerits=0 \par}%
+}
+
+\NewDocumentEnvironment{pquotation}{m}
+  {\begin{quoting}[
+     indentfirst=true,
+     leftmargin=\parindent,
+     rightmargin=\parindent]\itshape}
+  {\bywhom{#1}\end{quoting}}

@@ -1,10 +1,14 @@
 \input{preamble.tex}
-\renewcommand{\baselinestretch}{1.5}
+\renewcommand{\baselinestretch}{1.25}
 
 \begin{document}
 
 \setlength{\parskip}{0em}
 \maketitle
+\vfill
+\begin{center}
+    EXPH0300 - Examen philosophicum for naturvitenskap og teknologi
+\end{center}
 \thispagestyle{empty}
 \addtocounter{page}{-1}
 \newpage
@@ -15,26 +19,16 @@
 
 \input{doc/disposisjon.tex} % DISPOSISJON
 
-\section{Innledning}
+\input{doc/innledning.tex}
 
-\section{Bevisthetsfilosofi}
-\lipsum[1]
-Hei dette er en test for å se om det funker.
+\newpage
+\input{doc/opgA.tex}
 
-\section{Kan maskiner tenke?}
-\lipsum[1-2]
+\newpage
+\input{doc/opgB.tex}
 
 \section{Konklusjon}
 
-\autocite{Kiran2013}
-
-\autocite{Nagel2003}
-
 \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
-
-\newpage
-\appendix
-
-\input{doc/oppgave.tex}
 
 \end{document}
