@@ -13,11 +13,13 @@
 \addtocounter{page}{-1}
 \newpage
 \tableofcontents % INNHOLDSFORTEGNELSE
+\thispagestyle{empty}
+\addtocounter{page}{-1}
 \setlength{\parskip}{1em}
 \newpage
 
 
-\input{doc/disposisjon.tex} % DISPOSISJON
+% \input{doc/disposisjon.tex} % DISPOSISJON
 
 \newpage
 \input{doc/innledning.tex}
@@ -28,6 +30,7 @@
 
 \section{Konklusjon}
 
+\newpage
 \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
 
 \end{document}
