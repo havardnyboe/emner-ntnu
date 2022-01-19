@@ -43,17 +43,55 @@ OUT := $(RELEASE_OUT)
 GRAPH_LIB := Graph_lib
 endif
 
-OBJECTS := $(SOURCES:%.cpp=$(OUT)/%.o) $(TDT4102_SOURCES:%.cpp=$(OUT)/%.o)
+SOURCES_OUT = $(OUT)/sources
+
+TDT4102_BUILDDIR = $(OUT)/TDT4102
+TDT4102_OBJECTS = $(TDT4102_BUILDDIR)/AnimationWindow.o $(TDT4102_BUILDDIR)/InputHandler.o $(TDT4102_BUILDDIR)/MoveableImage.o $(TDT4102_BUILDDIR)/ShapeDrawQueue.o
+
+GRAPH_LIB_BUILDDIR = $(OUT)/Graph_lib
+GRAPH_LIB_OBJECTS = $(GRAPH_LIB_BUILDDIR)/Graph.o $(GRAPH_LIB_BUILDDIR)/GUI.o $(GRAPH_LIB_BUILDDIR)/Window.o
+
+OBJECTS := $(SOURCES:%.cpp=$(SOURCES_OUT)/%.o) $(GRAPH_LIB_OBJECTS) $(TDT4102_OBJECTS)
 
 $(OUT):
 	mkdir -p $@
 
-$(OUT)/%.o: %.cpp
+# There is probably a better way to do this, but this works without any hassle
+$(TDT4102_BUILDDIR)/AnimationWindow.o:
+	mkdir -p ./$(dir $(subst //,/,$@))
+	$(CXX) $(CXXFLAGS) -c $(TDT4102_DIR)/AnimationWindow.cpp -o $@
+
+$(TDT4102_BUILDDIR)/InputHandler.o:
+	mkdir -p ./$(dir $(subst //,/,$@))
+	$(CXX) $(CXXFLAGS) -c $(TDT4102_DIR)/InputHandler.cpp -o $@
+
+$(TDT4102_BUILDDIR)/MoveableImage.o:
+	mkdir -p ./$(dir $(subst //,/,$@))
+	$(CXX) $(CXXFLAGS) -c $(TDT4102_DIR)/MoveableImage.cpp -o $@
+
+$(TDT4102_BUILDDIR)/ShapeDrawQueue.o:
+	mkdir -p ./$(dir $(subst //,/,$@))
+	$(CXX) $(CXXFLAGS) -c $(TDT4102_DIR)/ShapeDrawQueue.cpp -o $@
+
+$(GRAPH_LIB_BUILDDIR)/Graph.o:
+	mkdir -p ./$(dir $(subst //,/,$@))
+	$(CXX) $(CXXFLAGS) -c $(GRAPH_LIB_DIR)/src/Graph.cpp -o $@
+
+$(GRAPH_LIB_BUILDDIR)/GUI.o:
+	mkdir -p ./$(dir $(subst //,/,$@))
+	$(CXX) $(CXXFLAGS) -c $(GRAPH_LIB_DIR)/src/GUI.cpp -o $@
+
+$(GRAPH_LIB_BUILDDIR)/Window.o:
+	mkdir -p ./$(dir $(subst //,/,$@))
+	$(CXX) $(CXXFLAGS) -c $(GRAPH_LIB_DIR)/src/Window.cpp -o $@
+
+$(SOURCES_OUT)/%.o: %.cpp
 	mkdir -p ./$(dir $(subst //,/,$@))
 	$(CXX) $(CXXFLAGS) -c $< -o $(subst //,/,$@)
 
 $(OUT)/$(EXECUTABLE): $(OUT) $(OBJECTS)
-	$(LINK) $(OBJECTS) -o $@ $(LDFLAGS)
+	$(LINK) -g $(OBJECTS) -o $@ $(LDFLAGS)
+
 
 .PHONY: runrelease rundebug
 runrelease: release
@@ -64,9 +102,11 @@ rundebug: debug
 .PHONY: clean cleandebug cleanrelease
 clean: cleanrelease cleandebug
 cleandebug:
-	$(RM) -r $(DEBUG_OUT)
+	$(RM) $(DEBUG_OUT)/$(EXECUTABLE)
+	$(RM) -r $(SOURCES_OUT)
 cleanrelease:
-	$(RM) -r $(RELEASE_OUT)
+	$(RM) $(DEBUG_OUT)/$(EXECUTABLE)
+	$(RM) -r $(SOURCES_OUT)
 
 # Helpers to build release and debug binaries
 .PHONY: debug release
