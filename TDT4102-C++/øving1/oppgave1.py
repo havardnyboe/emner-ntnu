@@ -10,4 +10,4 @@ def isFibonacciNumber(n):
 
 
 for i in range(0, 10):
-    print(i, ": ", isFibonacciNumber(i), sep="")
+    print(i, isFibonacciNumber(i))
