@@ -1,0 +1,140 @@
+% #region PREAMBEL OG PAKKER
+\documentclass[a4paper, 12pt]{article}  % DOKUMENTKLASSE
+\title{Øving 1}                         % TITTEL
+\author{Håvard Solberg Nybøe}           % FORFATTER
+\date{MA0301 -- \today}                 % DATO & FAG
+
+\usepackage[english, norsk]{babel}      % NORSK SPRÅK
+\usepackage[
+    backend=biber,style=apa]{biblatex}  % BIBLIOGRAFI
+\usepackage{csquotes}                   % PAKKE TIL BABEL
+\addbibresource{bibliografi.bib}         % PATH TIL BIBLIOGRAFI
+\usepackage[hidelinks]{hyperref}        % LENKER I TOC OG GENERELT
+\usepackage[margin=1in]{geometry}       % VANLIG STØRRELSE MARGIN
+\setlength{\parindent}{0em}             % SKILLER AVSNITT
+\setlength{\parskip}{.8em}              % SKILLER AVSNITT
+\usepackage{graphicx}                   % BILDER \includegraphics[OPTIONS]{PATH}
+\usepackage{kantlipsum}                 % FYLLTEKST I KANT-STIL (kant[n-m])
+\usepackage{amsfonts,                   % BLACKBOARD BOLD FONT (\mathbb{N})
+amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
+\usepackage{circuitikz}                 % LOGISKE PORTER OG KRETSER & TikZ
+\usepackage{import}                     % IMPORTER FILER (\import{PATH}{FILE})
+\usepackage{caption}                    % PAKKE FOR BEDRE CAPTIONS I FIGURER
+\usepackage{float}
+% #endregion
+\begin{document}
+
+\maketitle
+
+\textbf{Exsercise 1} 
+\begin{table}[H]
+    \begin{tabular}[H]{c|c|c|c|c|c|}
+        (a) & p & q & r & $q \lor r$ & $p \Rightarrow (q \lor r)$ \\
+            & 0 & 0 & 0 &     0      &            1            \\
+            & 0 & 0 & 1 &     1      &            1            \\
+            & 0 & 1 & 0 &     1      &            1            \\
+            & 0 & 1 & 1 &     1      &            1            \\
+            & 1 & 0 & 0 &     0      &            0            \\
+            & 1 & 0 & 1 &     1      &            1            \\
+            & 1 & 1 & 0 &     1      &            1            \\
+            & 1 & 1 & 1 &     1      &            1            \\
+
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}[H]{c|c|c|c|c|c|}
+        (b) & p & q & r & $p \Rightarrow q$ & $r \Rightarrow (p \Rightarrow q)$ \\
+            & 0 & 0 & 0 &        1          &                 1                 \\
+            & 0 & 0 & 1 &        1          &                 1                 \\
+            & 0 & 1 & 0 &        1          &                 1                 \\
+            & 0 & 1 & 1 &        1          &                 1                 \\
+            & 1 & 0 & 0 &        0          &                 1                 \\
+            & 1 & 0 & 1 &        0          &                 0                 \\
+            & 1 & 1 & 0 &        1          &                 1                 \\
+            & 1 & 1 & 1 &        1          &                 1                 \\
+
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}[H]{c|c|c|c|c|c|c|c|}
+        (c) & p & q & r & $p \oplus  r$ & $q \Rightarrow \neg r$ & $(q \Rightarrow \neg r) \lor (p \oplus r)$ & $p \Rightarrow (q \Rightarrow \neg r) \lor (p \oplus r)$\\
+            & 0 & 0 & 0 &      0        &            1           &                      1                     &                             1                           \\
+            & 0 & 0 & 1 &      1        &            1           &                      1                     &                             1                           \\
+            & 0 & 1 & 0 &      0        &            1           &                      1                     &                             1                           \\
+            & 0 & 1 & 1 &      1        &            0           &                      1                     &                             1                           \\
+            & 1 & 0 & 0 &      1        &            1           &                      1                     &                             1                           \\
+            & 1 & 0 & 1 &      0        &            1           &                      1                     &                             1                           \\
+            & 1 & 1 & 0 &      1        &            1           &                      1                     &                             1                           \\
+            & 1 & 1 & 1 &      0        &            0           &                      0                     &                             0                           \\
+
+    \end{tabular}
+\end{table}
+
+\newpage
+\textbf{Exsercise 2}
+\begin{enumerate}
+    \item [(a)] $(p \lor q) \lor (p \Rightarrow q)$
+    \\Hvis $p$ og/eller $q$ er sann, er $p \lor q$ sann. Hvis begge er usanne er $p \Rightarrow q$ sann.
+    \\Utsagnet er en tautologi. $\blacksquare$
+
+    \item [(b)] $\left( p \Rightarrow (q \land \neg q) \right) \land p$
+    \\Anta at $p$ er sann. Skal utsagnet være sant, må $p \Rightarrow (q \land \neg q)$ være sant.
+    \\ $(q \land \neg q) \equiv \mathrm{F}$, $p \Rightarrow \mathrm{F} \equiv \mathrm{F}$
+    \\Utsagnet er en kontradiksjon. $\blacksquare$
+
+    \item [(c)] $\left( p \Rightarrow (q \land \neg q) \right) \land p \Rightarrow r$
+    \\Gitt resultatet i forrige oppgave er $\left( p \Rightarrow (q \land \neg q) \right) \land p$ usant.
+    \\Utsagnet er en tautologi. $\blacksquare$
+\end{enumerate}
+
+\textbf{Exsercise 3}
+\begin{enumerate}
+    \item [(a)] $p \land q \Rightarrow r$
+    \\$a$ is smaller than $b$ and $b$ is smaller than $c$ implies that $a$ is smaller than $c$.
+    \\Logisk riktig antagelse.
+    \item [(b)] $p \land q \Rightarrow u$
+    \\$a$ is smaller than $b$ and $b$ is smaller than $c$ implies that $a$ is equal to $c$.
+    \\Logisk feil antagelse da $a$ må være mindre enn $c$.
+    \item [(c)] $(p \lor s) \land (q \lor t) \land u \Rightarrow s$
+    \\$a$ smaller or equal to $b$ and $b$ smaller or equal to $c$ and $a$ equal to $c$ implies that $a$ is equal to $b$.
+    \\Logisk riktig da alle vil ha samme verdi.
+\end{enumerate}
+% p: a is smaller than b.
+% q: b is smaller than c.
+% r: a is smaller than c.
+% s: a is equal to b.
+% t: b is equal to c.
+% u: a is equal to c.
+
+\textbf{Exsercise 4} 
+\\\newline Gitt at $q$ er sann (T), og at 
+
+$$ (q \Rightarrow ((p \lor \neg r) \land s)) \land (s \Rightarrow (r \land q)) $$
+
+er en tautologi.
+\\Tester med $r$ satt til sann.
+\begin{align*}
+    (q \Rightarrow ((p \lor \neg r) \land s)) & \land (s \Rightarrow (r \land q)) \\
+    (q \Rightarrow ((p \lor \mathrm{F}) \land s)) & \land (s \Rightarrow \mathrm{T}), \quad s \equiv \mathrm{T}, p \equiv \mathrm{T}\\
+    (q \Rightarrow (\mathrm{T} \land \mathrm{T})) & \land \mathrm{T}
+\end{align*}
+\begin{center}
+    \boxed{\text{$p$, $r$ og $s$ er sann.}}
+\end{center}
+
+\newpage
+\textbf{Exsercise 5}
+\begin{enumerate}
+    \item [(a)] $(p \land q) \Rightarrow (\neg r \lor \neg s)$
+    \item [(b)] $p \Rightarrow (r \oplus s)$
+\end{enumerate}
+
+\textbf{Exsercise 6}
+
+\textbf{Exsercise 7}
+
+\textbf{Exsercise 8}
+% \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
+\end{document}
