@@ -5,10 +5,10 @@ Diverse emner jeg har tatt, skal ta (og har prøvd å ta) på ntnu
 | Høst 21                     | Vår 22                    | Høst 22    | Vår 23 | Høst 23 | Vår 24 |
 | --------------------------- | ------------------------- | ---------- | ------ | ------- | ------ |
 | [ITGK](TDT4109-ITGK/)       | [DiskMat](MA0301-DiskMat) | [DatDig]() |        |         |        |
-| [WebTek](IT2805-Webtek/)    | [KTN]()                   | [AlgDat]() |        |         |        |
-| [Matte A](MA0001-MatteA/)   | [MMI]()                   | [IT1901]() |        |         |        |
+| [WebTek](IT2805-Webtek/)    | [KTN](TTM4100-KTN)        | [AlgDat]() |        |         |        |
+| [Matte A](MA0001-MatteA/)   | [MMI](TDT4180-MMI)        | [IT1901]() |        |         |        |
 | [DiskMat](TMA4140-DiskMat/) | [C++](TDT4102-C++)        |            |        |         |        |
-| [Ex.phil](EXPH0300-ExPhil/) |                           |            |        |         |        |
+| [Ex.phil](EXPH0300-ExPhil/) | [Java](TDT4100-Java)      |            |        |         |        |
 
 ## Emner jeg vurderer å ta
 
