@@ -63,7 +63,7 @@ void printHumanReadableTime(int s) {
 /* OPPGAVE 2 - Løkker */
 
 // a)
-void sumOfIntegers() {
+void sumOfIntegersAndPrint() {
     int numberOfIntegers{0}, sum{0};
     std::cout << "Hvor mange tall vil du legge sammen?: ";
     std::cin >> numberOfIntegers;
@@ -77,10 +77,10 @@ void sumOfIntegers() {
 }
 
 // b)
-void sumOfIntegersLoop() {
+void sumOfIntegersLoopAndPrint() {
     int input{1}, sum{0};
     while (input) {
-        std::cout << "Skriv inn et heltall: ";
+        std::cout << "Skriv inn et heltall (0 for å avslutte): ";
         std::cin >> input;
         sum += input;
     }
@@ -94,3 +94,39 @@ void sumOfIntegersLoop() {
 */
 
 // d)
+double inputDouble() {
+    double i{0};
+    std::cout << "Skriv inn et tall: ";
+    std::cin >> i;
+    return i;
+}
+
+// e)
+double NOKtoEURAndPrint() {
+    double exchangeRate{9.75},
+        inputInNOK{inputDouble()},
+        outputInEUR{0};
+
+    if (inputInNOK < 0) {
+        std::cout << "Kan ikke bruke negative tall";
+        inputInNOK = inputDouble();
+    }
+
+    outputInEUR = inputInNOK / exchangeRate;
+    std::cout.precision(3);
+    std::cout << inputInNOK << "NOK = " << outputInEUR << "EUR" << std::endl;
+    return outputInEUR;
+}
+
+// f)
+/*
+    Man må bruke inputDouble framfor inputInteger for å kunne bruke desimaler.
+
+    Returntypen er double fordi funskjonen bruker og regner med flyttall.
+*/
+
+/* OPPGAVE 3 - Menysystem */
+
+// b)
+void printOutTimesTable() {
+}
