@@ -26,49 +26,48 @@ amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
 
 \maketitle
 
-\textbf{Exsercise 1} 
+\emph{Ønsker retting}
+
+\textbf{Exsercise 1}
 \begin{table}[H]
     \begin{tabular}[H]{c|c|c|c|c|c|}
-        (a) & p & q & r & $q \lor r$ & $p \Rightarrow (q \lor r)$ \\
-            & 0 & 0 & 0 &     0      &            1            \\
-            & 0 & 0 & 1 &     1      &            1            \\
-            & 0 & 1 & 0 &     1      &            1            \\
-            & 0 & 1 & 1 &     1      &            1            \\
-            & 1 & 0 & 0 &     0      &            0            \\
-            & 1 & 0 & 1 &     1      &            1            \\
-            & 1 & 1 & 0 &     1      &            1            \\
-            & 1 & 1 & 1 &     1      &            1            \\
-
+        (a) & $p$ & $q$ & $r$ & $q \lor r$ & $p \Rightarrow (q \lor r)$ \\
+            & 0   & 0   & 0   & 0          & 1                          \\
+            & 0   & 0   & 1   & 1          & 1                          \\
+            & 0   & 1   & 0   & 1          & 1                          \\
+            & 0   & 1   & 1   & 1          & 1                          \\
+            & 1   & 0   & 0   & 0          & 0                          \\
+            & 1   & 0   & 1   & 1          & 1                          \\
+            & 1   & 1   & 0   & 1          & 1                          \\
+            & 1   & 1   & 1   & 1          & 1                          \\
     \end{tabular}
 \end{table}
 
 \begin{table}[H]
     \begin{tabular}[H]{c|c|c|c|c|c|}
-        (b) & p & q & r & $p \Rightarrow q$ & $r \Rightarrow (p \Rightarrow q)$ \\
-            & 0 & 0 & 0 &        1          &                 1                 \\
-            & 0 & 0 & 1 &        1          &                 1                 \\
-            & 0 & 1 & 0 &        1          &                 1                 \\
-            & 0 & 1 & 1 &        1          &                 1                 \\
-            & 1 & 0 & 0 &        0          &                 1                 \\
-            & 1 & 0 & 1 &        0          &                 0                 \\
-            & 1 & 1 & 0 &        1          &                 1                 \\
-            & 1 & 1 & 1 &        1          &                 1                 \\
-
+        (b) & $p$ & $q$ & $r$ & $p \Rightarrow q$ & $r \Rightarrow (p \Rightarrow q)$ \\
+            & 0   & 0   & 0   & 1                 & 1                                 \\
+            & 0   & 0   & 1   & 1                 & 1                                 \\
+            & 0   & 1   & 0   & 1                 & 1                                 \\
+            & 0   & 1   & 1   & 1                 & 1                                 \\
+            & 1   & 0   & 0   & 0                 & 1                                 \\
+            & 1   & 0   & 1   & 0                 & 0                                 \\
+            & 1   & 1   & 0   & 1                 & 1                                 \\
+            & 1   & 1   & 1   & 1                 & 1                                 \\
     \end{tabular}
 \end{table}
 
 \begin{table}[H]
     \begin{tabular}[H]{c|c|c|c|c|c|c|c|}
-        (c) & p & q & r & $p \oplus  r$ & $q \Rightarrow \neg r$ & $(q \Rightarrow \neg r) \lor (p \oplus r)$ & $p \Rightarrow (q \Rightarrow \neg r) \lor (p \oplus r)$\\
-            & 0 & 0 & 0 &      0        &            1           &                      1                     &                             1                           \\
-            & 0 & 0 & 1 &      1        &            1           &                      1                     &                             1                           \\
-            & 0 & 1 & 0 &      0        &            1           &                      1                     &                             1                           \\
-            & 0 & 1 & 1 &      1        &            0           &                      1                     &                             1                           \\
-            & 1 & 0 & 0 &      1        &            1           &                      1                     &                             1                           \\
-            & 1 & 0 & 1 &      0        &            1           &                      1                     &                             1                           \\
-            & 1 & 1 & 0 &      1        &            1           &                      1                     &                             1                           \\
-            & 1 & 1 & 1 &      0        &            0           &                      0                     &                             0                           \\
-
+        (c) & $p$ & $q$ & $r$ & $p \oplus  r$ & $q \Rightarrow \neg r$ & $(q \Rightarrow \neg r) \lor (p \oplus r)$ & $p \Rightarrow (q \Rightarrow \neg r) \lor (p \oplus r)$ \\
+            & 0   & 0   & 0   & 0             & 1                      & 1                                          & 1                                                        \\
+            & 0   & 0   & 1   & 1             & 1                      & 1                                          & 1                                                        \\
+            & 0   & 1   & 0   & 0             & 1                      & 1                                          & 1                                                        \\
+            & 0   & 1   & 1   & 1             & 0                      & 1                                          & 1                                                        \\
+            & 1   & 0   & 0   & 1             & 1                      & 1                                          & 1                                                        \\
+            & 1   & 0   & 1   & 0             & 1                      & 1                                          & 1                                                        \\
+            & 1   & 1   & 0   & 1             & 1                      & 1                                          & 1                                                        \\
+            & 1   & 1   & 1   & 0             & 0                      & 0                                          & 0                                                        \\
     \end{tabular}
 \end{table}
 
@@ -76,30 +75,30 @@ amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
 \textbf{Exsercise 2}
 \begin{enumerate}
     \item [(a)] $(p \lor q) \lor (p \Rightarrow q)$
-    \\Hvis $p$ og/eller $q$ er sann, er $p \lor q$ sann. Hvis begge er usanne er $p \Rightarrow q$ sann.
-    \\Utsagnet er en tautologi. $\blacksquare$
+          \\Hvis $p$ og/eller $q$ er sann, er $p \lor q$ sann. Hvis begge er usanne er $p \Rightarrow q$ sann.
+          \\Utsagnet er en tautologi. $\blacksquare$
 
     \item [(b)] $\left( p \Rightarrow (q \land \neg q) \right) \land p$
-    \\Anta at $p$ er sann. Skal utsagnet være sant, må $p \Rightarrow (q \land \neg q)$ være sant.
-    \\ $(q \land \neg q) \equiv \mathrm{F}$, $p \Rightarrow \mathrm{F} \equiv \mathrm{F}$
-    \\Utsagnet er en kontradiksjon. $\blacksquare$
+          \\Anta at $p$ er sann. Skal utsagnet være sant, må $p \Rightarrow (q \land \neg q)$ være sant.
+          \\ $(q \land \neg q) \equiv \mathrm{F}$, $p \Rightarrow \mathrm{F} \equiv \mathrm{F}$
+          \\Utsagnet er en kontradiksjon. $\blacksquare$
 
     \item [(c)] $\left( p \Rightarrow (q \land \neg q) \right) \land p \Rightarrow r$
-    \\Gitt resultatet i forrige oppgave er $\left( p \Rightarrow (q \land \neg q) \right) \land p$ usant.
-    \\Utsagnet er en tautologi. $\blacksquare$
+          \\Gitt resultatet i forrige oppgave er $\left( p \Rightarrow (q \land \neg q) \right) \land p$ usant.
+          \\Utsagnet er en tautologi. $\blacksquare$
 \end{enumerate}
 
 \textbf{Exsercise 3}
 \begin{enumerate}
     \item [(a)] $p \land q \Rightarrow r$
-    \\$a$ is smaller than $b$ and $b$ is smaller than $c$ implies that $a$ is smaller than $c$.
-    \\Logisk riktig antagelse.
+          \\$a$ is smaller than $b$ and $b$ is smaller than $c$ implies that $a$ is smaller than $c$.
+          \\Logisk riktig antagelse.
     \item [(b)] $p \land q \Rightarrow u$
-    \\$a$ is smaller than $b$ and $b$ is smaller than $c$ implies that $a$ is equal to $c$.
-    \\Logisk feil antagelse da $a$ må være mindre enn $c$.
+          \\$a$ is smaller than $b$ and $b$ is smaller than $c$ implies that $a$ is equal to $c$.
+              \\Logisk feil antagelse da $a$ må være mindre enn $c$.
     \item [(c)] $(p \lor s) \land (q \lor t) \land u \Rightarrow s$
-    \\$a$ smaller or equal to $b$ and $b$ smaller or equal to $c$ and $a$ equal to $c$ implies that $a$ is equal to $b$.
-    \\Logisk riktig da alle vil ha samme verdi.
+          \\$a$ smaller or equal to $b$ and $b$ smaller or equal to $c$ and $a$ equal to $c$ implies that $a$ is equal to $b$.
+          \\Logisk riktig da alle vil ha samme verdi.
 \end{enumerate}
 % p: a is smaller than b.
 % q: b is smaller than c.
@@ -108,33 +107,157 @@ amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
 % t: b is equal to c.
 % u: a is equal to c.
 
-\textbf{Exsercise 4} 
-\\\newline Gitt at $q$ er sann (T), og at 
+\textbf{Exsercise 4}
+\\\newline Gitt at $q$ er sann (T), og at
 
 $$ (q \Rightarrow ((p \lor \neg r) \land s)) \land (s \Rightarrow (r \land q)) $$
 
 er en tautologi.
 \\Tester med $r$ satt til sann.
 \begin{align*}
-    (q \Rightarrow ((p \lor \neg r) \land s)) & \land (s \Rightarrow (r \land q)) \\
-    (q \Rightarrow ((p \lor \mathrm{F}) \land s)) & \land (s \Rightarrow \mathrm{T}), \quad s \equiv \mathrm{T}, p \equiv \mathrm{T}\\
+    (q \Rightarrow ((p \lor \neg r) \land s))     & \land (s \Rightarrow (r \land q))                                                \\
+    (q \Rightarrow ((p \lor \mathrm{F}) \land s)) & \land (s \Rightarrow \mathrm{T}), \quad s \equiv \mathrm{T}, p \equiv \mathrm{T} \\
     (q \Rightarrow (\mathrm{T} \land \mathrm{T})) & \land \mathrm{T}
 \end{align*}
 \begin{center}
-    \boxed{\text{$p$, $r$ og $s$ er sann.}}
+    \text{$p$, $r$ og $s$ er sann.} $\blacksquare$
 \end{center}
 
 \newpage
 \textbf{Exsercise 5}
 \begin{enumerate}
-    \item [(a)] $(p \land q) \Rightarrow (\neg r \lor \neg s)$
-    \item [(b)] $p \Rightarrow (r \oplus s)$
+    \item [(a)] Negate: $(p \land q) \Rightarrow (\neg r \lor \neg s)$
+          \begin{flalign*}
+              \neg((p \land q)      & \Rightarrow (\neg r \lor \neg s)) &  &                                                         \\
+              \neg(\neg(p \land q)  & \lor (\neg r \lor \neg s))        &  & \textit{\small{(Material implication)}}         &  &  & \\
+              \neg(\neg(p \land q)) & \land \neg(\neg r \lor \neg s)    &  & \textit{\small{(De Morgan)}}                            \\
+              (p \land q)           & \land (r \land s)                 &  & \textit{\small{(De Morgan \& Double Negation)}}         \\
+              p \land q             & \land r \land s                   &  & \textit{\small{(Associativity)}}                        \\
+          \end{flalign*}
+    \item [(b)] Negate: $p \Rightarrow (r \oplus s)$
+          \begin{flalign*}
+              \neg(p                        & \Rightarrow (r \oplus s))     &  &                                                         \\
+              \neg(\neg p                   & \lor (r \oplus s))            &  & \textit{\small{(Material implication)}}         &  &  & \\
+              p                             & \land \neg(r \oplus s)        &  & \textit{\small{(De Morgan \& Double Negation)}}         \\
+              p \land \neg((r \lor s)       & \land (\neg r \lor \neg s))   &  & \textit{\small{(Replacement)}}                          \\
+              p \land \neg(r \lor s)        & \lor \neg(\neg r \lor \neg s) &  & \textit{\small{(De Morgan)}}                            \\
+              p \land (\neg r \land \neg s) & \lor ( r \land s)             &  & \textit{\small{(De Morgan)}}                            \\
+          \end{flalign*}
 \end{enumerate}
 
 \textbf{Exsercise 6}
+\begin{table}[H]
+    \begin{tabular}{c|c|c|c|c|c|}
+        AL1 (V.S.) & $\alpha$ & $\beta$ & $\gamma$ & $(\alpha \lor \beta)$ & $(\alpha \lor \beta) \lor \gamma $ \\
+                   & 0        & 0       & 0        & 0                     & 0                                  \\
+                   & 0        & 0       & 1        & 0                     & 1                                  \\
+                   & 0        & 1       & 0        & 1                     & 1                                  \\
+                   & 0        & 1       & 1        & 1                     & 1                                  \\
+                   & 1        & 0       & 0        & 1                     & 1                                  \\
+                   & 1        & 0       & 1        & 1                     & 1                                  \\
+                   & 1        & 1       & 0        & 1                     & 1                                  \\
+                   & 1        & 1       & 1        & 1                     & 1                                  \\
+    \end{tabular}
+\end{table}
+\begin{table}[H]
+    \begin{tabular}{c|c|c|c|c|c|}
+        AL1 (H.S.) & $\alpha$ & $\beta$ & $\gamma$ & $(\beta \lor \gamma)$ & $\alpha \lor (\beta \lor \gamma) $ \\
+                   & 0        & 0       & 0        & 0                     & 0                                  \\
+                   & 0        & 0       & 1        & 1                     & 1                                  \\
+                   & 0        & 1       & 0        & 1                     & 1                                  \\
+                   & 0        & 1       & 1        & 1                     & 1                                  \\
+                   & 1        & 0       & 0        & 0                     & 1                                  \\
+                   & 1        & 0       & 1        & 1                     & 1                                  \\
+                   & 1        & 1       & 0        & 1                     & 1                                  \\
+                   & 1        & 1       & 1        & 1                     & 1                                  \\
+    \end{tabular}
+    \begin{equation*}
+        (\alpha \lor \beta) \lor \gamma \equiv \alpha \lor (\beta \lor \gamma) \blacksquare
+    \end{equation*}
+\end{table}
+
+\newpage
+\begin{table}[H]
+    \begin{tabular}{c|c|c|c|c|c|}
+        AL2 (V.S.) & $\alpha$ & $\beta$ & $\gamma$ & $(\alpha \land \beta)$ & $(\alpha \land \beta) \land \gamma $ \\
+                   & 0        & 0       & 0        & 0                      & 0                                    \\
+                   & 0        & 0       & 1        & 0                      & 0                                    \\
+                   & 0        & 1       & 0        & 0                      & 0                                    \\
+                   & 0        & 1       & 1        & 0                      & 0                                    \\
+                   & 1        & 0       & 0        & 0                      & 0                                    \\
+                   & 1        & 0       & 1        & 0                      & 0                                    \\
+                   & 1        & 1       & 0        & 1                      & 0                                    \\
+                   & 1        & 1       & 1        & 1                      & 1                                    \\
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{c|c|c|c|c|c|}
+        AL2 (H.S.) & $\alpha$ & $\beta$ & $\gamma$ & $(\beta \land \gamma)$ & $\alpha \land (\beta \land \gamma) $ \\
+                   & 0        & 0       & 0        & 0                      & 0                                    \\
+                   & 0        & 0       & 1        & 0                      & 0                                    \\
+                   & 0        & 1       & 0        & 0                      & 0                                    \\
+                   & 0        & 1       & 1        & 1                      & 0                                    \\
+                   & 1        & 0       & 0        & 0                      & 0                                    \\
+                   & 1        & 0       & 1        & 0                      & 0                                    \\
+                   & 1        & 1       & 0        & 0                      & 0                                    \\
+                   & 1        & 1       & 1        & 1                      & 1                                    \\
+    \end{tabular}
+    \begin{equation*}
+        (\alpha \land \beta) \land \gamma \equiv \alpha \land (\beta \land \gamma) \blacksquare
+    \end{equation*}
+\end{table}
+
 
 \textbf{Exsercise 7}
 
+\begin{table}[H]
+    \begin{tabular}{c|c|c|c|c|}
+        (a) & $p$ & $q$ & $p \lor q$ & $p \Rightarrow (p \lor q)$ \\
+            & 0   & 0   & 0          & 1                          \\
+            & 0   & 1   & 1          & 1                          \\
+            & 1   & 0   & 1          & 1                          \\
+            & 1   & 1   & 1          & 1                          \\
+    \end{tabular}
+    \begin{center}
+        Utsagnet $p \Rightarrow (p \lor q)$ er en tautologi. $\blacksquare$
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{c|c|c|c|c|}
+        (b) & $p$ & $q$ & $p \lor q$ & $\neg(p \Rightarrow (p \lor q))$ \\
+            & 0   & 0   & 0          & 0                                \\
+            & 0   & 1   & 1          & 0                                \\
+            & 1   & 0   & 1          & 1                                \\
+            & 1   & 1   & 1          & 0                                \\
+    \end{tabular}
+    \begin{center}
+        Utsagnet $p \Rightarrow (p \lor q)$ er tilfredstillbar. $\blacksquare$
+    \end{center}
+\end{table}
+
+\begin{table}[H]
+    \begin{tabular}{c|c|c|c|c|}
+        (c) & $p$ & $q$ & $p \Rightarrow q$ & $p \Rightarrow (p \Rightarrow q)$ \\
+            & 0   & 0   & 1                 & 1                                 \\
+            & 0   & 1   & 1                 & 1                                 \\
+            & 1   & 0   & 0                 & 0                                 \\
+            & 1   & 1   & 1                 & 1                                 \\
+    \end{tabular}
+    \begin{center}
+        Utsagnet $p \Rightarrow (p \Rightarrow q)$ er tilfredstillbar. $\blacksquare$
+    \end{center}
+\end{table}
+
 \textbf{Exsercise 8}
-% \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
+
+\begin{enumerate}
+    \item \(\neg p \Rightarrow (q \Leftrightarrow r )\)
+    \item \(r \Rightarrow \neg p\)
+    \item \(\neg r \oplus (p \land q)\)
+    \item \(p \Rightarrow (r \land q)\)
+    \item \(\neg q \oplus r\)
+\end{enumerate}
+
 \end{document}
