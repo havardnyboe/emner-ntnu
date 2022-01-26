@@ -180,6 +180,8 @@ vector<int> calculateBalance(int deposit, double interest, int years) {
     }
     return balance;
 }
+
+// b)
 void printBalance(vector<int> balance) {
 
     std::cout << std::setw(10) << "År"
@@ -187,8 +189,20 @@ void printBalance(vector<int> balance) {
               << std::endl;
 
     for (int i = 0; i < balance.size(); i++) {
-        std::cout << std::setw(10) << i
+        std::cout << std::setw(9) << i
                   << std::setw(10) << balance.at(i)
                   << std::endl;
     }
 }
+
+// c)
+/*
+    feilen skyldes av at man prøver å skrive ut en vector med std::cout,
+    og opperatoren "<<" er ikke gyldig for vectorer.
+*/
+
+// d)
+/*
+    får ingen feilmelding men antar feilen ligger i at løkken skriver
+    ut ett element mer enn det er i vectoren (i <= v.size()).
+*/
