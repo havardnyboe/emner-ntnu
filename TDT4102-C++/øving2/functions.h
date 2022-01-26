@@ -1,5 +1,5 @@
 #include <iostream>
-
+#include <math.h>
 void clear() {
     // CSI[2J clears screen, CSI[H moves the cursor to top-left corner
     std::cout << "\x1B[2J\x1B[H";
@@ -94,9 +94,9 @@ void sumOfIntegersLoopAndPrint() {
 */
 
 // d)
-double inputDouble() {
+double inputDouble(std::string prompt = "Skriv inn et tall: ") {
     double i{0};
-    std::cout << "Skriv inn et tall: ";
+    std::cout << prompt;
     std::cin >> i;
     return i;
 }
@@ -129,4 +129,53 @@ double NOKtoEURAndPrint() {
 
 // b)
 void printOutTimesTable() {
+    int width = inputInteger();
+    int height = inputInteger();
+    clear();
+    for (int i = 1; i <= height; i++) {
+        for (int j = 1; j <= width; j++) {
+            std::cout << i * j << '\t';
+        }
+        std::cout << std::endl;
+    }
+}
+
+/* OPPGAVE 4 */
+
+// a)
+double discriminant(double a, double b, double c) {
+    return b * b - 4 * a * c;
+}
+
+// b)
+void printRealRoots(double a, double b, double c) {
+    double discriminantValue = discriminant(a, b, c);
+    if (discriminantValue < 0) {
+        std::cout << "Ingen reelle løsninger" << std::endl;
+    } else if (discriminantValue == 0) {
+        double root = -b / (2 * a);
+        std::cout << "En reell løsning: " << root << std::endl;
+    } else {
+        double root1 = (-b + sqrt(discriminantValue)) / (2 * a);
+        double root2 = (-b - sqrt(discriminantValue)) / (2 * a);
+        std::cout << "To reelle løsninger: " << root1 << " og " << root2 << std::endl;
+    }
+}
+
+void solveQuadraticEquation() {
+    double a = inputDouble("Skriv inn a: "),
+           b = inputDouble("Skriv inn b: "),
+           c = inputDouble("Skriv inn c: ");
+    printRealRoots(a, b, c);
+}
+
+/* OPPGAVE 6 - Renter med bruk av løkker */
+
+// a)
+int calculateBalance(int deposit, int interest, int years) {
+    vector<int> balance{deposit};
+    for (int i = 0; i < years; i++) {
+        double bal = deposit * pow((1 + std::static_cast<double>(interest) / 100), years);
+        balance.push_back(bal);
+    }
 }
