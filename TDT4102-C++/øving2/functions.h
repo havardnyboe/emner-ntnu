@@ -17,9 +17,9 @@ void inputAndPrintInteger() {
 }
 
 //  b)
-int inputInteger() {
+int inputInteger(std::string prompt = "Skriv inn et heltall: ") {
     int i{0};
-    std::cout << "Skriv inn et heltall: ";
+    std::cout << prompt;
     std::cin >> i;
     return i;
 }
@@ -134,7 +134,7 @@ void printOutTimesTable() {
     clear();
     for (int i = 1; i <= height; i++) {
         for (int j = 1; j <= width; j++) {
-            std::cout << i * j << '\t';
+            std::cout << std::setw(6) << i * j;
         }
         std::cout << std::endl;
     }
@@ -172,10 +172,23 @@ void solveQuadraticEquation() {
 /* OPPGAVE 6 - Renter med bruk av løkker */
 
 // a)
-int calculateBalance(int deposit, int interest, int years) {
+vector<int> calculateBalance(int deposit, double interest, int years) {
     vector<int> balance{deposit};
     for (int i = 0; i < years; i++) {
-        double bal = deposit * pow((1 + std::static_cast<double>(interest) / 100), years);
+        double bal = balance.at(i) * pow((1 + interest / 100), i + 1);
         balance.push_back(bal);
+    }
+    return balance;
+}
+void printBalance(vector<int> balance) {
+
+    std::cout << std::setw(10) << "År"
+              << std::setw(10) << "Saldo"
+              << std::endl;
+
+    for (int i = 0; i < balance.size(); i++) {
+        std::cout << std::setw(10) << i
+                  << std::setw(10) << balance.at(i)
+                  << std::endl;
     }
 }
