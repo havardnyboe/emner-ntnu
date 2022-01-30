@@ -1,14 +1,14 @@
 % #region PREAMBEL OG PAKKER
 \documentclass[a4paper, 12pt]{article}  % DOKUMENTKLASSE
-\title{Øving 2}               % TITTEL
+\title{Øving 2}                         % TITTEL
 \author{Håvard Solberg Nybøe}           % FORFATTER
-\date{MA0301 -- \today}                    % DATO & FAG
+\date{MA0301 -- \today}                 % DATO & FAG
 
 \usepackage[english, norsk]{babel}      % NORSK SPRÅK
 \usepackage[
     backend=biber,style=apa]{biblatex}  % BIBLIOGRAFI
 \usepackage{csquotes}                   % PAKKE TIL BABEL
-\addbibresource{bibliografi.bib}        % PATH TIL BIBLIOGRAFI
+\addbibresource{bibliografi.bib}         % PATH TIL BIBLIOGRAFI
 \usepackage[hidelinks]{hyperref}        % LENKER I TOC OG GENERELT
 \usepackage[margin=1in]{geometry}       % VANLIG STØRRELSE MARGIN
 \setlength{\parindent}{0em}             % SKILLER AVSNITT
@@ -29,8 +29,12 @@ amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
 \begin{enumerate}
     \item [\boxed{1}] 
     \item [\boxed{2}] \begin{enumerate}
-        \item 
+        \item For all $x$ there exists a $y$ such that $x$ is smaller then $y$.
+        \item There exists an $x$ for all $y$ such that $x$ is equal to $y$.
+        \item For all $x$ and all $y$ and all $z$ $x$ is smaller then $y$ and $y$ is smaller then $z$ implies that $x$ is smaller then $z$.
+        \item For all $x$ and all $y$ and all $z$ $z$ is smaller then or equal to $y$ and $y$ is smaller then or equal to $z$ and $x$ is equal to $z$ implies that $x$ is equal to $y$.
     \end{enumerate}
+    Det er ingen logisk forskjell på (a) og (b) og (a) og (c) i oppgave 3 i øving 1.
 \end{enumerate}
 
 % \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
