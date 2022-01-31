@@ -26,15 +26,44 @@ amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
 \maketitle
 % \tableofcontents % INNHOLDSFORTEGNELSE
 
+\textit{Ønsker retting}
+
 \begin{enumerate}
-    \item [\boxed{1}] 
-    \item [\boxed{2}] \begin{enumerate}
-        \item For all $x$ there exists a $y$ such that $x$ is smaller then $y$.
-        \item There exists an $x$ for all $y$ such that $x$ is equal to $y$.
-        \item For all $x$ and all $y$ and all $z$ $x$ is smaller then $y$ and $y$ is smaller then $z$ implies that $x$ is smaller then $z$.
-        \item For all $x$ and all $y$ and all $z$ $z$ is smaller then or equal to $y$ and $y$ is smaller then or equal to $z$ and $x$ is equal to $z$ implies that $x$ is equal to $y$.
-    \end{enumerate}
-    Det er ingen logisk forskjell på (a) og (b) og (a) og (c) i oppgave 3 i øving 1.
+    \item [\boxed{1}]
+          \begin{enumerate}
+              \item []$L(x, y)$ \textit{: \quad x loves y}
+              \item $\exists{x}\forall{y}L(x, y)$
+              \item $\exists{x}\forall{y}\neg L(x, y)$
+              \item $\neg\exists{x}\forall{y}L(x, y)$
+              \item []
+          \end{enumerate}
+    \item [\boxed{2}]
+          \begin{enumerate}
+              \item For all $x$ there exists a $y$ such that $x$ is smaller then $y$.
+              \item There exists an $x$ for all $y$ such that $x$ is equal to $y$.
+              \item For all $x$ and all $y$ and all $z$ $x$ is smaller then $y$ and $y$ is smaller then $z$ implies that $x$ is smaller then $z$.
+              \item For all $x$ and all $y$ and all $z$ $z$ is smaller then or equal to $y$ and $y$ is smaller then or equal to $z$ and $x$ is equal to $z$ implies that $x$ is equal to $y$.
+              \item []
+              \item [] Det er ingen logisk forskjell på (a) og (b) og (a) og (c) i oppgave 3 i øving 1.
+              \item []
+          \end{enumerate}
+    \item [\boxed{3}]
+          Evaluerer utsagnene hver for seg
+          \begin{flalign*}
+              \text{(a)} &  & \neg(\forall{x}\exists{y}F(x, y)     & \Rightarrow F(y, x))                                                              \\
+                         &  & \neg(\neg\forall{x}\exists{y}F(x, y) & \lor F(y, x))        &  & \textit{\small{(Material Implication)}}         &  &  & \\
+                         &  & \forall{x}\exists{y}F(x, y)          & \land \neg F(y, x)   &  & \textit{\small{(De Morgan \& Double Negation)}}         \\
+              \\
+              \text{(b)} &  & \exists{x} \forall{y} \neg F(x, y)   & \land F(y, x)                                                                     \\
+                         &  & \neg\forall{x}\exists{y}F(x, y)      & \land F(y, x)                                                                     \\
+                         &  &
+          \end{flalign*}
+    \item [\boxed{4}]
+          \begin{enumerate}
+              \item [] $F(x)$ \textit{: \quad x is red or green, } $x:$ \textit{is an apple, } $y:$ \textit{is a fruit, } $x \subseteq y$
+              \item $\forall{x}F(x)$
+              \item $\forall{y} F(y) \lor \neg x$
+          \end{enumerate}
 \end{enumerate}
 
 % \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
