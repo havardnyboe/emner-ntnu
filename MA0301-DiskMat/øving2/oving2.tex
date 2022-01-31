@@ -48,21 +48,37 @@ amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
               \item []
           \end{enumerate}
     \item [\boxed{3}]
-          Evaluerer utsagnene hver for seg
+          Evaluerer utsagnene
           \begin{flalign*}
               \text{(a)} &  & \neg(\forall{x}\exists{y}F(x, y)     & \Rightarrow F(y, x))                                                              \\
-                         &  & \neg(\neg\forall{x}\exists{y}F(x, y) & \lor F(y, x))        &  & \textit{\small{(Material Implication)}}         &  &  & \\
-                         &  & \forall{x}\exists{y}F(x, y)          & \land \neg F(y, x)   &  & \textit{\small{(De Morgan \& Double Negation)}}         \\
+              &  & \neg(\neg\forall{x}\exists{y}F(x, y) & \lor F(y, x))        &  & \textit{\small{(Material Implication)}}         &  &  & \\
+              &  & \forall{x}\exists{y}F(x, y)          & \land \neg F(y, x)   &  & \textit{\small{(De Morgan \& Double Negation)}}         \\
               \\
-              \text{(b)} &  & \exists{x} \forall{y} \neg F(x, y)   & \land F(y, x)                                                                     \\
-                         &  & \neg\forall{x}\exists{y}F(x, y)      & \land F(y, x)                                                                     \\
-                         &  &
+              \text{(d)} &  & \exists{y} \forall{a} \neg F(x, y)   & \land F(y, x)
           \end{flalign*}
+          \begin{equation*}
+              \forall{x}\exists{y}F(x, y) \land \neg F(y, x) \equiv \exists{y} \forall{a} \neg F(x, y) \land F(y, x) \blacksquare
+          \end{equation*} \newpage
     \item [\boxed{4}]
           \begin{enumerate}
               \item [] $F(x)$ \textit{: \quad x is red or green, } $x:$ \textit{is an apple, } $y:$ \textit{is a fruit, } $x \subseteq y$
               \item $\forall{x}F(x)$
               \item $\forall{y} F(y) \lor \neg x$
+              \item $\neg \exists x \neg F(x)$
+          \end{enumerate}
+    \item [\boxed{5}]
+          \begin{enumerate}
+              \item [] $\exists{x} \exists{y} \exists{z}(P(x, y) \land P(z, y) \land (x, z) \land \neg P(x, x))$
+              \item True, $x \leqslant z \leqslant y$
+              \item False
+              \item True
+          \end{enumerate}
+    \item [\boxed{6}]
+          \begin{enumerate}
+              \item $\forall{x} \exists{y} \exists{z} P(x, y, z) \land \forall{u, v} (P(u, v) \Leftrightarrow \neg P(v, v, u))$
+                    \\For a model to be true for the statement, all three terms must be true.
+              \item $\forall{x}\exists{y}\forall{z}((P(x, y) \Leftrightarrow P(y, z) \land P(x, y) \Rightarrow \neg P(y, x)))$
+                    \\For a model to be true for the statement, $P(x, y)$ and $P(y, z)$ must be true, and $P(y, x)$ must be false.
           \end{enumerate}
 \end{enumerate}
 
