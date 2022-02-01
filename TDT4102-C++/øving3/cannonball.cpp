@@ -56,5 +56,5 @@ std::array<double, 2> getVelocityVector(double theta, double absVelocity) {
 }
 
 double getDistanceTraveled(double velocityX, double velocityY) {
-    return;
+    return 0;
 }
