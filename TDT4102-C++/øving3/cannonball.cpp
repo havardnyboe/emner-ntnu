@@ -1,5 +1,6 @@
 #include "cannonball.h"
 #include "std_lib_facilities.h"
+#include "utilities.h"
 
 double acclY() { return -9.81; } // akselerasjon i y-retning
 
@@ -47,8 +48,8 @@ double getUserInputAbsVelocity() {
 double degToRad(double deg) { return deg * M_PI / 180; }
 
 // Returnerer henholdsvis farten i x- og y-retning
-double getVelocityX(double theta, double absVelocity) { return absVelocity * cos(theta); }
-double getVelocityY(double theta, double absVelocity) { return absVelocity * sin(theta); }
+double getVelocityX(double theta, double absVelocity) { return absVelocity * std::cos(degToRad(theta)); }
+double getVelocityY(double theta, double absVelocity) { return absVelocity * std::sin(degToRad(theta)); }
 
 std::array<double, 2> getVelocityVector(double theta, double absVelocity) {
     return std::array<double, 2>{getVelocityX(theta, absVelocity),
@@ -56,5 +57,62 @@ std::array<double, 2> getVelocityVector(double theta, double absVelocity) {
 }
 
 double getDistanceTraveled(double velocityX, double velocityY) {
-    return 0;
+    return velocityX * flightTime(velocityY);
+}
+
+double targetPractice(double distanceToTarget, double velocityX, double velocityY) {
+    return distanceToTarget - getDistanceTraveled(velocityX, velocityY);
+}
+
+// opg 4 e)
+
+// bool checkIfDistanceToTargetIsCorrect() {
+//     double error = targetPractice(0, 0, 0);
+//     if (error == 0)
+//         return true;
+// }
+/*
+    får advarsel om at funksjonen ikke returnerer en verdi for alle utfall,
+    eks når error ikke er lik 0.
+*/
+
+void playTargetPractice() {
+    int distanceToTarget = randomWithLimits(100, 1000);
+    int maxTries{10};
+    bool hasWon{false};
+
+    for (int i{1}; i <= maxTries; ++i) {
+        double absVel = getUserInputAbsVelocity();
+        double theta = getUserInputTheta();
+        double distanceBetweenTargetAndBall = targetPractice(distanceToTarget, getVelocityX(theta, absVel), getVelocityY(theta, absVel));
+
+        clearTerminal();
+        if (std::abs(distanceBetweenTargetAndBall) <= 5) {
+            hasWon = true;
+        } else if (distanceBetweenTargetAndBall < 0) {
+            std::cout
+                << "Skuddet var for langt." << std::endl;
+        } else {
+            std::cout << "Skuddet var for kort." << std::endl;
+        }
+
+        std::cout << "Kulen landet "
+                  << std::abs(distanceBetweenTargetAndBall)
+                  << "m unna blinken."
+                  << std::endl
+                  << "Kulen brukte ";
+        printTime(flightTime(getVelocityY(theta, absVel)));
+        std::cout << std::endl
+                  << "Du har "
+                  << maxTries - i
+                  << " skudd igjen."
+                  << std::endl;
+        if (hasWon) {
+            std::cout << "Gratulerer du vant!" << std::endl;
+            break;
+        }
+        if (maxTries - i == 0) {
+            std::cout << "Du tapte! Prøv igjen!" << std::endl;
+        }
+    }
 }
