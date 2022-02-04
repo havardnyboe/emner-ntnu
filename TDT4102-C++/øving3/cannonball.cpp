@@ -107,6 +107,7 @@ void playTargetPractice() {
                   << maxTries - i
                   << " skudd igjen."
                   << std::endl;
+
         if (hasWon) {
             std::cout << "Gratulerer du vant!" << std::endl;
             break;
