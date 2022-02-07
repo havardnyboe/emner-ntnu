@@ -27,18 +27,70 @@ amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
 % \tableofcontents % INNHOLDSFORTEGNELSE
 
 \begin{enumerate}
-    \item [\boxed{1}] Prenex normal form
-    \item [\boxed{2}] $\mathcal{P}(A) = \{\}$
+    \item [\boxed{1}] \begin{flalign*}
+        \neg\forall{x}(P(x) &\Rightarrow \exists{y}Q(x, y))&\\
+        \neg\forall{x}(\exists{y}P(x) &\Rightarrow Q(x, y))&\\
+        \exists{x}\forall{y}\neg P(x) &\Rightarrow Q(x, y)&\\
+        \exists{x}\forall{y}P(x) &\lor Q(x, y)&\\
+    \end{flalign*}
+    \item [\boxed{2}] $\mathcal{P}(A) = 
+    \{\emptyset, \{\{a\}\}, \{\{b, c\}\}, \{\{c, d, \{e, f\}\}\},  \{\{a\}, \{b, c\}\}, \{\{a\}, \{c, d, \{e, f\}\}\}, 
+    \\\{\{b, c\}, \{c, d, \{e, f\}\}\}, \{\{a\}, \{b, c\}, \{c, d, \{e, f\}\}\}\}$\\
     \item [\boxed{3}]
           \begin{enumerate}
-              \item
-              \item
+              \item [] $A = \{1, 2, 3, 4, 5\}, B = \{3, 4, 5, 6, 7\}$
+              \item $A \cap B = \{3, 4, 5\}$
+              \item $A \triangle  B = \{1, 2, 6, 7\}\\
+              C := \{1, 2\}, \quad D := \{6, 7\}\\
+              C \cup D = A \triangle B$
           \end{enumerate}
-    \item [\boxed{4}]
+    \item [\boxed{4}] $\text{Prove: } \overline{X - Y} = \overline{X} \cup Y$
+    \begin{flalign*}
+        \\
+        X - Y &:= \{x : x \in X \land x \notin Y\} = X \cap \overline{Y} \\
+        \\
+        \overline{X - Y} &= \overline{X \cap \overline{Y}} \\
+        &= \overline{X} \cup \overline{\overline{Y}} \quad\textit{(De morgan)}\\
+        &= \overline{X} \cup Y \quad\square\\
+    \end{flalign*}
     \item [\boxed{5}]
+    \begin{enumerate}
+        \item $(\overline{X} \cup Y) \cap (X \cup Y), \quad$ logisk riktig når $X = \emptyset$
+        \item $(\overline{X} \cap Y) \cup (X \cap Y), \quad$ logisk riktig når $X = \emptyset$
+    \end{enumerate}
     \item [\boxed{6}]
+    \begin{flalign*}
+        \overline{Y} - X = \overline{Y} \equiv X &\subseteq Y \equiv X \cap Y = X \\
+        &\Updownarrow\\
+        X &= \emptyset\\
+    \end{flalign*}
     \item [\boxed{7}]
+    \begin{flalign*}
+        \left|\mathcal{P}(A) - \{\{x\}:x \in A\}\right|, &\quad \{\{x\}:x \in A\} \in \mathcal{P}(A) \\
+        \\
+        \left|\mathcal{P}(A)\right| &= 2^n \\
+        \left|\mathcal{P}(A) - \{\{x\}:x \in A\}\right| &= 2^n-1\\
+    \end{flalign*}
     \item [\boxed{8}]
+    \begin{enumerate}
+        \item 
+        \begin{flalign*}
+            |\mathcal{P}(A \times B)| &= 2^{m \cdot n}, \quad |A| = m, |B| = n \\
+            |\mathcal{P}(A)| \cdot |\mathcal{P}(B)| &= 2^m \cdot 2^n = 2^{m+n}\\
+            \\
+            \text{For }m,n \in \{0, 2\} &\text{ er } |\mathcal{P}(A \times B)| = |\mathcal{P}(A)| \cdot |\mathcal{P}(B)|\\
+            \text{For } m,n = 1 &\text{ er } |\mathcal{P}(A \times B)| < |\mathcal{P}(A)| \cdot |\mathcal{P}(B)|\\
+            \text{For } m,n < 0 \text{ og }m,n > 2  &\text{ er } |\mathcal{P}(A \times B)| > |\mathcal{P}(A)| \cdot |\mathcal{P}(B)|\\
+        \end{flalign*}
+        \item Prove: $(A - B) \cap (B - A) = \emptyset$
+        \begin{flalign*}
+            (A - B) \cap (B - A) &= (A \cap \overline{B}) \cap (\overline{A} \cap B) \\
+            &= A \cap \overline{B} \cap \overline{A} \cap B\\
+            &=  A \cap \overline{A} \cap B \cap \overline{B} \\
+            &= \emptyset \cap \emptyset \\
+            &= \emptyset \quad\square \\
+        \end{flalign*}
+    \end{enumerate}
 \end{enumerate}
 
 % \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
