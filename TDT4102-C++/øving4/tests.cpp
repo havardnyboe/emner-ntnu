@@ -22,4 +22,26 @@ void testCallByValueReference() {
     incrementByValueNumTimesRef(v0, increment, iterations);
     std::cout << " result: " << v0 << std::endl;
 }
-void testString() {}
+void testString() {
+    std::string grades;
+    grades = randomizeString(8, 'A', 'F');
+    std::cout << "Grades: " << grades << std::endl;
+}
+
+void testGradeCount() {
+    std::string grades;
+    std::vector<pair<char, int>> gradeCount{};
+    grades = randomizeString(8, 'A', 'F');
+
+    for (char i{'A'}; i <= 'F'; ++i) {
+        gradeCount.push_back(std::make_pair(i, countChar(grades, i)));
+    }
+    std::cout << "Grades: " << grades << std::endl;
+    std::cout << "GradeCount: ";
+    for (auto &grade : gradeCount) {
+        std::cout << grade.first << ": " << grade.second << " ";
+    }
+    std::cout << std::endl;
+
+    std::cout << "Average: " << averageGrade(grades) << std::endl;
+}
