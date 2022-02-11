@@ -40,7 +40,7 @@ string MastermindWindow::wait_for_guess() {
 
             for (int i = 0; i < size; i++) {
                 // Tegn sirkler ved hjelp av draw_circle
-                draw_circle(Point{200, 200}, 5, 2);
+                // draw_circle(Point{200, 200}, 5, 2);
             }
         }
 

@@ -11,6 +11,8 @@ int main() {
 
     srand(time(nullptr)); // seed RNG
 
+    Student student{"", 0, ""}; // lager en tom Student
+
     while (keepRunning) {
         std::cout << std::endl
                   << "--------------\n"
@@ -30,10 +32,7 @@ int main() {
                   << std::endl
                   << "Angi valg (0-11): ";
         std::cin >> menuPane;
-
         clear(); // renser terminalen
-
-        Student student{}; // lager en tom Student
 
         switch (menuPane) {
         case 0: {

@@ -43,8 +43,7 @@ void playMastermindVisual() {
     // std::string code{randomizeString(SIZE, 'A', 'A' + LETTERS - 1)};
     // std::string guess;
 
-    // MastermindWindow mwin{900, 20, winW, winH, SIZE, "Mastermind"};
-    AnimationWindow mwin{};
+    MastermindWindow mwin{900, 20, winW, winH, SIZE, "Mastermind"};
     mwin.wait_for_close();
     mwin.draw_rectangle(Point{10, 10}, padX * 10, padY * 10);
     // mwin.setCodeHidden(false);
