@@ -1,30 +1,36 @@
 #pragma once
 #include "CardDeck.hpp"
 
+class Player {
+  protected:
+    vector<Card> hand;
+    bool drawMoreCards;
+    int handSum{0};
+
+  public:
+    Player();
+    bool askDrawCard();
+    int getCardValue(Card &card);
+    int countHandScore();
+    void drawCard(CardDeck &deck);
+    void printHand();
+};
+
+class Dealer : public Player {
+  public:
+    void printHand(bool showDealerHand);
+};
+
 class Blackjack {
   private:
     CardDeck deck;
-    vector<Card> playerHand;
-    vector<Card> dealerHand;
-    int playerHandSum{0};
-    int dealerHandSum{0};
-
-    bool isAce(Card &card) {
-        return card.getRank() == Rank::ace ? true : false;
-    };
 
   public:
-    bool gameOver = false;
-    string endMessage = "";
-    int getCardValue(Card &card);
-    int getHandScore(vector<Card> &hand);
-    int getPlayerHandSum();
-    int getDealerHandSum();
-    bool askPlayerDrawCard();
-    void drawPlayerCard();
-    void drawDealerCard();
-    void printGameState();
-    void shuffleDeck();
+    Blackjack(Player &player, Dealer &dealer);
+    bool gameOver;
+    string endMessage;
+    void printGameState(Player &player, Dealer &dealer, bool gameOver);
+    void playBlackjack(Player &player, Dealer &dealer);
 };
 
 void playBlackjack(Blackjack &game);

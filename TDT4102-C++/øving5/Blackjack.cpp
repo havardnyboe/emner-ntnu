@@ -4,11 +4,29 @@ void clearScreen() {
     cout << "\033[2J\033[1;1H";
 }
 
-int Blackjack::getCardValue(Card &card) {
+// CLASS: Player
+
+Player::Player() {
+    drawMoreCards = true;
+    handSum = 0;
+}
+
+bool Player::askDrawCard() {
+    if (!drawMoreCards) {
+        return false;
+    }
+    char answer;
+    std::cout << "Do you want to draw another card? (y/n): ";
+    std::cin >> answer;
+    tolower(answer) == 'y' ? drawMoreCards = true : drawMoreCards = false;
+    return drawMoreCards;
+}
+
+int Player::getCardValue(Card &card) {
     int value = 0;
     switch (card.getRank()) {
     case Rank::ace:
-        playerHandSum + 11 <= 21 ? value = 11 : value = 1;
+        handSum + 11 <= 21 ? value = 11 : value = 1;
         break;
     case Rank::two:
         value = 2;
@@ -44,94 +62,106 @@ int Blackjack::getCardValue(Card &card) {
     return value;
 }
 
-int Blackjack::getHandScore(vector<Card> &hand) {
+int Player::countHandScore() {
     int score = 0;
+    // flytter alle ess til enden av hånden for å kunne regne ut score uten å få feil
+    for (int i = 0; i < hand.size(); i++) {
+        if (hand.at(i).getRank() == Rank::ace) {
+            Card temp = hand[i];
+            hand.erase(hand.begin() + i);
+            hand.push_back(temp);
+        }
+    }
     for (Card card : hand) {
         score += getCardValue(card);
     }
     return score;
 }
 
-int Blackjack::getPlayerHandSum() { return playerHandSum; }
-int Blackjack::getDealerHandSum() { return dealerHandSum; }
-
-bool Blackjack::askPlayerDrawCard() {
-    char answer;
-    cout << "Do you want to draw another card? (y/n) ";
-    cin >> answer;
-    return tolower(answer) == 'y' ? true : false;
+void Player::drawCard(CardDeck &deck) {
+    Card card = deck.drawCard();
+    hand.push_back(card);
+    handSum = countHandScore();
 }
 
-void Blackjack::drawPlayerCard() {
-    playerHand.push_back(deck.drawCard());
-    playerHandSum = getHandScore(playerHand);
-    cout << "Player drew " << playerHand.back().toString() << endl;
-}
-
-void Blackjack::drawDealerCard() {
-    dealerHand.push_back(deck.drawCard());
-    dealerHandSum = getHandScore(dealerHand);
-}
-
-void Blackjack::printGameState() {
-    clearScreen();
-    if (!gameOver) {
-        std::cout << "DEALER:" << std::endl
-                  << "  " << dealerHand.front().toString() << std::endl
-                  << "  + " << dealerHand.size() - 1 << " Card(s)" << std::endl
-                  << std::endl;
-    } else {
-        std::cout << "DEALER:" << std::endl;
-        for (Card card : dealerHand) {
-            std::cout << "  " << card.toString() << std::endl;
-        }
-        std::cout << "  SUM: " << dealerHandSum << std::endl;
-    }
-    std::cout << "PLAYER:" << std::endl;
-    for (Card card : playerHand) {
+void Player::printHand() {
+    std::cout << "Your hand: \n";
+    for (Card card : hand) {
         std::cout << "  " << card.toString() << std::endl;
     }
-    std::cout << "  SUM: " << playerHandSum << std::endl;
-
-    std::cout << "  " << endMessage << std::endl;
+    std::cout << "  Your hand sum: " << countHandScore() << std::endl
+              << std::endl;
 }
 
-void Blackjack::shuffleDeck() { deck.shuffle(); }
+// CLASS: Dealer
 
-void playBlackjack(Blackjack &game) {
-    game.shuffleDeck();
-    game.drawPlayerCard();
-    game.drawPlayerCard();
-    game.drawDealerCard();
-    game.drawDealerCard();
-    game.printGameState();
-    while (game.getPlayerHandSum() < 21 && game.askPlayerDrawCard()) {
-        game.drawPlayerCard();
-        game.printGameState();
-    }
-    while (game.getDealerHandSum() < 17) {
-        game.drawDealerCard();
-        game.printGameState();
-    }
-    if (game.getPlayerHandSum() > 21) {
-        game.endMessage = "Player busted!";
-        game.gameOver = true;
-        game.printGameState();
-    } else if (game.getDealerHandSum() > 21) {
-        game.endMessage = "Dealer busted!";
-        game.gameOver = true;
-        game.printGameState();
-    } else if (game.getPlayerHandSum() > game.getDealerHandSum()) {
-        game.endMessage = "Player wins!";
-        game.gameOver = true;
-        game.printGameState();
-    } else if (game.getPlayerHandSum() < game.getDealerHandSum()) {
-        game.endMessage = "Dealer wins!";
-        game.gameOver = true;
-        game.printGameState();
+void Dealer::printHand(bool showDealerHand) {
+    std::cout << "Dealer's hand: \n";
+    if (!showDealerHand) {
+        std::cout << "  " << hand.front().toString() << " \n  [hidden]" << std::endl
+                  << std::endl;
     } else {
-        game.endMessage = "It's a tie!";
-        game.gameOver = true;
-        game.printGameState();
+        for (Card card : hand) {
+            std::cout << "  " << card.toString() << std::endl;
+        }
+        std::cout << "  Dealer's hand sum: " << countHandScore() << endl;
     }
+}
+
+// CLASS: Blackjack
+
+Blackjack::Blackjack(Player &player, Dealer &dealer) {
+    gameOver = false;
+    endMessage = "\n";
+    deck.shuffle();
+    player.drawCard(deck);
+    player.drawCard(deck);
+    dealer.drawCard(deck);
+    dealer.drawCard(deck);
+}
+
+void Blackjack::printGameState(Player &player, Dealer &dealer, bool gameOver) {
+    clearScreen();
+    player.printHand();
+
+    dealer.printHand(gameOver);
+    if (gameOver) {
+        std::cout << endMessage << std::endl;
+    }
+}
+
+void Blackjack::playBlackjack(Player &player, Dealer &dealer) {
+    printGameState(player, dealer, gameOver);
+
+    while (player.countHandScore() < 21 && player.askDrawCard()) {
+        player.drawCard(deck);
+        printGameState(player, dealer, gameOver);
+    }
+
+    if (player.countHandScore() > 21) {
+        endMessage += "You busted! Dealer wins!";
+        gameOver = true;
+    } else if (player.countHandScore() == 21) {
+        endMessage += "You got 21!";
+        gameOver = true;
+    } else {
+        while (dealer.countHandScore() < 17) {
+            dealer.drawCard(deck);
+        }
+        if (dealer.countHandScore() > 21) {
+            endMessage += "Dealer busted! You win!";
+            gameOver = true;
+        } else if (dealer.countHandScore() > player.countHandScore()) {
+            endMessage += "Dealer wins!";
+            gameOver = true;
+        } else if (dealer.countHandScore() < player.countHandScore()) {
+            endMessage += "You win!";
+            gameOver = true;
+        } else {
+            endMessage += "It's a tie!";
+            gameOver = true;
+        }
+    }
+
+    printGameState(player, dealer, gameOver);
 }
