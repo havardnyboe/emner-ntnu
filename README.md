@@ -8,7 +8,7 @@ Diverse emner jeg har tatt, skal ta (og har prøvd å ta) på ntnu
 | [WebTek](IT2805-Webtek/)    | [KTN](TTM4100-KTN)        | [AlgDat]() |        |         |        |
 | [Matte A](MA0001-MatteA/)   | [MMI](TDT4180-MMI)        | [IT1901]() |        |         |        |
 | [DiskMat](TMA4140-DiskMat/) | [C++](TDT4102-C++)        |            |        |         |        |
-| [Ex.phil](EXPH0300-ExPhil/) | [Java](TDT4100-Java)      |            |        |         |        |
+| [Ex.phil](EXPH0300-ExPhil/) | [Java](https://gitlab.stud.idi.ntnu.no/haavasny/tdt-4100)      |            |        |         |        |
 
 ## Emner jeg vurderer å ta
 
