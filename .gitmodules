@@ -1,3 +1,3 @@
 [submodule "TDT4100"]
-	path = TDT4100
+	path = TDT4100-Java/TDT4100
 	url = git@github.com:havardnyboe/TDT4100.git
