@@ -1,6 +1,8 @@
-# emner ntnu
+# emner-ntnu
 
-Diverse emner jeg har tatt, skal ta (og har prøvd å ta) på ntnu
+Diverse emner jeg har tatt, skal ta, og har prøvd å ta
+
+## semesterfordeling
 
 | Høst 21                     | Vår 22                                                    | Høst 22    | Vår 23 | Høst 23 | Vår 24 |
 | --------------------------- | --------------------------------------------------------- | ---------- | ------ | ------- | ------ |
@@ -10,7 +12,7 @@ Diverse emner jeg har tatt, skal ta (og har prøvd å ta) på ntnu
 | [DiskMat](TMA4140-DiskMat/) | [C++](TDT4102-C++)                                        |            |        |         |        |
 | [Ex.phil](EXPH0300-ExPhil/) | [Java](https://gitlab.stud.idi.ntnu.no/haavasny/tdt-4100) |            |        |         |        |
 
-## Emner jeg vurderer å ta
+## emner av interesse
 
 
 | Kode                                                  | Navn                                        | Høst/Vår |
