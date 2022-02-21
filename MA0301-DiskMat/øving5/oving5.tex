@@ -10,7 +10,7 @@
 \usepackage{csquotes}                   % PAKKE TIL BABEL
 \addbibresource{bibliografi.bib}         % PATH TIL BIBLIOGRAFI
 \usepackage[hidelinks]{hyperref}        % LENKER I TOC OG GENERELT
-\usepackage[margin=1in]{geometry}       % VANLIG STØRRELSE MARGIN
+\usepackage[margin=24mm]{geometry}       % VANLIG STØRRELSE MARGIN
 \setlength{\parindent}{0em}             % SKILLER AVSNITT
 \setlength{\parskip}{.8em}              % SKILLER AVSNITT
 \usepackage{graphicx}                   % BILDER \includegraphics[OPTIONS]{PATH}
@@ -27,8 +27,68 @@ amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
 \maketitle
 % \tableofcontents % INNHOLDSFORTEGNELSE
 
+\textit{Ønsker retting}
+
 \begin{enumerate}
-    \item [\boxed{1}]
+    \item [\boxed{1}] \(R = \{(m,n) \in \mathbb{N}\times\mathbb{N}|\exists l \in \mathbb{N}:n=lm\}\)
+    \\[1em]\(R\) er refleksiv fordi \(R(m,n)=R(n,m)\)
+    \\\(R\) er antisymmetrisk fordi \(R(m,n)=R(n,m)\)
+    \\\(R\) er transitiv fordi \(R(m,n)=R(R(m,n),R(n,m))\) 
+    \\[1em]\(R\) er derfor en delvis ordnet mengde. \(\square\)
+
+    \item [\boxed{2}] 
+    \begin{enumerate}
+        \item \textit{1.} er en funksjon fordi for alle \(x\) under relasjonen \(R\) har den bare ett bilde \(y\). (alle \(x\)-verdier svarer til én \(y\)-verdi).
+        \\\textit{2.} er en funksjon fordi for alle \(x\) under relasjonen \(R\) har den bare ett bilde \(y\).
+        \item \textit{1.} er bijektiv fordi for alle elementene i verdimengden er bare avbildet en gang av et element i definisjonsmengden.
+        \\\textit{2.} er surjektiv fordi for alle elementene i verdimengden er avbildet minst en gang av et element i definisjonsmengden \((\sin(0) = \sin(2\pi) = 0)\).
+    \end{enumerate}
+    
+    \item [\boxed{3}] \(f_R = \{(x,y) \in X \times (X/R)|x \in y\}\)
+    \begin{enumerate}
+        \item [(b)] den inverse funksjonen til \(f_R\) er \(f_R^{-1} = \{(y,x) \in X \times (X/R)|x \in y\}\)
+    \end{enumerate}
+    
+    \item [\boxed{4}]
+    \begin{enumerate}
+        \item Fra posisjonen \((1, 1)\) kan springeren flytte til \((2, 3)\) får så å komme til \((3, 1)\).
+        \\\(((1,1),(3,1)) \in R\) \(\square\)
+        \item Gitt observasjonen i (a) er \(R\) transitiv. 
+        \\Relasjonen er symetrisk fordi hvis en springer kan flytte fra \((1,1)\) til \((2,3)\) så kan den også flytte fra \((2,3)\) til \((1,1)\).
+        \\Relasjonen er refleksiv fordi \(((1,1),(1,1)) \in R\), (springeren kan ``flytte'' til feltet den står på).
+        \\Relasjonen en derfor ekvivalensrelasjon \(\square\)
+    \end{enumerate}
+    
+    \item [\boxed{5}]
+    Gitt at \(f\) og \(f^{-1}\) er funksjoner, må de i det minstre være injektive for at \(f^{-1}\) skal være inversfunksjon av \(f\).
+    \(f^{-1}\) er definert slik at \(f^{-1} = \{(y,x)|y=f(x)\}\), siden \(y=f(x)\) tilsvarer en hver y i definisjonsmengden en x i verdimengden. 
+    \(f^{-1}\) surjektiv og dermed også bijektiv.
+    
+    \item [\boxed{6}] 
+    \begin{enumerate}
+        \item \(f:\mathbb{Z} \rightarrow \mathbb{Z}, f(n)=2n\), 
+        \\ikke injektiv fordi \(f(-1)=f(1)=1\), surjektiv fordi for alle elementene i verdimengden finnes det minst ett element i definisjonsmengden som relaterer til dette elementet med funksjonen \(f\).
+        \item \(f:\mathbb{R}\rightarrow\{x\in\mathbb{R}|0\leqslant x < 1\}, f(x) = x - \lfloor x\rfloor \),
+        \\
+        \item \(f:\mathbb{N}\times\mathbb{N}\rightarrow\mathbb{N}, \text{ hvor } f(n, m) \text{ er den største av } m \text{ og } n\),
+        \\ikke injektiv da både f.eks. (1,1) og (0,1) svarer til 1, surjektiv da det for alle elementene i verdimengden finnes minst ett element i definisjonsmengden som relaterer til elementet med funksjonen \(f\).
+        \item \(f:\mathbb{Z}\rightarrow\mathbb{R}, f(n)={n\over 3}\),
+        \\injektiv fordi alle elementene i definisjonsmengden svarer til et unikt element i verdimengden, ikke surjektiv da alle elementene i \(\mathbb{R}\) ikke dekkes av formelen \({n\over 3}\).
+        \\\(f^{-1}:\mathbb{R}\rightarrow\mathbb{Z}\).
+        \item \(f:\mathbb{R}\rightarrow\mathbb{R}, f(x)={x\over3}\),
+        \\bijektiv fordi alle elementene i definisjonsmengden svarer til et unikt element i verdimengden, og alle elementene i verdimengden svarer til et unikt element i definisjonsmengden.
+        \\\(f^{-1}:\mathbb{R}\rightarrow\mathbb{R}, f(x) = 3x\).
+        \item \(f:\mathbb{N}\rightarrow\mathbb{Z}, f(n)={-n\over2} \text{ hvis n er et partall, og } \frac{n+1}{2} \text{ hvis n er et oddetall.}\)
+        \begin{table*}[h]
+            \centering
+            \begin{tabular}{cccccccccc}
+                \(\mathbb{N:}\) & 0 & 1 & 2 & 3 & 4 & 5 & 6 & \(\cdots\) & \(\mathbb{N}\)\\
+                & \(\downarrow\) & \(\downarrow\) & \(\downarrow\) & \(\downarrow\) & \(\downarrow\) & \(\downarrow\) & \(\downarrow\) & & \(\downarrow\)\\
+                \(\mathbb{Z}:\) & 0 & 1 & -1 & 2 & -2 & 3 & -3 & \(\cdots\) & \(\mathbb{Z}\)\\
+            \end{tabular}
+            \\[1em]funksjonen \(f\) er bijektiv.
+        \end{table*}        
+    \end{enumerate}
 \end{enumerate}
 
 % \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
