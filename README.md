@@ -34,9 +34,3 @@ Diverse emner jeg har tatt, skal ta, og har prøvd å ta
 | [TDT4260](https://www.ntnu.no/studier/emner/TDT4260/) | Datamaskinarkitektur                        | Vår      |
 | [TDT4265](https://www.ntnu.no/studier/emner/TDT4265/) | Datasyn og dyp læring                       | Vår      |
 |                                                       |                                             |          |
-
-## Checkliste for å lære et nytt språk
-- Hello World
-- Celsius til Fahrenheit 
-- Tekstspill (Typ. Blackjack, Poker, Ultimate Tic-Tac-Toe, etc.)
-- Lesing og skriving til fils
