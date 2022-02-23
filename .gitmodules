@@ -4,3 +4,6 @@
 [submodule "TDT4100-Java/TDT4100"]
 	path = TDT4100-Java/TDT4100
 	url = git@github.com:havardnyboe/TDT4100.git
+[submodule "IT2805-Webtek/prosjekt"]
+	path = IT2805-Webtek/prosjekt
+	url = git@github.com:havardnyboe/IT2805-Prosjekt.git
