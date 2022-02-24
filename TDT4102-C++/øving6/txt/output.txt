@@ -1,0 +1,10 @@
+1: dette
+2: er
+3: en
+4: test
+5: for
+6: å
+7: se
+8: om
+9: det
+10: funker
