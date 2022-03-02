@@ -1,0 +1,9 @@
+Alexander Kielland,Car,1000,1234,Text missing!
+Bjoernstjerne Bjoernson,Travel,2000,1235,Text missing!
+Sigrid Undset,Contents,6000,1236,Text missing!
+Amalie Skram,Travel,2000,1237,Text missing!
+Henrik Ibsen,Contents,3000,1238,Text missing!
+AAdne Gaarborg,Contents,4000,1239,Text missing!
+Camilla Collett,Car,3000,1240,Text missing!
+Inger Hagerup,Car,3000,1241,Text missing!
+Leif Juster,Contents,10000,1242,Text missing!
