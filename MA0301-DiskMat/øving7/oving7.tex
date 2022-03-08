@@ -25,7 +25,6 @@ amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
 \begin{document}
 
 \maketitle
-\textit{Ønsker retting}
 
 \begin{enumerate}
     \item [\boxed{1}]
@@ -50,7 +49,6 @@ amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
         &\textcolor{white}{:::} \quad 33 = 18 + 15 \\
         &\textcolor{white}{:::} \quad 33 = 33 \\
     \end{flalign*}
-    \item [\boxed{3}]
     \item [\boxed{4}] Primtall t.o.m. \(11\): \(\{2, 3, 5, 7, 11\}\)
     \begin{flalign*} 
         \text{Grunnsteg} &: \quad 4 = 2 \cdot 2 &\\
@@ -58,8 +56,28 @@ amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
         &\textcolor{white}{:::} \quad 8 = 2 \cdot 4 \\
         &\textcolor{white}{:::} \quad 9 = 3 \cdot 3 \\
         &\textcolor{white}{:::} \quad 10 = 2 \cdot 5 \\
-        \text{Bevis} &: \quad \text{Anta } k = \prod_{i=1}^{n} a_i, \\
+        \text{Bevis} &: \quad \text{Anta at det finnes minst ett heltall } a > 1\\ 
+        &\textcolor{white}{:::} \quad \text{som ikke kan skrives som et produkt av primtall} \\
+        &\textcolor{white}{:::} \quad \text{hvis et tall } b \text{ kan skrives som } 1 < b < a\\
+        &\textcolor{white}{:::} \quad \text{så kan } b \text{ skrives som et produkt av primtall } p_1 \cdot p_2 \cdots p_n\\
+        &\textcolor{white}{:::} \quad \text{da er a åpenbart ikke et primtall} \\
+        &\textcolor{white}{:::} \quad \text{siden hvis det var det kunne det skrives som } a = a \quad\square\\
     \end{flalign*}
+    \item [\boxed{7}] \(b \rightarrow c \rightarrow c \rightarrow d\) siden c er refleksiv.
+    \item [\boxed{8}]
+    \begin{enumerate}
+        \item a: inn = \(b \rightarrow a\), ut = \(a \rightarrow c\)
+        \\b: inn = \(d \rightarrow b\), ut = \(b \rightarrow a, b \rightarrow c\)
+        \\c: inn = \(a \rightarrow c\), ut = \(c \rightarrow d, c \rightarrow e\)
+        \\d: inn = \(c \rightarrow d, a \rightarrow d\), ut = \(d \rightarrow b, d \rightarrow e\)
+        \\e: inn = \(c \rightarrow e, d \rightarrow e\)
+        \item \(a \rightarrow b \rightarrow c \rightarrow d \rightarrow a, 
+        \\b \rightarrow c \rightarrow d \rightarrow b\)
+        \\ en sykel passerer gjennom \(a\), to sykler passerer gjennom \(b, c, d\), ingen sykler passerer gjennom \(e\)
+        \item 
+        \item 4, \(a \rightarrow c \rightarrow d \rightarrow b \rightarrow a,
+        \\a \rightarrow d \rightarrow b \rightarrow c \rightarrow e\)
+    \end{enumerate}
 \end{enumerate}
 
 % \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
