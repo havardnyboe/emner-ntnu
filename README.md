@@ -22,6 +22,7 @@ Diverse emner jeg har tatt, skal ta, og har prøvd å ta
 | [TDT4258](https://www.ntnu.no/studier/emner/TDT4258/) | Maskinnær programmering* (Anbefalt av Bart) | Høst     |
 | [TDT4295](https://www.ntnu.no/studier/emner/TDT4295/) | Datamaskinprosjekt                          | Høst     |
 | [TDT4255](https://www.ntnu.no/studier/emner/TDT4255/) | Datamaskinkonstruksjon                      | Høst     |
+| [IT1604](https://www.ntnu.no/studier/emner/IT1604/)   | Digitalt samfunn*                           | Høst     |
 | [IT2810](https://www.ntnu.no/studier/emner/IT2810)    | Webutvikling                                | Høst     |
 | [TDT4195](https://www.ntnu.no/studier/emner/TDT4195/) | Grunnleggende visuell databehandling        | Høst     |
 | [TDT4200](https://www.ntnu.no/studier/emner/TDT4200/) | Parallelle beregninger*                     | Høst     |
