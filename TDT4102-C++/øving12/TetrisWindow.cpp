@@ -10,7 +10,7 @@ const map<TetrominoType, Color> colorMap{
     {TetrominoType::I, Color::cyan},
     {TetrominoType::NONE, 49}};
 
-TetrisWindow::TetrisWindow() : AnimationWindow(1000, 100, windowWidth, windowHeight, "Tetris") {
+TetrisWindow::TetrisWindow() : AnimationWindow(4000, 400, windowWidth, windowHeight, "Tetris") {
     gridMatrix = vector<vector<TetrominoType>>(windowHeight, vector<TetrominoType>(windowWidth, TetrominoType::NONE));
     // fill the grid with NONE
     for (int i = 0; i < windowHeight / blockSize; i++) {
@@ -36,11 +36,11 @@ void TetrisWindow::run() {
         }
         handleInput();
 
-        /********************************************************/
-        // Kall draw-funksjonene her
+        // /********************************************************/
+        // // Kall draw-funksjonene her
         drawMatrixGrid();
         drawCurrentTetromino(currentTetromino, *this);
-        /********************************************************/
+        // /********************************************************/
 
         next_frame();
     }
@@ -87,17 +87,23 @@ void TetrisWindow::moveTetrominoDown() {
 }
 
 void TetrisWindow::handleInput() {
+    static bool lastZKeyState = false;
     static bool lastLeftShiftKeyState = false;
     static bool lastUpKeyState = false;
     static bool lastDownKeyState = false;
     static bool lastLeftKeyState = false;
     static bool lastRightKeyState = false;
 
+    bool currentZKeyState = is_key_down(KeyboardKey::Z);
     bool currentLeftShiftKeyState = is_key_down(KeyboardKey::LEFTSHIFT);
     bool currentUpKeyState = is_key_down(KeyboardKey::UP);
     bool currentDownKeyState = is_key_down(KeyboardKey::DOWN);
     bool currentLeftKeyState = is_key_down(KeyboardKey::LEFT);
     bool currentRightKeyState = is_key_down(KeyboardKey::RIGHT);
+
+    if (currentZKeyState && !lastZKeyState) {
+        currentTetromino.rotateCounterClockwise();
+    }
 
     if (currentLeftShiftKeyState && !lastLeftShiftKeyState) {
         // currentTetromino.rotateCounterClockwise();
@@ -120,6 +126,7 @@ void TetrisWindow::handleInput() {
         currentTetromino.moveRight();
     }
 
+    lastZKeyState = currentZKeyState;
     lastLeftShiftKeyState = currentLeftShiftKeyState;
     lastUpKeyState = currentUpKeyState;
     lastDownKeyState = currentDownKeyState;
@@ -140,15 +147,10 @@ void TetrisWindow::handleInput() {
                     currentTetromino.moveToLastPosition();
                 }
                 // Check if the tetromino has landed on another tetromino
-                for (i = gridMatrix.size() - 1; i >= 0; i--) {
-                    for (j = gridMatrix[i].size() - 1; j >= 0; j--) {
-                        if (gridMatrix[i][j] != TetrominoType::NONE &&
-                            currentTetromino.getPosition().y + i * blockSize == windowHeight - blockSize &&
-                            currentTetromino.getPosition().x + j * blockSize == j * blockSize) {
-                            fastenTetromino();
-                            generateRandomTetromino();
-                        }
-                    }
+                if (currentTetromino.getPosition().y + i * blockSize > windowHeight - blockSize) {
+                    currentTetromino.moveToLastPosition();
+                    fastenTetromino();
+                    generateRandomTetromino();
                 }
 
                 // Fasten the tetromino if it is colliding with the floor
