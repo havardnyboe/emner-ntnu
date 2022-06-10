@@ -1,18 +1,3 @@
-# TDT4102 - Prosedyre- og objektorientert programmering
-
-# Øvinger
-
-- [x] [Øving 0](øving0)
-- [x] [Øving 1](øving1)
-- [x] [Øving 2](øving2)
-- [x] [Øving 3](øving3)
-- [x] [Øving 4](øving4)
-- [x] [Øving 5](øving5)
-- [ ] [Øving 6](øving6)
-- [ ] [Øving 7](øving7)
-- [ ] [Øving 8](øving8)
-
-
 # Notater
 
 ## inkludering av filer
@@ -24,7 +9,7 @@
 - `c++std::vector` dynamic length
 - `c++std::array` fixed length
 
-## enumirations `enum`
+## enumerations `enum`
 
 - begrensinger av verdier
 - istedet for `true`eller `false`
