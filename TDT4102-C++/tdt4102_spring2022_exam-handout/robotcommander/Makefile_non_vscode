@@ -1,0 +1,53 @@
+# This Makefile is used to build the program on linux without the\n# course vscode infrastructure.\n\n# Rename to Makefile to use\n\n# This file is named GNUmakefile to avoid conflict with course
+# files. GNU make should prefer this over Makefile
+
+## Project conefiguration
+
+# Target binary
+TARGET = robotcommander
+
+# Handout/solution distributable base filename
+DIST_FILENAME_BASE = tdt4102_spring2022_exam
+
+# Handout folder name
+DIST_FOLDER_NAME = robotcommander
+
+# Directory containing exam
+PDF_DIR = ../../../assignments-spring/
+PDF_FILES = part3-assignment-english.pdf \
+            part3-assignment-norsk.pdf \
+            part3-assignment-nynorsk.pdf \
+            figures/robotcommander_video.mp4
+
+# LaTeX source files to use for the taskbank
+TASKBANK_DIR=$(PDF_DIR)
+TASKBANK_FILES = part3.tex
+
+# The argument of these LaTeX commands will be extracted and included
+# in the source code comment
+COMMENTWEAVER_ALLOWED_COMMANDS = en
+
+# Source files
+SRCS = main.cpp \
+       application.cpp \
+       robot.cpp \
+       robot_grid.cpp \
+       interpreter.cpp
+
+# Header files
+HEADERS = application.h \
+          robot.h \
+          robot_grid.h \
+          interpreter.h \
+          tracing_application.h
+
+# Data directories to include in handout/
+EXTRA_DIRS = programs
+
+# Debug build
+DEBUG = 0
+
+# Make handout
+HANDOUT = 0
+
+include ../../../../../common/build.mk
