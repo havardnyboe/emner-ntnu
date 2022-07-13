@@ -22,9 +22,10 @@ Diverse emner jeg har tatt, skal ta, og har prøvd å ta
 | [TDT4295](https://www.ntnu.no/studier/emner/TDT4295/) | Datamaskinprosjekt                       | Høst     |
 | [TDT4255](https://www.ntnu.no/studier/emner/TDT4255/) | Datamaskinkonstruksjon                   | Høst     |
 | [IT1604](https://www.ntnu.no/studier/emner/IT1604/)   | Digitalt samfunn                         | Høst     |
-| [IT2810](https://www.ntnu.no/studier/emner/IT2810)    | Webutvikling                             | Høst     |
+| [IT2810](https://www.ntnu.no/studier/emner/IT2810)    | Webutvikling*                            | Høst     |
 | [TDT4195](https://www.ntnu.no/studier/emner/TDT4195/) | Grunnleggende visuell databehandling     | Høst     |
-| [TDT4200](https://www.ntnu.no/studier/emner/TDT4200/) | Parallelle beregninger*                  | Høst     |
+| [TDT4200](https://www.ntnu.no/studier/emner/TDT4200/) | Parallelle beregninger                   | Høst     |
+| [TDT4117](https://www.ntnu.no/studier/emner/TDT4117/) | Informasjonsgjenfinning                  | Høst     |
 | [TTM4135](https://www.ntnu.no/studier/emner/TTM4135/) | Anvendt kryptografi og nettverksikkerhet | Vår      |
 | [TDT4171](https://www.ntnu.no/studier/emner/TDT4171/) | Metoder i kunstig intelligens            | Vår      |
 | [TDT4186](https://www.ntnu.no/studier/emner/TDT4186/) | Operativsystemer*                        | Vår      |
