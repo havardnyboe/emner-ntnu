@@ -1,7 +1,7 @@
 # directories
-build
-exe
-lst
+*/build
+*/exe
+*/lst
 # files
 .cproject
 .project
