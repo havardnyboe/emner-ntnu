@@ -1,0 +1,8 @@
+# directories
+build
+exe
+lst
+# files
+.cproject
+.project
+com.silabs.*
