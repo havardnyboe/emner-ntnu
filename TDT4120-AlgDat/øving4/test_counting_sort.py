@@ -3,9 +3,22 @@
 
 
 def counting_sort(A, n):
-    # Skriv koden din her
-    pass
-
+    k = 2048
+    B = [0]*n
+    C = [0]*k # Genererer array på lengde k
+    for i in A:
+        C[i] += 1 # Teller instanser av hvert tall
+    for i in range(1,k):
+        C[i] += C[i-1]
+    # print(f"""A:{A}
+    # B:{B}
+    # C:{C}""")
+    for i in range(n,0,-1): # Går baklengs for å gjøre algoritmen stabil
+        # if (n == 0): return B
+        num = A[i-1]
+        B[C[num]-1] = num
+        C[num] -= 1
+    return B
 
 tests = (
     ([], []),
