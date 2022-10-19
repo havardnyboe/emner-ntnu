@@ -10,31 +10,49 @@
 Start:
 
 	// Setter opp SysTick
-	LDR R0, =SYSTICK_BASE    // Control and Status register
-	MOV R1, 0b111            // CLKSOURCE, TICKINT og ENABLE bits settes til 1
+	LDR R0, =SYSTICK_BASE    // SysTick Control og Status register
+	MOV R1, 0b000            // CLKSOURCE, TICKINT og ENABLE bits settes til 0 (starter pauset)
 	STR R1, [R0]
     ADD R1, R0, SYSTICK_LOAD // Reload Value Register
     ADD R2, R0, SYSTICK_VAL  // Current Value Register
 	LDR R0, =1400000         // Frequency / 10
 	STR R0, [R1]
 	STR R0, [R2]
-	// Setter opp GPIO interrupt handler
 
 	// Finner GPIO offsets og laster knapp og LED til register
-    LDR R1, =LED_PORT
-	LDR R2, =BUTTON_PORT
 	LDR R0, =PORT_SIZE
+    LDR R1, =LED_PORT
 	MUL R1, R1, R0
-	MUL R2, R2, R0
+
 	LDR R0, =GPIO_BASE
+	ADD R4, R0, GPIO_IFC       // R4 = Interrupt Flag Clear (adresse)
+
 	ADD R1, R1, R0
-	ADD R2, R2, R0
-	LDR R4, =GPIO_PORT_DIN
-	ADD R4, R4, R2             // R4 = BTN0 (adress)
 	LDR R5, =GPIO_PORT_DOUTSET
-	ADD R5, R5, R1             // R5 = LED_SET (adress)
+	ADD R5, R5, R1             // R5 = LED_SET (adresse)
 	LDR R6, =GPIO_PORT_DOUTCLR
-	ADD R6, R6, R1             // R6 = LED_CLR (adress)
+	ADD R6, R6, R1             // R6 = LED_CLR (adresse)
+
+	MOV R1, 0b1111
+	LSL R1, R1, 4
+	MVN R1, R1
+	ADD R2, R0, GPIO_EXTIPSELH
+	LDR R3, [R2]
+	AND R3, R3, R1
+	MOV R1, BUTTON_PORT
+	LSL R1, R1, 4
+	ORR R3, R3, R1
+	STR R3, [R2]               // BUTTON_PORT er satt til interrupt
+
+	ADD R2, R0, GPIO_EXTIFALL
+	LDR R3, [R2]
+	MOV R1, #1
+	LSL R1, R1, BUTTON_PIN
+	ORR R3, R3, R1
+	STR R3, [R2]               // fallende flanke er satt på BUTTON_PIN
+	ADD R2, R0, GPIO_IEN
+	STR R3, [R2]               // enabled interrupt på BUTTON_PIN
+
 	// Laster tenths, seconds og minutes til register
     MOV R7, #0
     MOV R8, #0
@@ -44,30 +62,36 @@ Start:
     LDR R12, =minutes
 
 	// R4-R12 er nå reservert, R0-R3 kan brukes fritt
-
 	B LOOP
 
-LOOP:
-
-	// les knapp
-	// if BTN is PRESSED
-	//     interrupt and pause timer
+LOOP: // tom loop for at programmet skal jobbe med noe
 
 	B LOOP
-
 
 .global GPIO_ODD_IRQHandler
 .thumb_func
 GPIO_ODD_IRQHandler:
-    
 
+	LDR R0, =SYSTICK_BASE
+	LDR R1, [R0]
+	CMP R1, 0b000 // if SYSTICK_BASE == 0b000 (programmet er pauset)
+	BEQ RESUME    // goto RESUME
+                  // else:
+	MOV R1, 0b000
+	STR R1, [R0]  // sett SYSTICK_BASE = 0b000 (pause programmet)
+	B IF_CLEAR
 
 	BX LR
-
 
 .global SysTick_Handler
 .thumb_func
 SysTick_Handler:    // interrupt hvert tiendels sekund
+
+	B INC_TENTHS
+
+	BX LR
+
+INC_TENTHS:
 
 	ADD R7, R7, #1  // tenths++ 
 	CMP R7, #10     // if tenths == 10
@@ -76,7 +100,6 @@ SysTick_Handler:    // interrupt hvert tiendels sekund
 	STR R7, [R10]   // laster tenths med verdien til tenths 
 
 	BX LR
-
 
 INC_SECONDS:
 
@@ -106,7 +129,6 @@ INC_MINUTES:
 
 	BX LR
 
-
 READ_BTN:
 
     LDR R1, [R4]           // leser inn fra knapp
@@ -116,6 +138,21 @@ READ_BTN:
 
     BX LR
 
+IF_CLEAR:
+
+	MOV R0, #1
+	LSL R0, R0, BUTTON_PIN
+	STR R0, [R4]           // renser interrupt flag
+
+	BX LR
+
+RESUME:
+
+	LDR R0, =SYSTICK_BASE
+	MOV R1, 0b111
+	STR R1, [R0]           // setter SYSTICK_BASE = 0b111 (enable SysTick)
+
+	B IF_CLEAR
 
 TURNON:
 
@@ -124,7 +161,6 @@ TURNON:
 	STR R0, [R5]        // laster PIN tallet til DOUTSET
 
 	BX LR
-
 
 TURNOFF:
 
@@ -135,6 +171,4 @@ TURNOFF:
 	BX LR
 
 
-
 NOP // Behold denne på bunnen av fila
-
