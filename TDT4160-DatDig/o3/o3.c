@@ -80,25 +80,134 @@ typedef struct {
     volatile word EM4WUCAUSE;
 } gpio_map_t;
 
+typedef struct {
+    volatile word CTRL;
+    volatile word LOAD;
+    volatile word VAL;
+    volatile word CALIB;
+} systick_t;
+
 #define LED_PIN 2
+#define BTN1_PIN 9
+#define BTN2_PIN 10
 #define LED_PORT GPIO_PORT_E
+#define BTN_PORT GPIO_PORT_B
+
+enum state {
+    SECONDS,
+    MINUTES,
+    HOURS,
+    COUNTDOWN,
+    ALARM
+};
 
 // Globale variabler
-volatile gpio_map_t *GPIO_map;
+volatile gpio_map_t *gpio;
+volatile systick_t *sys_tick;
+enum state state;
+int seconds, minutes, hours;
 
 void lightLED(bool turnOn) {
-    if (turnOn)
-        GPIO_map->ports[LED_PORT].DOUTSET = 0b0001 << LED_PIN;
-    else
-        GPIO_map->ports[LED_PORT].DOUTCLR = 0b0001 << LED_PIN;
+    if (turnOn) {
+        gpio->ports[LED_PORT].DOUTSET = 0b0001 << LED_PIN;
+    } else {
+        gpio->ports[LED_PORT].DOUTCLR = 0b0001 << LED_PIN;
+    }
+}
+
+void GPIO_ODD_IRQHandler(void) {
+    switch (state) {
+    case SECONDS:
+        seconds == 59 ? seconds = 0, minutes++ : seconds++;
+        break;
+    case MINUTES:
+        minutes == 59 ? minutes = 0, hours++ : minutes++;
+        break;
+    case HOURS:
+        HOURS == 99 ? hours : hours++;
+        break;
+    default:
+        break;
+    }
+
+    gpio->IFC = 1 << BTN1_PIN;
+}
+
+void GPIO_EVEN_IRQHandler(void) {
+    switch (state) {
+    case COUNTDOWN:
+        break;
+    case ALARM:
+        state = SECONDS;
+        lightLED(false);
+        break;
+    default:
+        state++;
+        break;
+    }
+
+    gpio->IFC = 1 << BTN2_PIN;
+}
+
+void SysTick_Handler(void) {
+    switch (state) {
+    case COUNTDOWN:
+        seconds--;
+        if (hours == 0 && minutes == 0 && seconds == 0) {
+            state = ALARM;
+            lightLED(true);
+        }
+        if (seconds == -1) {
+            minutes--;
+            seconds = 59;
+            if (minutes == -1) {
+                hours--;
+                minutes = 59;
+            }
+        }
+        break;
+    default:
+        break;
+    }
 }
 
 int main(void) {
     init();
 
-    GPIO_map = (gpio_map_t *)GPIO_BASE;
+    // setup SysTick
+    sys_tick = (systick_t *)SYSTICK_BASE;
+    sys_tick->CTRL = 0b0111;
+    sys_tick->LOAD = FREQUENCY;
 
-    lightLED(true);
+    // setup LED
+    gpio = (gpio_map_t *)GPIO_BASE;
+    gpio->ports[LED_PORT].MODEL = ((~(0b1111 << 8)) & gpio->ports[LED_PORT].MODEL) | (GPIO_MODE_OUTPUT << 8);
+
+    // setup BTN1 with interrupt
+    gpio->ports[BTN_PORT].MODEH = ((~(0b1111 << 4)) & gpio->ports[BTN_PORT].MODEH) | (GPIO_MODE_INPUT << 4);
+    gpio->EXTIPSELH = ((~(0b1111 << 4)) & gpio->EXTIPSELH) | (0b0001 << 4);
+    gpio->EXTIFALL = gpio->EXTIFALL | (1 << BTN1_PIN);
+    gpio->IFC = gpio->IFC | (1 << BTN1_PIN);
+    gpio->IEN = gpio->IEN | (1 << BTN1_PIN);
+
+    // setup BTN2 with interrupt
+    gpio->ports[BTN_PORT].MODEH = ((~(0b1111 << 8)) & gpio->ports[BTN_PORT].MODEH) | (GPIO_MODE_INPUT << 8);
+    gpio->EXTIPSELH = ((~(0b1111 << 8)) & gpio->EXTIPSELH) | (0b0001 << 8);
+    gpio->EXTIFALL = gpio->EXTIFALL | (1 << BTN2_PIN);
+    gpio->IFC = gpio->IFC | (1 << BTN2_PIN);
+    gpio->IEN = gpio->IEN | (1 << BTN2_PIN);
+
+    // default display
+    seconds = 0;
+    minutes = 0;
+    hours = 0;
+    state = SECONDS; // start in SECONDS state
+
+    while (true) {
+        char output[7];
+        time_to_string(output, hours, minutes, seconds);
+        lcd_write(output);
+    }
 
     return 0;
 }
