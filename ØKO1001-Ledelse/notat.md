@@ -20,3 +20,5 @@ Drøft teorier opp mot problemstilling.
 ## Språk og begrepsnivå
 
 Målgruppe er "Morten", trenger ikke forklare ting han forstår.
+
+Husk å forklar begreper.
