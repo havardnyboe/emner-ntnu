@@ -5,4 +5,10 @@
 - Asymptotisk notasjon
     - forenklinger
     - likninger med asymptotisk notasjon
+- BFS og DFS
+- Traverseringsalgoritmer 
+- Flytnettverk og restnettverk
+    - Maks flyt = min snitt
+    - Ford-Fulkerson
+    - Forelesning 12
 
