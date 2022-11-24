@@ -1,6 +1,6 @@
 % #region PREAMBEL OG PAKKER
 \documentclass[a4paper, 12pt]{article}  % DOKUMENTKLASSE
-\title{Eksamen Ledelse}                 % TITTEL
+\title{Eksamen Ledelse, Økonomidel}      % TITTEL
 \author{Kandidatnr. 10026}              % FORFATTER
 \date{\today}                           % DATO & FAG
 
@@ -38,20 +38,29 @@
 \thispagestyle{empty}
 \addtocounter{page}{-1}
 \newpage
-\tableofcontents % INNHOLDSFORTEGNELSE
-\thispagestyle{empty}
-\addtocounter{page}{-1}
-\newpage
+% \tableofcontents % INNHOLDSFORTEGNELSE
+% \thispagestyle{empty}
+% \addtocounter{page}{-1}
+% \newpage
 % #endregion
 \section{Lorem}
 
-\kant[1]
+\begin{table}[!htp]
+  \centering
+  \begin{tabular}{lrrrrr}
+  \toprule
+  Hei &dette &er &en &test \\
+  \midrule
+  1 &2 &3 &511 &5 \\
+  6 &2 &9 &1FF &2 \\
+  11 &2 &81 &111111111 &5 \\
+  16 &2 &6561 &511 &6 \\
+  21 &2 &43046721 &1297 &5 \\
+  \bottomrule
+  \end{tabular}
+  \end{table}
 
-\kant[2]
-
-\kant[3]
-
-\parencite[22]{ledelse}
+\parencite{berg19}
 
 \newpage
 \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
