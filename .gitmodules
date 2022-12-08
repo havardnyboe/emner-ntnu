@@ -7,3 +7,9 @@
 [submodule "IT2805-Webtek/prosjekt"]
 	path = IT2805-Webtek/prosjekt
 	url = git@github.com:havardnyboe/IT2805-Prosjekt.git
+[submodule "IT1901-ITPro1/time-master"]
+	path = IT1901-ITPro1/time-master
+	url = git@github.com:havardnyboe/IT1901-TimeMaster.git
+[submodule "IT1901-ITPro1/javafx-template"]
+	path = IT1901-ITPro1/javafx-template
+	url = git@github.com:havardnyboe/IT1901-RPNCalculator.git
