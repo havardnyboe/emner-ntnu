@@ -16,6 +16,7 @@ def les_meteoritter(filnavn):
                 meteoritt[3] = float(meteoritt[3]) # masse til flyttall
                 meteoritt[4] = int(meteoritt[4]) # nedslagsår til heltall
                 
+            # meteoritter.append(meteoritt) # legger til meteoritten
                 meteoritter.append(meteoritt) # legger til meteoritten
             
     return meteoritter
