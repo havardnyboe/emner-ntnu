@@ -1,1 +1,3 @@
 build
+xv6.out*
+__pycache__/
