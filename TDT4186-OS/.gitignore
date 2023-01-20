@@ -1,3 +1,8 @@
 build
 xv6.out*
 __pycache__/
+
+*.img
+kernel
+mkfs
+user
