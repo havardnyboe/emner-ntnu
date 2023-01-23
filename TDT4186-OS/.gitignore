@@ -2,6 +2,8 @@ build
 xv6.out*
 __pycache__/
 
+.gdbinit
+*.ans
 *.img
 kernel
 mkfs
