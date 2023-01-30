@@ -39,5 +39,25 @@ elseif case == "3"
         println(x, "\n")
     end
 elseif case == "4"
-    
+    println("Which file do you want to read?")
+    file = readline(readline())
+    ans = frequency_analysis(file, 2)
+    println("Showing the 10 most common bi-grams:")
+    for i in 1:10
+        max = findmax(ans)
+        println("$(max[2])\t$(max[1])")
+        pop!(ans, max[2])
+    end
+    for i in 1:length(file)
+        if file[i] == ','
+            print("0")
+        elseif file[i] == '.'
+            print("1")
+        elseif file[i] == '-'
+            print("2")
+        else
+            print(file[i])
+        end
+    end
+    println()
 end

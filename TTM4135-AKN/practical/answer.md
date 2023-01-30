@@ -21,12 +21,10 @@ encryption of `THE`: `JY,`
 
 ### Vigenère analysis
 
-enten 0.txt eller 2.txt
-
-file:
-key:
+file: `2.txt`
+key: `zlncm`
 
 ### Hill cipher analysis
 
-file:
-key:
+file: `0.txt`
+key: $\left(\begin{matrix} 13 & 14 \\ 23 & 25 \end{matrix}\right)$
