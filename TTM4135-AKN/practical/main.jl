@@ -34,7 +34,10 @@ elseif case == "2"
 elseif case == "3"
     println("Which file do you want to read?")
     file = readline(readline())
-    println(vigenere(file))
+    ans = vigenere(file, 5)
+    for x in ans
+        println(x, "\n")
+    end
 elseif case == "4"
     
 end

@@ -1,10 +1,14 @@
 include("caesar.jl")
 
-function vigenere(cipher)
-    for i in 1:5
-        for j in i:5:length(cipher)
-            print(cipher[j])
-        end
-        println("\n")
+function vigenere(cipher, period)
+    arr = []
+    for _ in 1:period
+        push!(arr, "")
     end
+    for i in 1:period
+        for j in i:period:length(cipher)
+            arr[i] *= cipher[j]
+        end
+    end
+    return arr
 end
