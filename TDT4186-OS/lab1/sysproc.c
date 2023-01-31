@@ -22,6 +22,13 @@ sys_getpid(void)
 }
 
 uint64
+sys_getproc(void)
+{
+  printf("%s (%d): %d\n", myproc()->name, myproc()->pid, myproc()->state);
+  return 0;
+}
+
+uint64
 sys_fork(void)
 {
   return fork();
@@ -88,4 +95,13 @@ sys_uptime(void)
   xticks = ticks;
   release(&tickslock);
   return xticks;
+}
+
+// print hello world
+// just for testing
+uint64
+sys_hello(void)
+{
+  printf("Hello, World!\n");
+  return 0;
 }
