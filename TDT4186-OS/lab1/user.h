@@ -23,7 +23,7 @@ char* sbrk(int);
 int sleep(int);
 int uptime(void);
 int hello(void);
-int getpname(void);
+int getproc(void);
 
 // ulib.c
 int stat(const char*, struct stat*);
