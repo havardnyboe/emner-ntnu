@@ -21,30 +21,6 @@ sys_getpid(void)
   return myproc()->pid;
 }
 
-struct proc* proc_arr[5];
-struct proc** ptr_arr = proc_arr;
-int tally = 0;
-void
-find_proc(struct proc* p)
-{
-
-  if (!strncmp(p->name, "init", 3)){ 
-    *ptr_arr = p;
-    for (int i = tally; i >= 0; i--)
-    {
-      printf("%s (%d): %d\n", proc_arr[i]->name, proc_arr[i]->pid, proc_arr[i]->state);
-    }
-    ptr_arr = proc_arr;
-    tally = 0;
-    }
-  else {
-    *ptr_arr = p;
-    ptr_arr++;
-    tally++;
-    find_proc(p->parent);
-  }
-}
-
 uint64
 sys_getproc(void)
 {
