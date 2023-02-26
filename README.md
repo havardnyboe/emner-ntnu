@@ -8,8 +8,8 @@ Diverse emner jeg har tatt, skal ta, og har prøvd å ta
 | ------------------------------- | ------------------------- | -------------------------- | ------------------------ | --------------- | -------------- |
 | [ITGK](TDT4109-ITGK/)           | [DiskMat](MA0301-DiskMat) | [DatDig](TDT4160-DatDig)   | [PU](TDT4145-PU)         | [*ProgSpråk*]() | [ITPro2]()     |
 | [WebTek](IT2805-Webtek/)        | [KTN](TTM4100-KTN)        | [AlgDat](TDT4120-AlgDat)   | [DatDat](TDT4145-DatDat) | [*WebDev*]()    | [* *]()        |
-| [Matte A](MA0001-MatteA/)       | [MMI](TDT4180-MMI)        | [ITPro1](IT1901-ITPro1)    | [OS](TDT4186-OS)         | [*HFEL0010*]()  | [*MFEL1050*]() |
-| [~~DiskMat~~](TMA4140-DiskMat/) | [C++](TDT4102-C++)        | [Ledelse](ØKO1001-Ledelse) | [AKN](TTM4135-AKN)       | [*MFEL1010*]()  |                |
+| [Matte A](MA0001-MatteA/)       | [MMI](TDT4180-MMI)        | [ITPro1](IT1901-ITPro1)    | [OS](TDT4186-OS)         | [*TDT4117*]()   | [* *]()        |
+| [~~DiskMat~~](TMA4140-DiskMat/) | [C++](TDT4102-C++)        | [Ledelse](ØKO1001-Ledelse) | [AKN](TTM4135-AKN)       | [*HFEL0010*]()  |                |
 | [Ex.phil](EXPH0300-ExPhil/)     | [~~Java~~](TDT4100-Java)  |                            |                          | [*AlgDat igjen*](TDT4120-AlgDat)||
 
 ## emner av interesse
