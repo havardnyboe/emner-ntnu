@@ -29,9 +29,10 @@ typedef struct scheduler_impl
 
 // Register all available schedulers here
 // also update schedc, this indicates how long the SchedImpl array is
-#define SCHEDC 1
+#define SCHEDC 2
 static SchedImpl available_schedulers[SCHEDC] = {
-    {"Round Robin", &rr_scheduler, 1}};
+    {"Round Robin", &rr_scheduler, 1},
+    {"MLFQ Scheduler", &mlfq_scheduler, 2}};
 
 void (*sched_pointer)(void) = &rr_scheduler;
 
@@ -579,6 +580,40 @@ void rr_scheduler(void)
     }
     // In case a setsched happened, we will switch to the new scheduler after one
     // Round Robin round has completed.
+}
+
+void pri_run(struct cpu *c, int pri_check, int pri_set)
+{
+  struct proc *p;
+  for (p = proc; p < &proc[NPROC]; p++)
+    {
+        acquire(&p->lock);
+        if (p->priority == pri_check) 
+        {
+          if (p->state == RUNNABLE)
+          {
+              p->state = RUNNING;
+              c->proc = p;
+              if (!p->xstate) p->priority = pri_set;
+              swtch(&c->context, &p->context);
+              c->proc = 0;
+          }
+        }
+        release(&p->lock);
+  }
+}
+
+void mlfq_scheduler(void)
+{
+    struct cpu *c = mycpu();
+
+    c->proc = 0;
+    intr_on();
+
+    pri_run(c, 0, 1);
+    pri_run(c, 1, 2);
+    pri_run(c, 2, 2);
+
 }
 
 // Switch to scheduler.  Must hold only p->lock
