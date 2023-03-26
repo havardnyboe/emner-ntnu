@@ -13,3 +13,6 @@
 [submodule "IT1901-ITPro1/javafx-template"]
 	path = IT1901-ITPro1/javafx-template
 	url = git@github.com:havardnyboe/IT1901-RPNCalculator.git
+[submodule "TDT4145-DatDat/prosjekt"]
+	path = TDT4145-DatDat/prosjekt
+	url = git@github.com:havardnyboe/datdat.git
