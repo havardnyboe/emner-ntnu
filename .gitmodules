@@ -17,3 +17,6 @@
 	path = TDT4145-DatDat/prosjekt
 	url = git@github.com:havardnyboe/datdat
 
+[submodule "TDT4145-DatDat/datdat"]
+	path = TDT4145-DatDat/datdat
+	url = git@github.com:havardnyboe/datdat.git
