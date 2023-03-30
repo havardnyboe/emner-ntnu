@@ -315,8 +315,18 @@ uvmcopy(pagetable_t old, pagetable_t new, uint64 sz)
       panic("uvmcopy: pte should exist");
     if((*pte & PTE_V) == 0)
       panic("uvmcopy: page not present");
+
     pa = PTE2PA(*pte);
     flags = PTE_FLAGS(*pte);
+
+    // printf("PA: %d\n", pa);
+    // printf("flags: %d\n", flags);
+
+    // printf("WRITE: %d\n", *pte & PTE_W);
+
+    // mappages(old, i, PGSIZE, pa, flags);
+    // mappages(new, i, PGSIZE, pa, flags);
+
     if((mem = kalloc()) == 0)
       goto err;
     memmove(mem, (char*)pa, PGSIZE);

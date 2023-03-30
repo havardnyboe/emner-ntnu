@@ -200,7 +200,7 @@ test:
 
 
 prepare-handin: test
-	tar --warning=no-file-changed -zcvf lab-$(LAB)-handin.tar.gz . ||:
+	tar -zcvf lab-$(LAB)-handin.tar.gz ./ ||:
 
 internal-prepare-handout:
 	tar --warning=no-file-changed -zcvf lab-$(LAB)-handout.tar.gz . ||:
