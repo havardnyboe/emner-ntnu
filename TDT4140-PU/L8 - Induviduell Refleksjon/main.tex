@@ -1,0 +1,58 @@
+\documentclass[a4paper, 12pt]{article}
+
+\usepackage[english, norsk]{babel}
+\usepackage{csquotes}
+\usepackage[backend=biber, style=ieee]{biblatex}
+\addbibresource{ref.bib}
+\usepackage[margin=25mm]{geometry}
+\usepackage[table]{xcolor}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{changepage,threeparttable}
+\title{TDT4140 - Programvareutvikling\\Leveranse \{ nr \}}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{center}
+Antall ord utenom forside og referanser
+\\\{ ord \} 
+% \\[1em]
+% Teamnummer
+% \\14 
+% \\[1em]
+% Lenke til teamets kodebase på GitLab
+% \\\url{https://gitlab.stud.idi.ntnu.no/groups/tdt4140-2023/landsby-1/gruppe-14}
+% \\[1em]
+% Produktnavn
+% \\FitShare
+% \\[4em]
+% \emph{Medlemmer som har bidratt til leveransen}
+% \\[-.8em]
+% \begin{table}[h]
+% \centering
+%     \begin{tabular}{|l|l|l|ll}
+%         \hline
+%         \textbf{Fornavn} & \textbf{Etternavn} & \textbf{Studentmail}  \\\hline
+%         Håvard & Solberg Nybøe & \href{mailto:haavasny@stud.ntnu.no}{haavasny@stud.ntnu.no} \\ \hline
+%     \end{tabular}
+% \end{table}
+\vfill
+\includegraphics[width=8cm]{ntnu.pdf}
+\end{center}
+\thispagestyle{empty}
+\addtocounter{page}{-1}
+\newpage
+\tableofcontents
+\newpage
+
+\input{docs/section1.tex}
+
+\newpage
+\printbibliography[heading=bibintoc]
+
+\end{document}
