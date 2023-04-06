@@ -16,10 +16,8 @@ Diverse emner jeg har tatt, skal ta, og har prøvd å ta
 
 | Kode                                                  | Navn                                  | Høst/Vår |
 | ----------------------------------------------------- | ------------------------------------- | -------- |
-| [TDT4136](https://www.ntnu.no/studier/emner/TDT4136/) | Introduksjon til kunstig intelligens  | Høst     |
 | [TDT4165](https://www.ntnu.no/studier/emner/TDT4165/) | Programmeringsspråk                   | Høst     |
 | [IT1604](https://www.ntnu.no/studier/emner/IT1604/)   | Digitalt samfunn                      | Høst     |
-| [TDT4258](https://www.ntnu.no/studier/emner/TDT4258/) | Maskinnær programmering               | Høst     |
 | [IT2810](https://www.ntnu.no/studier/emner/IT2810)    | Webutvikling                          | Høst     |
 | [TDT4117](https://www.ntnu.no/studier/emner/TDT4117/) | Informasjonsgjenfinning               | Høst     |
 | [HFEL0010](http://www.ntnu.no/studier/emner/HFEL0010/)| Introduction to Norwegian History     | Høst     |
@@ -28,8 +26,6 @@ Diverse emner jeg har tatt, skal ta, og har prøvd å ta
 | [INTRO175](http://www.ntnu.no/studier/emner/INTRO175/)| Introduction to Norway                | Høst/Vår |
 | [FI1005](https://www.ntnu.no/studier/emner/FI1005/)   | Logikk                                | Vår      |
 | [MFEL1050](http://www.ntnu.no/studier/emner/MFEL1050/)| Innføring i idrettsfysiologi          | Vår      |
-| [TDT4171](https://www.ntnu.no/studier/emner/TDT4171/) | Metoder i kunstig intelligens         | Vår      |
-| [TDT4205](https://www.ntnu.no/studier/emner/TDT4205/) | Kompilatorteknikk                     | Vår      |
 | [TDT4240](https://www.ntnu.no/studier/emner/TDT4240/) | Programvarearkitektur                 | Vår      |
-| [TDT4265](https://www.ntnu.no/studier/emner/TDT4265/) | Datasyn og dyp læring                 | Vår      |
+| [TDT4237](https://www.ntnu.no/studier/emner/TDT4237/) | Programvaresikkerhet og personvern    | Vår      |
 |                                                       |                                       |          |
