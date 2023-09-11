@@ -1,8 +1,8 @@
 % #region PREAMBEL OG PAKKER
 \documentclass[a4paper, 12pt]{article}  % DOKUMENTKLASSE
-\title{{\LaTeX} Dokument}               % TITTEL
+\title{IIK3100 -- Etisk hacking og penetrasjonstesting\\[0.25em]Home Exam}               % TITTEL
 \author{Håvard Solberg Nybøe}           % FORFATTER
-\date{FAG -- \today}                    % DATO & FAG
+\date{\today}                    % DATO & FAG
 
 \usepackage[english, norsk]{babel}      % NORSK SPRÅK
 \usepackage[
@@ -12,7 +12,6 @@
 \usepackage[hidelinks]{hyperref}        % LENKER I TOC OG GENERELT
 \usepackage[margin=1in]{geometry}       % VANLIG STØRRELSE MARGIN
 \setlength{\parindent}{0em}             % SKILLER AVSNITT
-\setlength{\parskip}{.8em}              % SKILLER AVSNITT
 \usepackage{graphicx}                   % BILDER \includegraphics[OPTIONS]{PATH}
 \usepackage{kantlipsum}                 % FYLLTEKST I KANT-STIL (kant[n-m])
 \usepackage{amsfonts,                   % BLACKBOARD BOLD FONT (\mathbb{N})
@@ -24,8 +23,10 @@ amsmath,stmaryrd,amssymb}         % ANDRE MATTE PAKKER
 % #endregion
 \begin{document}
 
+\setlength{\parskip}{0em}             % LINJEAVSTAND
 \maketitle
 \tableofcontents % INNHOLDSFORTEGNELSE
+\setlength{\parskip}{.8em}             % LINJEAVSTAND
 
 \import{sections/}{osint.tex}
 \import{sections/}{technical-information-gathering.tex}
