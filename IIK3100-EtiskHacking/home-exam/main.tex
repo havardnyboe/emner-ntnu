@@ -1,8 +1,8 @@
 % #region PREAMBEL OG PAKKER
 \documentclass[a4paper, 12pt]{article}  % DOKUMENTKLASSE
-\title{Øving 1}                         % TITTEL
+\title{{\LaTeX} Dokument}               % TITTEL
 \author{Håvard Solberg Nybøe}           % FORFATTER
-\date{\today}                           % DATO & FAG
+\date{FAG -- \today}                    % DATO & FAG
 
 \usepackage[english, norsk]{babel}      % NORSK SPRÅK
 \usepackage[
@@ -10,7 +10,7 @@
 \usepackage{csquotes}                   % PAKKE TIL BABEL
 \addbibresource{bibliografi.bib}        % PATH TIL BIBLIOGRAFI
 \usepackage[hidelinks]{hyperref}        % LENKER I TOC OG GENERELT
-\usepackage[margin=25mm]{geometry}       % VANLIG STØRRELSE MARGIN
+\usepackage[margin=1in]{geometry}       % VANLIG STØRRELSE MARGIN
 \setlength{\parindent}{0em}             % SKILLER AVSNITT
 \setlength{\parskip}{.8em}              % SKILLER AVSNITT
 \usepackage{graphicx}                   % BILDER \includegraphics[OPTIONS]{PATH}
@@ -25,36 +25,11 @@ amsmath,stmaryrd,amssymb}         % ANDRE MATTE PAKKER
 \begin{document}
 
 \maketitle
-% \tableofcontents % INNHOLDSFORTEGNELSE
+\tableofcontents % INNHOLDSFORTEGNELSE
 
-\section*{Oppgave 1}
+\import{sections/}{osint.tex}
+\import{sections/}{technical-information-gathering.tex}
+\import{sections/}{network-mapping.tex}
 
-% Lineær innovasjon:
-%   - Slide 10 (Foreles 3)
-%   - Grunnforskning -> Anvendt forskning -> Teknisk utvikling -> Industriell tilpassing -> Spredning
-%   - Lineær modell bugger på Schumpeter (Push, Økonomisk modell)
-% Hovedutfordringer:
-%   - Samdarbeid/læring ikke tatt (godt) høyde for
-%   - Klynger/komplementaritet ikke tatt (godt) høyde for
-
-Hovedtrekkene for tradisjonell lineær innovasjon følger gjerne denne rekken:
-
-\parencite{sorensen2006}
-
-\begin{center}
-    Naturvitenskaplig grunnforskning
-    \\$\downarrow$ 
-    \\Teknologisk/anvendt forskning
-    \\$\downarrow$
-    \\Teknologisk utviklingsarbeid
-    \\$\downarrow$
-    \\Industriell tilpassing og utprøving
-    \\$\downarrow$
-    \\Spredning
-\end{center}
-
-
-\section*{Oppgave 2}
-
-\printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
+% \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
 \end{document}
