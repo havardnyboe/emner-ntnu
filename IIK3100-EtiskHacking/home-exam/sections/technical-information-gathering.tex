@@ -1,2 +1,31 @@
 \newpage
 \section{Technical Information Gathering}
+
+\subsection{Vipps backoffice (30p)}
+Can you find the backoffice website of Vipps? Send the domain as a flag!
+
+\textbf{Solution:}\\
+The difficulty in this task was mostly finding a website that could look for and display subdomains without a paywall, since my manual attempts at finding the subdomain failed. I found a website called pentest-tools.com that could do this for me.
+
+\includegraphics[width=15cm]{img/Technical information gathering/Vipps Backoffice/Skjermbilde 2023-09-07 kl. 15.40.23.png}
+
+After the scan three subdomains were found, and the one that looked most promising was backoffice-test.vipps.no.
+
+\includegraphics[width=15cm]{img/Technical information gathering/Vipps Backoffice/Skjermbilde 2023-09-07 kl. 15.40.13.png}
+
+\newpage
+\subsection{Vy (30p)}
+Find the network range of Vy in Norway! Write it in CIDR format!
+
+\textbf{Solution:}\\
+This task was pretty straight forward, all I needed to di was look up vy.no on dnsdumpster.com.
+
+\includegraphics[width=15cm]{img/Technical information gathering/Vy/Skjermbilde 2023-09-01 kl. 14.56.00.png}
+
+Then find an IP-address from Norway\dots
+
+\includegraphics[width=15cm]{img/Technical information gathering/Vy/Skjermbilde 2023-09-01 kl. 14.56.23.png}
+
+\dots and look it up in the RIPE database.
+
+\includegraphics[width=15cm]{img/Technical information gathering/Vy/Skjermbilde 2023-09-01 kl. 14.56.50.png}
