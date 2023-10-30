@@ -1,0 +1,117 @@
+\section{Web Hacking}
+
+\subsection{Beatles song catalogue (60p)}
+There must be something hidden here:
+\url{http://r2d2.hackingarena.com:1811}
+
+\textbf{Solution:}\\
+I first connected to the site with Burp Suite and explored the different sites. The parameter for switching sites was \texttt{songid}, and after finding the pattern with the albums that all ended with \texttt{53} i set up an intruder attack with the following payload:
+
+\begin{center}
+    \includegraphics[width=15cm]{img/Web hacking/Beatles song catalogue/Skjermbilde 2023-10-26 kl. 13.06.47.png}
+\end{center}
+
+When the attack was done I searched through the results that had a length other than 232 or 233 since these were empty pages. I found the following page:
+
+\begin{center}
+    \includegraphics[width=15cm]{img/Web hacking/Beatles song catalogue/Skjermbilde 2023-10-26 kl. 13.06.58.png}
+\end{center}
+
+The flag is: \texttt{UiO-Hacking-Arena\string{Lucy 1n the Sky w1th Flags\string}}
+
+\newpage
+\subsection{Web 5 (60p)}
+Can you find the flag here?
+\url{http://padawan.hackingarena.com:820}
+
+\textbf{Solution:}\\
+The trick I found to solving this task was exceeding the character limit of the input field. When I did this I got the following error message:
+
+\begin{center}
+    \includegraphics[width=12cm]{img/Web hacking/Web 5/Skjermbilde 2023-10-26 kl. 13.37.52.png}
+\end{center}
+
+Assuming the site was located at \texttt{/var/www/} I followed the path \texttt{partnerprocess/process.php}
+
+\begin{center}
+    \includegraphics[width=12cm]{img/Web hacking/Web 5/Skjermbilde 2023-10-26 kl. 13.38.18.png}
+\end{center}
+
+After that I jumped to the parent directory \texttt{partnerprocess/} and found the flag in the \texttt{flag.txt} file.
+
+\begin{center}
+    \includegraphics[width=12cm]{img/Web hacking/Web 5/Skjermbilde 2023-10-26 kl. 13.37.19.png}
+\end{center}
+
+Opening the file revealed the flag:
+
+\begin{center}
+    \includegraphics[width=12cm]{img/Web hacking/Web 5/Skjermbilde 2023-10-26 kl. 13.39.25.png}
+\end{center}
+
+The flag is: \texttt{UiO-Hacking-Arena\string{Err0r\_m4ssag4\_d1scl0sure\string}}
+
+\newpage
+\subsection{Redirect (60p)}
+Can you redirect \texttt{kenobi.hackingarena.com:821} to \texttt{kenobi.hackingarena.com:822}?
+
+\textbf{Solution:}\\
+This task was all about cross site scripting. I first tried to inject a script into the input field, but this did not work. 
+I then tried to log to the console with the injected script, but I realized some anti tampering mechanism was in place as I got a lot of \texttt{***ANTIHACKER***} in my log. 
+I then had the idea of replacing the \texttt{window.location} with the new url.
+This didn't work when injecting the script, so I tried again but this time in the console and it worked.
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{.5\textwidth}
+        \hspace*{-1cm}
+        \centerline{\includegraphics[width=1.4\textwidth]{img/Web hacking/Redirect/Skjermbilde 2023-10-26 kl. 15.29.27.png}}
+        \vspace*{-.5cm}
+        \captionof*{figure}{Before running the \\command in the console}
+    \end{minipage}%
+    \begin{minipage}{.5\textwidth}
+        \hspace*{1cm}
+        \centerline{\includegraphics[width=1.4\textwidth]{img/Web hacking/Redirect/Skjermbilde 2023-10-26 kl. 15.29.41.png}}
+        \vspace*{-1 cm}
+        \captionof*{figure}{After running the \\command in the console}
+    \end{minipage}
+\end{figure}
+
+\newpage
+\subsection{Arenabook (80p)}
+Hi, Check out the latest social media platform:
+\url{http://sidious.hackingarena.com:803}
+Sandra already tried it. :)
+
+\textbf{Solution:}\\
+The first step was to look for Sandra.
+
+\begin{center}
+    \includegraphics[width=12cm]{img/Web hacking/Arenabook/Skjermbilde 2023-10-26 kl. 14.49.43.png}
+\end{center}
+
+After getting her username I could use the forgot password function to get her password. I ended up at a page asking for the birthplace of her grandmother.
+
+\begin{center}
+    \includegraphics[width=12cm]{img/Web hacking/Arenabook/Skjermbilde 2023-10-26 kl. 14.50.02.png}
+\end{center}
+
+After putting this page into Burp Suite I found a field in the post request called where different place names could be tried.
+I then visited the Wikipedia page <<\href{https://en.wikipedia.org/wiki/List_of_villages_in_Telemark}{List of villages in Telemark}>> and downloaded the list of villages to a text file.
+Then in Burp Suite I set up an intruder attack with the list of villages as the payload.
+
+\begin{center}
+    \includegraphics[width=15cm]{img/Web hacking/Arenabook/Skjermbilde 2023-10-26 kl. 14.54.29.png}
+\end{center}
+
+After the attack was done I searched through the results and found the following page:
+
+\begin{center}
+    \includegraphics[width=13cm]{img/Web hacking/Arenabook/Skjermbilde 2023-10-26 kl. 14.55.08.png}
+\end{center}
+
+Sandras grandmother was born in \texttt{Vinjastranda}, and her password was \texttt{MyDogNameIsSigurd}. Using the password I could log in to Sandras account and get the flag.
+
+\begin{center}
+    \includegraphics[width=12cm]{img/Web hacking/Arenabook/Skjermbilde 2023-10-26 kl. 14.55.36.png}
+\end{center}
