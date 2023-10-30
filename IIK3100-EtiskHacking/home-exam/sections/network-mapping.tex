@@ -27,3 +27,17 @@ When I first tried to solve this task i begun a full port scan with nmap using t
 \includegraphics[width=15cm]{img/Network mapping/Padawan all ports/Skjermbilde 2023-09-10 kl. 19.35.19.png}
 
 The sum of all the open ports was 33099.
+
+\subsection{Censys (30p)}
+Use Censys to find a computer in Oslo that runs Ubuntu 20.04 and tcp port 2233 is open. What is the ip?
+
+\textbf{Solution:}\\
+Using Censys I searched for the following query:
+
+\texttt{location.city:oslo and services.port:2233 and services.software.vendor:Ubuntu}
+
+and got the following result:
+
+\includegraphics[width=16cm]{img/Network mapping/Censys/Skjermbilde 2023-10-26 kl. 12.40.17.png}
+
+The ip is: \texttt{185.101.34.119}
