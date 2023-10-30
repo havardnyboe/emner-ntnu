@@ -4,7 +4,7 @@
 \author{Håvard Solberg Nybøe}           % FORFATTER
 \date{\today}                    % DATO & FAG
 
-\usepackage[english, norsk]{babel}      % NORSK SPRÅK
+\usepackage[english]{babel}      % NORSK SPRÅK
 \usepackage[
     backend=biber,style=apa]{biblatex}  % BIBLIOGRAFI
 \usepackage{csquotes}                   % PAKKE TIL BABEL
@@ -16,11 +16,10 @@
 \usepackage{kantlipsum}                 % FYLLTEKST I KANT-STIL (kant[n-m])
 \usepackage{amsfonts,                   % BLACKBOARD BOLD FONT (\mathbb{N})
 amsmath,stmaryrd,amssymb}         % ANDRE MATTE PAKKER
-\usepackage{circuitikz}                 % LOGISKE PORTER OG KRETSER & TikZ
-\usepackage{import}                     % IMPORTER FILER (\import{PATH}{FILE})
 \usepackage{caption}                    % PAKKE FOR BEDRE CAPTIONS I FIGURER
 \usepackage{float}                      % FLYTT FIGURER 
 % #endregion
+% \includeonly{sections/web-hacking}
 \begin{document}
 
 \setlength{\parskip}{0em}             % LINJEAVSTAND
@@ -28,9 +27,13 @@ amsmath,stmaryrd,amssymb}         % ANDRE MATTE PAKKER
 \tableofcontents % INNHOLDSFORTEGNELSE
 \setlength{\parskip}{.8em}             % LINJEAVSTAND
 
-\import{sections/}{osint.tex}
-\import{sections/}{technical-information-gathering.tex}
-\import{sections/}{network-mapping.tex}
+\include{sections/osint}
+\include{sections/technical-information-gathering}
+\include{sections/network-mapping}
+\include{sections/get-in-touch-with-services}
+\include{sections/web-hacking}
+\section*{Total points: 710p}
+\addcontentsline{toc}{section}{Total points: 710p}
 
 % \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
 \end{document}
