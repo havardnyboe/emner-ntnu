@@ -1,0 +1,92 @@
+% #region PREAMBEL OG PAKKER
+\documentclass[a4paper, 12pt]{article}  % DOKUMENTKLASSE
+\title{Øving 3}                         % TITTEL
+\author{Håvard Solberg Nybøe}           % FORFATTER
+\date{\today}                           % DATO & FAG
+
+\usepackage[english, norsk]{babel}      % NORSK SPRÅK
+\usepackage[
+    backend=biber,style=ieee]{biblatex} % BIBLIOGRAFI
+\usepackage{csquotes}                   % PAKKE TIL BABEL
+\addbibresource{bibliografi.bib}        % PATH TIL BIBLIOGRAFI
+\usepackage[hidelinks]{hyperref}        % LENKER I TOC OG GENERELT
+\usepackage[margin=1in]{geometry}       % VANLIG STØRRELSE MARGIN
+\setlength{\parindent}{0em}             % SKILLER AVSNITT
+\setlength{\parskip}{.8em}              % SKILLER AVSNITT
+\usepackage{graphicx}                   % BILDER \includegraphics[OPTIONS]{PATH}
+\usepackage{kantlipsum}                 % FYLLTEKST I KANT-STIL (kant[n-m])
+\usepackage{amsfonts,                   % BLACKBOARD BOLD FONT (\mathbb{N})
+amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
+\usepackage{circuitikz}                 % LOGISKE PORTER OG KRETSER & TikZ
+\usepackage{import}                     % IMPORTER FILER (\import{PATH}{FILE})
+\usepackage{caption}                    % PAKKE FOR BEDRE CAPTIONS I FIGURER
+\usepackage{float}                      % FLYTT FIGURER 
+% #endregion
+\begin{document}
+
+\maketitle
+% \tableofcontents % INNHOLDSFORTEGNELSE
+
+\section*{Oppgave 1}
+% Forklar bakgrunn for og innhold av begrepet «affordance»
+Begrepet <<affordance>> ble introdusert av den amerikanske psykologen James J. Gibson på 1970-tallet. 
+Han brukte det i sammenheng med hans teori om persepsjon og økologisk psykologi. Affordance refererer til de potensielle handlingene eller bruksmulighetene som et objekt eller miljø tilbyr til en organisme \cite{volkoff2017}.
+På norsk kan man gjerne bruke begrepet \emph{tilbydelighet} om affordance \cite{borgund2019}.
+
+For å forklare det enkelt, handler affordance om egenskaper ved et objekt eller en situasjon som indikerer hvordan det kan eller skal brukes.
+Det er en relasjon mellom den observerende brukeren og den observerte gjenstanden eller miljøet.
+Affordance er ikke bare knyttet til de fysiske egenskapene til objekter, men også til hvordan disse egenskapene blir oppfattet av brukeren.
+
+Eksempelvis kan man se for seg en knapp på en nettside.
+Denne knappen har en fysisk egenskap som gjør at den kan trykkes på.
+Den har også en visuell egenskap som gjør at den er utformet slik at den skiller seg ut fra resten av nettsiden. 
+Knappen tilbyr dermed en handling til brukeren, nemlig å trykke på den.
+Dette er affordance.
+
+Affordance er et viktig prinsipp innen design, spesielt i interaksjonsdesign og brukergrensesnitt, der det brukes til å beskrive hvordan designelementer kommuniserer bruksmuligheter til brukeren \cite{volkoff2017}.
+Det er også et viktig prinsipp innenfor arkitektur, der det brukes til å beskrive hvordan bygninger og rom kommuniserer bruksmuligheter til brukeren.
+
+
+\section*{Oppgave 2}
+% Diskuter oppslaget fra DigDir (Direktoratet for Digitalisering) der de presenterer et case om deling av data. Trekk inn relevante perspektiv fra kurset.
+
+% Innledning
+Oppslaget fra DigDir git innsikt i utviklingen av en digital løsning for å søke om økonomisk sosialhjelp gjennom et samarbeid mellom NAV og og Husbanken.
+Prosjektet, som går under navnet Digisos, har som mål å effektivisere og forenkle søknadsprosessen ved å innhente hvor mye brukerne har fått i bostøtte fra Husbanken og integrere dette i søknaden \cite{digisos}.
+Oppslaget tar for seg ulike aspekter av prosjektet, inkludert teknologiske utfordringer, juridiske avklaringer, og fokuset på brukeropplevelse.
+
+% Teori
+I lys av teori kan vi trekke inn relevante prinsipper som dataminimering og personvern. 
+Dataminimering vil si  å samle inn og behandle så lite personlig informasjon som nødvendig.
+I konteksten av Digisos-prosjektet innebærer dataminimering å være svært selektiv i hvilken informasjon som blir hentet fra Husbanken for å støtte søknadsprosessen.
+Dette hindrer innsamling av unødvendig eller overflødig data, og det sikrer at bare de dataene som er avgjørende for å behandle søknader om økonomisk sosialhjelp, blir samlet inn.
+Dette er essensielt for å beskytte brukernes personvern og sikre at prosjektet ikke går utover det som er nødvendig for sin hensikt.
+
+Tverrfaglig samarbeid er et nøkkelprinsipp som understrekes i prosjektet, da det kreves komplementære ferdigheter innen teknologi, jus og forretningsforståelse for å oppnå suksess.
+Alle disse fagområdene må jobbe sammen for å forstå og håndtere hverandres utfordringer. 
+For eksempel krever implementeringen av datadeling-systemet at utviklere samarbeider tett med jurister for å sikre at all datainnsamling og utveksling er i samsvar med gjeldende lovverk. 
+Samtidig må perspektivene om brukeropplevelse og brukervennlighet forstås for å sikre at løsningen møter brukernes behov og forventninger.
+
+% Diskusjon
+Prosjektet står overfor ikke ubetydelige utfordringer, særlig knyttet til de juridiske avklaringene, og de teknologiske integrasjonene. 
+Når det gjelder juridiske aspekter, er en av de sentrale utfordringene behovet for å sikre at all datadeling følger gjeldene personvernlover.
+Dette krever nøye juridiske vurderinger og dialog med relevante myndigheter for å lage tydelige retningslinjer for hvordan data kan samles inn og deles mellom de ulike aktørene.
+
+I tillegg er det viktig å følge med på endringer i personvernlover over tid. 
+Prosjektet må være fleksibelt nok til å tilpasse seg nye krav og standarder som kan dukke opp. 
+Dette krever kontinuerlig juridisk oppfølging gjennom hele prosjektet.
+
+Når det gjelder teknologisk integrasjon, er en sentral utfordring utviklingen av funksjonelle API-er for å muliggjøre sikker og effektiv datautveksling med Husbankens systemer. 
+Dette krever et tett samarbeid mellom utviklere i prosjektet og Husbanken for å utforme grensesnitt som ikke bare oppfyller tekniske standarder, men også sikrer at sensitiv informasjon blir forsvarlig håndtert.
+
+Teknologisk kompleksitet kommer også til syne når man ser på hvordan den digitale løsningen integreres med eksisterende systemer i NAV. 
+Dette krever tilpasninger og testing for å sikre en sikker og pålitelig datastrøm mellom de ulike aktørene.
+Eventuelle feil i denne integrasjonen kan potensielt få konsekvenser for hele søknadsprosessen, noe som understreker viktigheten av grundig teknisk testing og oppfølging.
+
+% Konklusjon
+Digisos-prosjektet demonstrerer vellykket bruk av prinsippene dataminimering, tverrfaglig samarbeid og juridiske avklaringer i utviklingen av en digital løsning for økonomisk sosialhjelp.
+Gjennom nøye begrensning av informasjonssamling, samarbeid mellom ulike fagfelt og grundig juridisk håndtering, har prosjektet oppnådd en balansert tilnærming.
+Dette understreker betydningen av slike prinsipper for vellykket digital transformasjon i offentlig sektor, der brukerens personvern og lovlighet er sentrale faktorer for suksess.
+
+\printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
+\end{document}
