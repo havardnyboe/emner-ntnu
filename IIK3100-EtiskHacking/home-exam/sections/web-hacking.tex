@@ -115,3 +115,55 @@ Sandras grandmother was born in \texttt{Vinjastranda}, and her password was \tex
 \begin{center}
     \includegraphics[width=12cm]{img/Web hacking/Arenabook/Skjermbilde 2023-10-26 kl. 14.55.36.png}
 \end{center}
+
+\subsection{Cybersmart (80p)}
+Find the flag here: \url{http://padawan.hackingarena.com:804}
+
+\textbf{Solution:}\\
+
+When first entering the site I clicked on the \texttt{CyberSmart} link and noticed that the url had changed and that i got some text output on the page.
+After some trial and error I figured that the url parameter \texttt{program} executed a program from a directory. So I then naively tried to execute the \texttt{ls} command from the \texttt{/bin} directory.
+
+\begin{center}
+    \includegraphics[width=12cm]{img/Web hacking/Cybersmart/Screenshot 2023-11-09 at 14.03.33.png}
+\end{center}
+
+Since that clearly didn't work I looked more into what to do and found that I could get the source code from the php script encoded in base64 by adding\\ \texttt{php://filter/convert.base64-encode/resource=index.php} to the program parameter.
+
+\begin{center}
+    \includegraphics[width=12cm]{img/Web hacking/Cybersmart/Screenshot 2023-11-09 at 14.04.28.png}
+\end{center}
+
+I then decoded the base64 string and got the following code:
+
+\begin{center}
+    \includegraphics[width=15cm]{img/Web hacking/Cybersmart/Screenshot 2023-11-09 at 14.05.04.png}
+\end{center}
+
+In the code it told where the flag was located, so I located the file and got the following output:
+
+\begin{center}
+    \includegraphics[width=15cm]{img/Web hacking/Cybersmart/Screenshot 2023-11-09 at 14.02.40.png}
+\end{center}
+
+The flag is: \texttt{Hacking-Arena\string{L0cal\_f1les\_sh0uld\_n0t\_supp0s4d\_t0\_b4\_v1s1bl4\string}}
+
+\subsection{}
+
+\newpage
+\subsection{Beatles login 2 (120p)}
+Find the user: \url{http://vader.hackingarena.com:825}
+
+\textbf{Solution:}\\
+I logged in to the site with all the provided usernames and passwords, and noted the different \texttt{beatlesid} parameters. 
+To check if the id persisted I tried to log in with the same user twice and saw that the id was the same. 
+I then figured the id I was looking for could de searched for with a brute force attack. 
+I therefore set up an intruder attack with a payload set from 10000. 
+When I realized that it would take a long time using Burp Suite I noticed all the ids for the users were prime numbers. 
+So I started another intruder attack with the payload set to prime numbers from 10000. After the attack had ran for a while I found the following page with the id \texttt{17159}:
+
+\begin{center}
+    \includegraphics[width=16cm]{img/Web hacking/Beatles login 2/Screenshot 2023-11-09 at 17.33.16.png}
+\end{center}
+
+The flag is: \texttt{Hacking-Arena\string{Prime\_days\_a\_week\string}}
