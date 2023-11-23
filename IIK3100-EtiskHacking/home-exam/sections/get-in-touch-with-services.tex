@@ -24,6 +24,7 @@ I then got one hit, and the password was \texttt{kazuga}. I then connected to th
 
 The flag is: \texttt{Hacking-Arena\string{I\_am\_much\_more\_Casan0va\string}}
 
+\newpage
 \subsection{Minuteman (80p)}
 A service is running on \texttt{kenobi.hackingarena.com} portrange: \texttt{7000-7500}. I hope you can find this very important flag :)
 
@@ -37,7 +38,7 @@ I started by scanning the ports with nmap, and got the following output:
 I then connected to the only open service on port 7211 with telnet, and got the following response:
 
 \begin{center}
-    \includegraphics[width=12cm]{img/Get in touch with services/Minuteman/Skjermbilde 2023-10-27 kl. 09.30.39.png}
+    \includegraphics[width=11cm]{img/Get in touch with services/Minuteman/Skjermbilde 2023-10-27 kl. 09.30.39.png}
 \end{center}
 
 After searching for what Able Archer was, i found that it was a NATO exercise in 1983. I then found the nuclear launch codes for the exercise, which was \texttt{00000000}. I then connected to the service again with telnet, gave it the launch codes, and got the following response:
@@ -47,3 +48,20 @@ After searching for what Able Archer was, i found that it was a NATO exercise in
 \end{center}
 
 The flag was \texttt{UiO-Hacking-Arena\string{C0ld\_war\_1s\_0v4r\string}}.
+
+\newpage
+\subsection{Dark energy (90p)}
+Have you already checked padawan ports? What was this on \texttt{tcp/502}? Maybe there is a flag for you. :)
+
+\textbf{Solution:}\\
+First i had to check again what service was running on port 502, and found that it was modbus.
+I then downloaded a \href{https://github.com/tallakt/modbus-cli}{modbus client} and followed the README instructions and ran the command:
+\texttt{modbus read -p502 padawan.hackingarena.com \%MW100 50}
+which read 50 registers from the modbus server on port 502.
+
+\begin{center}
+    \includegraphics[width=9cm]{img/Get in touch with services/Dark energy/Screenshot 2023-11-10 at 10.38.21.png}
+\end{center}
+
+I then copied the numbers from the output and converted them from decimal to ascii, and got the following flag:
+\texttt{HackingA\string{H4ck\_the\_bu5\_4nd\_n0\_4l4ctricity\string}}

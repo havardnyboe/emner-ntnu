@@ -1,44 +1,45 @@
 % #region PREAMBEL OG PAKKER
 \documentclass[a4paper, 12pt]{article}  % DOKUMENTKLASSE
-\title{IIK3100 -- Etisk hacking og penetrasjonstesting\\[0.25em]Home Exam}               % TITTEL
-\author{Kandidatnr}           % FORFATTER
-\date{}                    % DATO & FAG
+\title{IIK3100 -- Etisk hacking og penetrasjonstesting\\[0.25em]Home Exam}                         % TITTEL
+\author{Kandidatnr: 10058}              % FORFATTER
+\date{}                                 % DATO & FAG
 
-\usepackage[english]{babel}      % NORSK SPRÅK
+\usepackage[english]{babel}             % SPRÅK
 \usepackage[
     backend=biber,style=apa]{biblatex}  % BIBLIOGRAFI
 \usepackage{csquotes}                   % PAKKE TIL BABEL
 \addbibresource{bibliografi.bib}        % PATH TIL BIBLIOGRAFI
-\usepackage[hidelinks]{hyperref}        % LENKER I TOC OG GENERELT
+\usepackage[]{hyperref}                 % LENKER I TOC OG GENERELT
 \usepackage[margin=1in]{geometry}       % VANLIG STØRRELSE MARGIN
 \setlength{\parindent}{0em}             % SKILLER AVSNITT
 \usepackage{graphicx}                   % BILDER \includegraphics[OPTIONS]{PATH}
 \usepackage{kantlipsum}                 % FYLLTEKST I KANT-STIL (kant[n-m])
 \usepackage{amsfonts,                   % BLACKBOARD BOLD FONT (\mathbb{N})
-amsmath,stmaryrd,amssymb}         % ANDRE MATTE PAKKER
+amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
 \usepackage{caption}                    % PAKKE FOR BEDRE CAPTIONS I FIGURER
 \usepackage{float}                      % FLYTT FIGURER 
 \usepackage[UTF8]{ctex}
 % #endregion
-% \includeonly{sections/web-hacking}
+% \includeonly{sections/hash-cracking}
 \begin{document}
 
-\setlength{\parskip}{-0.25em}          % LINJEAVSTAND
+\setlength{\parskip}{-0.25em}           % LINJEAVSTAND
 \maketitle
 \vspace{-4em}
-\tableofcontents                       % INNHOLDSFORTEGNELSE
+\tableofcontents                        % INNHOLDSFORTEGNELSE
 \thispagestyle{empty}
 \addtocounter{page}{-1}
-\setlength{\parskip}{.8em}             % LINJEAVSTAND
+\setlength{\parskip}{.8em}              % LINJEAVSTAND
 
 \include{sections/osint}
 \include{sections/technical-information-gathering}
 \include{sections/network-mapping}
 \include{sections/get-in-touch-with-services}
 \include{sections/web-hacking}
+\include{sections/hash-cracking}
 \newpage
 \section*{}
-\addcontentsline{toc}{section}{Total points: 990p}
+\addcontentsline{toc}{section}{Total points: 1200p}
 \begin{center}
     \topskip0pt
     \vspace*{\fill}

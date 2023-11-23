@@ -8,7 +8,7 @@ There must be something hidden here:
 I first connected to the site with Burp Suite and explored the different sites. The parameter for switching sites was \texttt{songid}, and after finding the pattern with the albums that all ended with \texttt{53} i set up an intruder attack with the following payload:
 
 \begin{center}
-    \includegraphics[width=15cm]{img/Web hacking/Beatles song catalogue/Skjermbilde 2023-10-26 kl. 13.06.47.png}
+    \includegraphics[width=14cm]{img/Web hacking/Beatles song catalogue/Skjermbilde 2023-10-26 kl. 13.06.47.png}
 \end{center}
 
 When the attack was done I searched through the results that had a length other than 232 or 233 since these were empty pages. I found the following page:
@@ -87,16 +87,16 @@ Sandra already tried it. :)
 The first step was to look for Sandra.
 
 \begin{center}
-    \includegraphics[width=12cm]{img/Web hacking/Arenabook/Skjermbilde 2023-10-26 kl. 14.49.43.png}
+    \includegraphics[width=15cm]{img/Web hacking/Arenabook/Skjermbilde 2023-10-26 kl. 14.49.43.png}
 \end{center}
 
 After getting her username I could use the forgot password function to get her password. I ended up at a page asking for the birthplace of her grandmother.
 
 \begin{center}
-    \includegraphics[width=12cm]{img/Web hacking/Arenabook/Skjermbilde 2023-10-26 kl. 14.50.02.png}
+    \includegraphics[width=14cm]{img/Web hacking/Arenabook/Skjermbilde 2023-10-26 kl. 14.50.02.png}
 \end{center}
 
-After putting this page into Burp Suite I found a field in the post request called where different place names could be tried.
+After putting the page into Burp Suite I found a field where different place names could be tried.
 I then visited the Wikipedia page <<\href{https://en.wikipedia.org/wiki/List_of_villages_in_Telemark}{List of villages in Telemark}>> and downloaded the list of villages to a text file.
 Then in Burp Suite I set up an intruder attack with the list of villages as the payload.
 
@@ -148,7 +148,34 @@ In the code it told where the flag was located, so I located the file and got th
 
 The flag is: \texttt{Hacking-Arena\string{L0cal\_f1les\_sh0uld\_n0t\_supp0s4d\_t0\_b4\_v1s1bl4\string}}
 
-\subsection{}
+\newpage
+\subsection{Beatles song catalogue 2 (100p)}
+Find the flag here: \url{http://r2d2.hackingarena.com:1819}
+
+\textbf{Solution:}\\
+The challenge in this task for me was to figure out what parameters to use and how to use them with sqlmap.
+I started by using Burp Suite to find the parameters and cookies used by the site.
+I first searched with the \texttt{song}, \texttt{user} and \texttt{pass} parameters, but I didn't get any results.
+Then after realizing the select boxes also provided parameters I tried with the \texttt{year}, \texttt{vocal} and \texttt{album} parameters as well as the \texttt{city} parameter from the form that appeared after loggin in.
+With that I used the following command to find the databases and tables:
+
+\texttt{sqlmap -u "http://r2d2.hackingarena.com:1819/index.php?year=1964\&vocal=2\&album=3" --current-db --cookie="PHPSESSID=sb35apjt8vor4ud1c236sfus6i" --data="city=London\&year=1962\&song=Let" --tables}
+
+That resulted in finding the database \texttt{BeatlesData} and the table \texttt{Flag}. 
+
+\begin{center}
+    \includegraphics[width=15cm]{img/Web hacking/Beatles song catalogue 2/Screenshot 2023-11-10 at 14.10.27.png}
+\end{center}
+
+I then dumped the table with the following command:
+
+\texttt{sqlmap -u "http://r2d2.hackingarena.com:1819/index.php?year=1964" --current-db --cookie="PHPSESSID=sb35apjt8vor4ud1c236sfus6i"  --tables -D BeatlesData -T Flag --dump}
+
+That gave me the following output:
+
+\begin{center}
+    \includegraphics[width=15cm]{img/Web hacking/Beatles song catalogue 2/Screenshot 2023-11-10 at 14.09.55.png}
+\end{center}
 
 \newpage
 \subsection{Beatles login 2 (120p)}
