@@ -1,0 +1,18 @@
+\section{Hash cracking}
+
+\subsection{Hash 1 (20p)}
+\addtocounter{points}{20}
+I do believe I'll be a tail fin hero on Norwegian in 50 years :) I travelled on a plane a few years ago, when I had to create my password, so I used the name on the tail. Here's the hash: 4b57b34a1855d0d9137d36023156717c What was my password?
+
+\textbf{Solution:}\\
+I first gathered a \href{https://en.wikipedia.org/wiki/List_of_Norwegian_Air_Shuttle_tail_fin_heroes_and_fleet}{list of the names of the people who are on the tail fin of Norwegian's planes}.
+
+\begin{center}
+    \includegraphics[width=10cm]{img/Hash cracking/Hash1/Screenshot 2023-11-24 at 10.47.35.png}
+\end{center}
+
+Then using hashcat I cracked the hash using the wordlist I created from the list of names.
+
+\begin{center}
+    \includegraphics[width=15cm]{img/Hash cracking/Hash1/Screenshot 2023-11-24 at 10.46.31.png}
+\end{center}
