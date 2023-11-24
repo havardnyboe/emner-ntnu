@@ -17,6 +17,8 @@ Then using hashcat I cracked the hash using the wordlist I created from the list
     \includegraphics[width=15cm]{img/Hash cracking/Hash1/Screenshot 2023-11-24 at 10.46.31.png}
 \end{center}
 
+The password was \texttt{Sonja Henie}.
+
 
 \subsection{Hash 2 (20p)}
 \addtocounter{points}{20}
@@ -63,3 +65,22 @@ print(crack(to_be_cracked)) # print the cracked password
 \end{minted}
 
 The password was \texttt{Shine}.
+
+\subsection{Hash 3 (30p)}
+\addtocounter{points}{30}
+I managed to dump the users table :)
+
+id, user, pwd, salt 1, admin, 610a2ee688cda9e724885e23cd2cfdee, key 33, sam, 56a03849f5d1b03353f22f64f04bd143, Julie
+
+Can you tell me what is Sam's password. I know him a bit, he's crazy about Take that and the song Julie. How lucky he is, his salt is also Julie.
+
+\textbf{Solution:}\\
+To solve this tash I used hashcat with the hash mode for md5(\$pass.\$salt) and the rockyou wordlist.
+Running the command 
+\\\texttt{hashcat -a0 -m10 "56a03849f5d1b03353f22f64f04bd143:Julie" rockyou.txt} resulted in the following output:
+
+\begin{center}
+    \includegraphics[width=15cm]{img/Hash cracking/Hash3/Screenshot 2023-11-24 at 23.05.42.png}
+\end{center}
+
+The password was \texttt{lalalalala}.

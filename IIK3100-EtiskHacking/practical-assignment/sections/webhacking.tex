@@ -1,6 +1,32 @@
 \section{Web hacking}
 
-\subsection{Unicorn 1 (100p)}
+\subsection{Unicorn 1 (Unfinished) (100p)}
+\url{http://julie.hackingarena.no:801}
+
+\textbf{Solution:}\\
+Beginning this task was quite difficult. 
+But I eventually managed to find the \texttt{robots.txt} file and the \texttt{2020} directory.
+
+\begin{center}
+    \includegraphics[width=15cm]{img/Web hacking/Unicorn 1/Screenshot 2023-11-24 at 22.15.51.png}
+\end{center}
+
+In the \texttt{2020} directory I found a file called \texttt{index.inc}. 
+
+\begin{center}
+    \includegraphics[width=14cm]{img/Web hacking/Unicorn 1/Screenshot 2023-11-24 at 22.17.38.png}
+\end{center}
+
+It contained the following code:
+
+\begin{center}
+    \includegraphics[width=15cm]{img/Web hacking/Unicorn 1/Screenshot 2023-11-24 at 22.17.43.png}
+\end{center}
+
+At this point I figured that the next step was to locate the flag file, but when searching known directories I couldn't find it.
+I figured that since everything passed to \texttt{cmd} was being added as arguments to \texttt{cat} all that was needed was the location of the flag file.
+But using commands like \texttt{ls -la} and \texttt{find / -name flag} didn't work either.
+
 \newpage
 \subsection{Tricky login (100p)}
 \addtocounter{points}{100}
