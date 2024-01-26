@@ -1,0 +1,59 @@
+\section{Get in touch with services}
+
+\subsection{5th challenge (80p)}
+\addtocounter{points}{80}
+Ladies and gentlemen, this is the 5th challenge.
+\\A little bit of everything...
+\\\url{julie.hackingarena.no} port 21000-21500
+
+\textbf{Solution:}\\
+First I ran a nmap port scan on the ports 21000-21500, and found a service running on port 21214. I also connected to the service using netcat and found that it was an FTP server.
+
+\begin{center}
+    \includegraphics[width=11cm]{img/Get in touch with services/5th challenge/Screenshot 2023-11-24 at 14.23.03.png}
+\end{center}
+
+I then connected to the FTP server annonymously with filezilla and found six files named \texttt{shadow.old}.
+
+\begin{center}
+    \includegraphics[width=13cm]{img/Get in touch with services/5th challenge/Screenshot 2023-11-24 at 14.00.01.png}
+\end{center}
+
+Opening the files revealed what looked like some hashed login credentials. I used \url{https://www.dcode.fr/md5-hash} to crack the hashes and found the following credentials:
+
+\begin{alltt}
+> shadow.old
+lou:Mary
+> shadow.old.1
+lou:Sandra
+> shadow.old.2
+lou:Tina
+> shadow.old.3
+lou:Rita
+> shadow.old.4
+lou:Monica
+> shadow.old.5
+lou:Mary
+\end{alltt}
+
+Given the six names and the intro text to the task I connected that this was a reference to the song \textit{Mambo No. 5} by Lou Bega. Looking at the chorus of the song I found one of the names that was not used in the hashes, \texttt{Jessica}.
+
+\begin{alltt}
+[Chorus]
+A little bit of Monica in my life
+A little bit of Erica by my side
+A little bit of Rita's all I need
+A little bit of Tina's what I see
+A little bit of Sandra in the sun
+A little bit of Mary all night long
+A little bit of \textbf{\emph{Jessica}}, here I am
+A little bit of you makes me your man (Ha!)
+\end{alltt}
+
+I then logged in to the FTP server with the username \texttt{lou} and the password \texttt{Jessica} and found the flag file.
+
+\begin{center}
+    \includegraphics[width=13cm]{img/Get in touch with services/5th challenge/Screenshot 2023-11-24 at 14.00.21.png}
+\end{center}
+
+The flag was \texttt{Hacking-Arena\{Everybody\_in\_come\_on\_let's\_flag\}\}}.

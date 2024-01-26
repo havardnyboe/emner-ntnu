@@ -1,0 +1,16 @@
+\section{Hash Cracking}
+\subsection{Hash 1 (20p)}
+I know this guy (lives in Norway) always has his license plate as the password, but I only know the hash: 3c15ee9710f7b56906cb33429d636de6 What's his password?
+
+\textbf{Solution:}\\
+Using \texttt{hashcat} this task was pretty simple.
+I did a brute force attack with a mask of 2 uppercase letters followed by 5 digits, to match the format of a Norwegian license plate.
+The command was \texttt{hashcat -a3 -m0 "3c15ee9710f7b56906cb33429d636de6" "?u?u?d?d?d?d?d"}.
+
+I got the following result:
+
+\begin{center}
+    \includegraphics[width=10cm]{img/Hash cracking/Hash 1/Screenshot 2023-11-10 at 15.52.08.png}
+\end{center}
+
+The password is \texttt{PH76513}.

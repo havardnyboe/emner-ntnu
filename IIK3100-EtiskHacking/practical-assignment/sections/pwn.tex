@@ -1,0 +1,17 @@
+\section{Pwn}
+
+\subsection{Secrethint (Unfinished) (120p)}
+\addtocounter{unfinished}{120}
+
+Can you exploit the stack overflow?
+
+\texttt{nc julie.hackingarena.no 821}
+
+\textbf{Solution:}\\
+Beginning this task was quite difficult since the binary could not be run on my computer as I was using and M1 Apple Silicon ARM processor.
+So I had to switch to a different computer to run the binary.
+While running the binary I didn't manage to get the program to return a segmenation fault, or any other error for that matter. But when providing a non-integer input I got the program to start what seemed like an infinite print loop.
+
+\begin{center}
+    \includegraphics[width=11cm]{img/Pwn/Screenshot from 2023-11-24 23-39-39.png}
+\end{center}

@@ -40,3 +40,38 @@ And found a review with an image.
 \includegraphics[width=16cm]{img/OSINT/Quality software/Skjermbilde 2023-09-06 kl. 11.54.53.png}
 
 And after looking for a while I found a senior developer followed by a phrase that looked like a password.
+
+\newpage
+\subsection{The pitfall (80p)}
+We captured one of them but we need a good answer to get the second one. The answer is the flag.
+\begin{verbatim}
+宏伟?
+嗯
+这是王林
+非安全通道，少说信息
+好
+我们需要缺少那部分
+周一9点，在奥斯陆Z地点
+最后确认，谁在问?
+\end{verbatim}
+
+\textbf{Solution:}\\
+The main challenge with this task was to translate the text correctly.
+I first used Google Translate to translate the text, but didn't get any seemingly useful results when I searched with the translated text.
+But using Yandex Translate I got that 宏伟 was a name, Hóngwěi, and 王林 was another name, Wáng lín.
+
+\begin{center}
+    \includegraphics[width=16cm]{img/OSINT/The pitfall/Screenshot 2023-11-09 at 21.10.33.png}
+\end{center}
+
+Searching for the names resulted in an FBI listing with some other names as well, one of them being \texttt{Dong Ting}.
+
+\begin{center}
+    \includegraphics[width=12cm]{img/OSINT/The pitfall/Screenshot 2023-11-09 at 21.11.12.png}
+\end{center}
+
+Translating this to Chinese gave me \texttt{董婷} which was the answer.
+
+\begin{center}
+    \includegraphics[width=14cm]{img/OSINT/The pitfall/Screenshot 2023-11-09 at 21.10.43.png}
+\end{center}

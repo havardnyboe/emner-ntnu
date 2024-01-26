@@ -1,0 +1,18 @@
+\section{Network mapping}
+
+\subsection{Open ports (40p)}
+\addtocounter{points}{40}
+Check the open ports on julie2.hackingarena.no in the range 6000-7000. What is the sum of the open port numbers? If only port 6000 and 6001 are open, the answer is 12001.
+
+\textbf{Solution:}\\
+Using nmap I started a port scan using TCP connect on the range 6000 to 7000, and found four open ports.
+
+\begin{center}
+    \includegraphics[width=15cm]{img/Network mapping/Open ports/Screenshot 2023-11-24 at 10.21.07.png}
+\end{center}
+
+Then adding the ports together I got the answer 26632.
+
+\begin{center}
+    \includegraphics[width=15cm]{img/Network mapping/Open ports/Screenshot 2023-11-24 at 10.21.11.png}
+\end{center}
