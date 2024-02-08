@@ -1,0 +1,147 @@
+% #region PREAMBEL OG PAKKER
+\documentclass[a4paper, 12pt]{article}  % DOKUMENTKLASSE
+\title{FI1005 Øving 1}                         % TITTEL
+\author{Håvard Solberg Nybøe}           % FORFATTER
+\date{\today}                           % DATO & FAG
+
+% Minimal preamble med nødvendige pakker
+\usepackage[english, norsk]{babel}      % NORSK SPRÅK
+\usepackage[
+    backend=biber,style=ieee]{biblatex} % BIBLIOGRAFI
+\usepackage{csquotes}                   % PAKKE TIL BABEL
+\addbibresource{bibliografi.bib}        % PATH TIL BIBLIOGRAFI
+\usepackage[hidelinks]{hyperref}        % LENKER I TOC OG GENERELT
+\usepackage[margin=1in]{geometry}       % VANLIG STØRRELSE MARGIN
+\setlength{\parindent}{0em}             % SKILLER AVSNITT
+\setlength{\parskip}{.8em}              % SKILLER AVSNITT
+\usepackage{graphicx}                   % BILDER \includegraphics[OPTIONS]{PATH}
+\usepackage{kantlipsum}                 % FYLLTEKST I KANT-STIL (kant[n-m])
+\usepackage{amsfonts,                   % BLACKBOARD BOLD FONT (\mathbb{N})
+amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
+\usepackage{caption}                    % PAKKE FOR BEDRE CAPTIONS I FIGURER
+\usepackage{float}                      % FLYTT FIGURER 
+\usepackage[UTF8]{ctex}                 % UTF8 TEGN
+\usepackage{minted}                     % KODEBLOKKER OG SLIKT
+% #endregion
+
+\begin{document}
+
+\maketitle
+% \tableofcontents % INNHOLDSFORTEGNELSE
+
+
+\begin{enumerate}
+    \item [\boxed{1}]
+    \begin{enumerate}
+        \item Enten går han, eller så sykler han.
+        \\ \(A \lor B\), Hovedkonnektiv: \(\lor\)
+        \item Det er torsdag, og i dag har vi ikke forelesning.
+        \\ \(A \land \neg B\), Hovedkonnektiv: \(\land\)
+        \item Du kan, om du vil.
+        \\ \(B \to A\), Hovedkonnektiv: \(\to\)
+        \item Pekka kommer i dag eller i morgen, men ikke senere.
+        \\ \((A \lor B)\land \neg C\), Hovedkonnektiv: \(\land\)
+        \item Det er glatt, men hvis vi strør fortauet, er det ikke glatt.
+        \\ \(A \land (B \to \neg A)\), Hovedkonnektiv: \(\land\)
+        \item Hvis du skriver epost-adressen feil, får julenissen aldri din ønskeliste, og da får du ingen gaver.
+        \\ \((A \to \neg B) \land (\neg B \to \neg C)\), Hovedkonnektiv: \(\land\)
+    \end{enumerate}
+    \item [\boxed{2}]
+    \begin{enumerate}
+        \item Det er oksygen på Månen. 
+        \\ Planter tåler ikke oksygen. 
+        \\ \(\therefore\) Det er ikke planter på Månen.
+        \item Partiet Høyre fikk flertall ved forrige valg. 
+        \\ Partiene med flest stemmer danner regjering. 
+        \\ \(\therefore\) Høyre er i regjering.
+    \end{enumerate}
+    \item [\boxed{3}]
+    \begin{enumerate}
+        \item Hvis det snør, så er det kaldt. Det snør. Altså er det kaldt.
+        \\ \(A \to B\)
+        \\ \(A\)
+        \\ \(\therefore B\)
+        \item Enten tapte hun, eller så vant hun. Hun tapte ikke, altså vant hun.
+        \\ \(A \lor B\)
+        \\ \(\neg A\)
+        \\ \(\therefore B\)
+        \item Du får ikke stryk i logikk, fordi du øver. Og hvis du øver, består du.
+        \\ \(\neg A \to B\)
+        \\ \(B \to \neg A\)
+        \\ \(\therefore \neg A\)
+        \item Enten blir du med, eller så blir du ikke med. Hvis du blir med, blir Pekka sur. Hvis du ikke blir med, blir Pekka sur. Så Pekka blir sur, uansett.
+        \\ \(A \lor \neg A\)
+        \\ \(A \to B\)
+        \\ \(\neg A \to B\)
+        \\ \(\therefore B\)
+        \item Hvis Descartes tenker, så eksisterer han, fordi han kan ikke både tenke og ikke eksistere.
+        \\ \(A \to B\)
+        \\ \(\neg (A \land \neg A)\)
+        \\ \(\therefore B\)
+        \item Aristoteles var en filosof. Alle filosofer er mennesker. Dermed var Aristoteles et menneske.
+        \\ \(A \to B\)
+        \\ \(B \to C\)
+        \\ \(\therefore A \to C\)
+    \end{enumerate}
+    \item [\boxed{4}]
+    \begin{enumerate}
+        \item 
+        \begin{tabular}[t]{c c|c}
+            \(A\) & \(B\) & \(A \to B\) \\ 
+            \hline
+            0 & 0 & 1 \\
+            0 & 1 & 1 \\
+            1 & 0 & 0 \\
+            1 & 1 & 1 \\
+        \end{tabular}
+        \\Hovedkonnektiv: \(\to\)
+        \item
+        \begin{tabular}[t]{c c|c}
+            \(A\) & \(B\) & \((A \land \neg B) \lor \neg A\) \\ 
+            \hline
+            0 & 0 & 1 \\
+            0 & 1 & 1 \\
+            1 & 0 & 1 \\
+            1 & 1 & 0 \\
+        \end{tabular}
+        \\Hovedkonnektiv: \(\lor\)
+        \item
+        \begin{tabular}[t]{c c c c|c}
+            \(A\) & \(B\) & \(A \to B\) & \(B \to A\) & \((A \to B) \lor (B \to A)\) \\
+            \hline
+            0 & 0 & 1 & 1 & 1 \\
+            0 & 1 & 1 & 0 & 1 \\
+            1 & 0 & 0 & 1 & 1 \\
+            1 & 1 & 1 & 1 & 1 \\
+        \end{tabular}
+        \\Hovedkonnektiv: \(\lor\)
+        \item
+        \begin{tabular}[t]{c c c c|c}
+            \(A\) & \(B\) & \(A \land B\) & \(\neg A \lor B\) & \((A \land B) \leftrightarrow (\neg A \lor B)\) \\
+            \hline
+            0 & 0 & 0 & 1 & 0 \\
+            0 & 1 & 0 & 1 & 0 \\
+            1 & 0 & 0 & 0 & 1 \\
+            1 & 1 & 1 & 1 & 1 \\
+        \end{tabular}
+        \\Hovedkonnektiv: \(\leftrightarrow\)
+        \item
+        \begin{tabular}[t]{c c c c c|c}
+            \(A\) & \(B\) & \(A \lor B\) & \(\neg (A \to B)\) & \(\neg A \lor \neg (A \to B)\) & \((A \lor B) \land (\neg A \lor \neg (A \to B))\) \\
+            \hline
+            0 & 0 & 0 & 0 & 1 & 0 \\
+            0 & 1 & 1 & 0 & 1 & 1 \\
+            1 & 0 & 1 & 1 & 1 & 1 \\
+            1 & 1 & 1 & 0 & 0 & 0 \\
+        \end{tabular}
+        \\Hovedkonnektiv: \(\land\)
+    \end{enumerate}
+    \item [\boxed{5}]
+    \begin{enumerate}
+        \item \(\neg A \equiv A | A\) 
+        \item 
+    \end{enumerate}
+\end{enumerate}
+
+% \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
+\end{document}
