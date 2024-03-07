@@ -1,0 +1,169 @@
+% #region PREAMBEL OG PAKKER
+\documentclass[a4paper, 12pt]{article}  % DOKUMENTKLASSE
+\title{FI1005 Øving 2}                         % TITTEL
+\author{Håvard Solberg Nybøe}           % FORFATTER
+\date{\today}                           % DATO & FAG
+
+% Minimal preamble med nødvendige pakker
+\usepackage[english, norsk]{babel}      % NORSK SPRÅK
+\usepackage[
+    backend=biber,style=ieee]{biblatex} % BIBLIOGRAFI
+\usepackage{csquotes}                   % PAKKE TIL BABEL
+\addbibresource{bibliografi.bib}        % PATH TIL BIBLIOGRAFI
+\usepackage[hidelinks]{hyperref}        % LENKER I TOC OG GENERELT
+\usepackage[margin=1in]{geometry}       % VANLIG STØRRELSE MARGIN
+\setlength{\parindent}{0em}             % SKILLER AVSNITT
+\setlength{\parskip}{.8em}              % SKILLER AVSNITT
+\usepackage{graphicx}                   % BILDER \includegraphics[OPTIONS]{PATH}
+\usepackage{kantlipsum}                 % FYLLTEKST I KANT-STIL (kant[n-m])
+\usepackage{amsfonts,                   % BLACKBOARD BOLD FONT (\mathbb{N})
+amsmath,stmaryrd,amssymb}               % ANDRE MATTE PAKKER
+\usepackage{caption}                    % PAKKE FOR BEDRE CAPTIONS I FIGURER
+\usepackage{float}                      % FLYTT FIGURER 
+\usepackage[UTF8]{ctex}                 % UTF8 TEGN
+\usepackage{minted}                     % KODEBLOKKER OG SLIKT
+% #endregion
+
+\begin{document}
+
+\maketitle
+% \tableofcontents % INNHOLDSFORTEGNELSE
+
+
+\begin{enumerate}
+    \item [\boxed{1}]
+    \begin{enumerate}
+        \item Det snør, og det blåser.
+        \\ \emph{Setningen er kontingent.}
+        \item Enten blåser det, eller så blåser det ikke.
+        \\ \emph{Setningen er en tautologi.}
+        \item \(A \to (A \land \neg B)\)
+        \\ \emph{Setningen er kontingent.}
+        \item \((A \land B) \land (\neg A \lor \neg B)\)
+        \\ \emph{Setningen er en kontradiksjon.}
+        \item Det er glatt, men hvis vi strør fortauet, er det ikke glatt.
+        \\ \emph{Setningen er kontingent.}
+    \end{enumerate}
+    \item [\boxed{2}]
+    \begin{enumerate}
+        \item 
+        \begin{tabular}[t]{c|c}
+            \(A\) & \(A \land \neg A \) \\
+            \hline
+            0 & 0 \\
+            1 & 0 \\
+        \end{tabular}
+        \hspace*{1em}
+        \begin{tabular}[t]{c|c}
+            \(A\) & \(A \to A \) \\
+            \hline
+            0 & 1 \\
+            1 & 1 \\
+        \end{tabular}
+        \\[1em]
+        \((A \land \neg A)\) og \(A \to A\) er ikke logisk ekvivalente.
+        \item
+        \begin{tabular}[t]{cc|c}
+            \(A\) & \(B\) & \(A \to B \) \\
+            \hline
+            0 & 0 & 1 \\
+            0 & 1 & 1 \\
+            1 & 0 & 0 \\
+            1 & 1 & 1 \\
+        \end{tabular}
+        \hspace*{1em}
+        \begin{tabular}[t]{cc|c}
+            \(A\) & \(B\) & \(\neg A \lor B\) \\
+            \hline
+            0 & 0 & 1 \\
+            0 & 1 & 1 \\
+            1 & 0 & 0 \\
+            1 & 1 & 1 \\
+        \end{tabular}
+        \\[1em]
+        \(A \to B\) og \(\neg A \lor B\) er logisk ekvivalente.
+        \item
+        \begin{tabular}[t]{ccc|c}
+            \(A\) & \(B\) & \(C\) & \(A \land (B \lor C) \) \\
+            \hline
+            0 & 0 & 0 & 0 \\
+            0 & 0 & 1 & 0 \\
+            0 & 1 & 0 & 0 \\
+            0 & 1 & 1 & 0 \\
+            1 & 0 & 0 & 0 \\
+            1 & 0 & 1 & 1 \\
+            1 & 1 & 0 & 1 \\
+            1 & 1 & 1 & 1 \\
+        \end{tabular}
+        \hspace*{1em}
+        \begin{tabular}[t]{ccc|c}
+            \(A\) & \(B\) & \(C\) & \(\neg A \lor (\neg B \to C) \) \\
+            \hline
+            0 & 0 & 0 & 1 \\
+            0 & 0 & 1 & 1 \\
+            0 & 1 & 0 & 1 \\
+            0 & 1 & 1 & 1 \\
+            1 & 0 & 0 & 0 \\
+            1 & 0 & 1 & 1 \\
+            1 & 1 & 0 & 1 \\
+            1 & 1 & 1 & 1 \\
+        \end{tabular}
+        \\[1em]
+        \(A \land (B \lor C)\) og \(\neg A \lor (\neg B \to C)\) er ikke logisk ekvivalente.
+        \item
+        \begin{tabular}[t]{ccc|c}
+            \(A\) & \(B\) & \(C\) & \(A \to (B \lor C) \) \\
+            \hline
+            0 & 0 & 0 & 1 \\
+            0 & 0 & 1 & 1 \\
+            0 & 1 & 0 & 1 \\
+            0 & 1 & 1 & 1 \\
+            1 & 0 & 0 & 0 \\
+            1 & 0 & 1 & 1 \\
+            1 & 1 & 0 & 1 \\
+            1 & 1 & 1 & 1 \\
+        \end{tabular}
+        \hspace*{1em}
+        \begin{tabular}[t]{ccc|c}
+            \(A\) & \(B\) & \(C\) & \(\neg A \lor (\neg B \to C) \) \\
+            \hline
+            0 & 0 & 0 & 1 \\
+            0 & 0 & 1 & 1 \\
+            0 & 1 & 0 & 1 \\
+            0 & 1 & 1 & 1 \\
+            1 & 0 & 0 & 0 \\
+            1 & 0 & 1 & 1 \\
+            1 & 1 & 0 & 1 \\
+            1 & 1 & 1 & 1 \\
+        \end{tabular}
+        \\[1em]
+        \(A \to (B \lor C)\) og \(\neg A \lor (\neg B \to C)\) er logisk ekvivalente.
+    \end{enumerate}
+    \item [\boxed{3}]
+    \begin{enumerate}
+        \item
+        \begin{tabular}[t]{cc|cc|c}
+            \(A\) & \(B\) & \(A\) & \(A \to B\) & \(B\)\\
+            \hline
+            0 & 0 & 0 & 1 & 0 \\
+            0 & 1 & 0 & 1 & 1 \\
+            1 & 0 & 1 & 0 & 0 \\
+            1 & 1 & 1 & 1 & 1 \\
+        \end{tabular}
+    \end{enumerate}
+    \item [\boxed{4}]
+    \begin{enumerate}
+        \item
+        \begin{tabular}[t]{cccc|c}
+            \(A\) & \(B\) & \(A \lor B\) & \(\neg B\) & \(A \to B\) \\
+            \hline
+            0 & 0 & 0 & 1 & 1 \\
+            0 & 1 & 1 & 0 & 1 \\
+            1 & 0 & 1 & 1 & 0 \\
+            1 & 1 & 1 & 0 & 1 \\            
+        \end{tabular}
+    \end{enumerate}
+\end{enumerate}
+
+% \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
+\end{document}
