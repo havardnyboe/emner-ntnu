@@ -1,0 +1,65 @@
+% #region PREAMBEL OG PAKKER
+\documentclass[a4paper, 12pt]{article}  % DOKUMENTKLASSE
+\title{FI1005 Øving 5}                         % TITTEL
+\author{Håvard Solberg Nybøe}           % FORFATTER
+\date{\today}                           % DATO & FAG
+
+% Minimal preamble med nødvendige pakker
+\usepackage[english, norsk]{babel}      % NORSK SPRÅK
+\usepackage[
+    backend=biber,style=ieee]{biblatex} % BIBLIOGRAFI
+\usepackage{csquotes}                   % PAKKE TIL BABEL
+\addbibresource{bibliografi.bib}        % PATH TIL BIBLIOGRAFI
+\usepackage[hidelinks]{hyperref}        % LENKER I TOC OG GENERELT
+\usepackage[margin=1in]{geometry}       % VANLIG STØRRELSE MARGIN
+\setlength{\parindent}{0em}             % SKILLER AVSNITT
+\setlength{\parskip}{.8em}              % SKILLER AVSNITT
+\usepackage{graphicx}                   % BILDER \includegraphics[OPTIONS]{PATH}
+\usepackage{kantlipsum}                 % FYLLTEKST I KANT-STIL (kant[n-m])
+\usepackage{amsfonts,                   % BLACKBOARD BOLD FONT (\mathbb{N})
+stmaryrd,amssymb}               % ANDRE MATTE PAKKER
+\usepackage{caption}                    % PAKKE FOR BEDRE CAPTIONS I FIGURER
+\usepackage[fleqn]{amsmath}
+\usepackage{float}                      % FLYTT FIGURER 
+\usepackage[UTF8]{ctex}                 % UTF8 TEGN
+\usepackage{minted}                     % KODEBLOKKER OG SLIKT
+% #endregion
+
+\begin{document}
+
+\maketitle
+% \tableofcontents % INNHOLDSFORTEGNELSE
+
+
+\begin{enumerate}
+    \item [\boxed{1}] Skriver domenet mennesker som \(\mathbb{M}\), og menneske som \(m\)
+    \begin{enumerate}
+        \item \(N(e) \land F(p)\)
+        \item \(\neg(N(d) \lor F(d))\)
+        \item \(\exists m [F(m)]\)
+        \item \(\exists m [\neg(N(m) \land F(m))]\)
+        \item \(\forall m [\neg(N(m) \lor F(m))]\)
+        \item \(\exists m [N(m) \land \neg N(d)] \) (Riktig fra øvingstime)
+    \end{enumerate}
+    \item [\boxed{2}] (Se kapittel 4)
+    \begin{enumerate}
+        \item [(a)]
+        \(\neg\exists x [G(x) \land F(x)]\) \\
+        \(\exists x [G(x) \land H(x)]\) \\
+        \(\therefore\exists x [H(x) \land \neg F(x)]\) (Riktig fra øvingstime)
+        \item [(c)]
+        \(\forall x [F(x) \to G(x)]\) \\
+        \(\neg\exists x [G(x) \land H(x)]\) \\
+        \(\therefore\neg\exists x [H(x) \land F(x)]\) (Riktig fra øvingstime)
+    \end{enumerate}
+    \item [\boxed{3}]
+    \begin{enumerate}
+        \item [(a)]
+        \(\forall x [V(x,k) \to K(x,o)] \) (Riktig fra øvingstime)
+        \item [(g)]
+        \(\forall x \forall y [(V(x,k) \land V(y,o)) \to (K(x,y) \land K(y,x))] \) (Riktig fra øvingstime)
+    \end{enumerate}
+\end{enumerate}
+
+% \printbibliography[heading=bibintoc] % LAGER BIBLIOGRAFI
+\end{document}
