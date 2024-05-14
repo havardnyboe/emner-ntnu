@@ -18,8 +18,8 @@ I Finland bor det finner.
 $\therefore$ Pekka bor i Finland.  
 
 Hvis Trondheim er i Norge, er Trondheim i Europa.  
-Trondheim er i Europa.
-$\therefore$ Trondheim er i Norge.
+Trondheim er i Europa.  
+$\therefore$ Trondheim er i Norge.  
 
 ### Abduktivt argument
 
